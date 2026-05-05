@@ -169,7 +169,4 @@ LDINF-DALI2/
 ## References
 
 - Costantini, S., Formisano, A., Pitoni, V. (2023). *An epistemic logic for formalizing group dynamics of agents.* Interaction Studies 23, 391–426.
-- Costantini, S., Pitoni, V. (2026). *A Trust Extension of L-DINF.* CILC 2026.
-- Costantini, S., Pitoni, V. (2026). *A Probabilistic Package for L-DINF.* LAMAS 2026.
-- Costantini, S., Pitoni, V., Formisano, A., De Lauretis, L. (2026). *From Constraints to Cognition: A Hybrid Framework.* NMR 2026.
 - DALI2: [github.com/AAAI-DISIM-UnivAQ/DALI2](https://github.com/AAAI-DISIM-UnivAQ/DALI2)

@@ -359,9 +359,6 @@ The hybrid ASP + L-DINF architecture operates as follows:
 - Costantini, S., Formisano, A., Pitoni, V. (2023). *An epistemic logic for formalizing group dynamics of agents.* Interaction Studies 23, 391–426.
 - Costantini, S., Formisano, A., Pitoni, V. (2022). *Cooperation among groups of agents in the epistemic logic L-DINF.* RuleML+RR 2022, LNCS 13752, 280–295.
 - Costantini, S., Formisano, A., Pitoni, V. (2023). *Preference management in epistemic logic L-DINF.* CILC 2023, CEUR Workshop Proceedings 3428.
-- Costantini, S., Pitoni, V. (2026). *A Trust Extension of L-DINF for Explainable Multi-Agent Decision Making.* CILC 2026.
-- Costantini, S., Pitoni, V. (2026). *A Probabilistic Package for L-DINF: Reasoning, Resources and Action Selection in Cooperative Agents.* LAMAS 2026.
-- Costantini, S., Pitoni, V., Formisano, A., De Lauretis, L. (2026). *From Constraints to Cognition: A Hybrid Framework for Adaptive, Explainable Scheduling.* NMR 2026.
 - Balbiani, P., Fernández-Duque, D., Lorini, E. (2016). *A logical theory of belief dynamics for resource-bounded agents.* AAMAS 2016, 644–652.
 - Balbiani, P., Fernández-Duque, D., Lorini, E. (2019). *The dynamics of epistemic attitudes in resource-bounded agents.* Studia Logica 107(3), 457–488.
 - Lorini, E. (2019). *Reasoning about cognitive attitudes in a qualitative setting.* JELIA 2019, 726–743.
