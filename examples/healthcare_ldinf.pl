@@ -76,12 +76,19 @@ believes(action_cost(visit(doc_smith), 5)).
 believes(action_cost(visit(doc_lee), 2)).
 believes(budget(10)).
 
-%% Trust thresholds for consultation action (L-DINF: Theta)
-believes(trust_threshold(consultation, intention, medium)).
-believes(trust_threshold(consultation, feasibility, medium)).
-believes(trust_threshold(consultation, lending, high)).
-believes(trust_threshold(consultation, blocking, very_low)).
-believes(trust_threshold(consultation, autonomy, high)).
+%% Trust level numeric mapping (L-DINF: Levels ordering)
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+%% Trust thresholds as numeric values (L-DINF: Theta)
+believes(trust_threshold_num(consultation, intention, 3)).    %% medium
+believes(trust_threshold_num(consultation, feasibility, 3)).  %% medium
+believes(trust_threshold_num(consultation, lending, 4)).      %% high
+believes(trust_threshold_num(consultation, blocking, 1)).     %% very_low
+believes(trust_threshold_num(consultation, autonomy, 4)).     %% high
 
 %% Feasibility constraints (compiled from ASP: tau^IC)
 %% A doctor cannot do consultation if unavailable
@@ -112,16 +119,17 @@ unavailableE(Doctor, TimeSlot) :>
 %% --- External event: local repair found ---
 local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
     log("Alice: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
-    %% L-DINF trust-aware decision
-    believes(trust_threshold(consultation, autonomy, AutonomyThreshold)),
-    believes(trust_threshold(consultation, blocking, BlockThreshold)),
-    (   trust_ge(TrustLevel, AutonomyThreshold)
+    %% L-DINF trust-aware decision (numeric comparison)
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
     ->  log("Alice: decision = ALLOW — ~w trusted for autonomous execution", [Doctor]),
         assert_belief(assigned_doctor(Doctor)),
         retract_belief(intend(consultation(TimeSlot))),
         assert_belief(intend(consultation_with(Doctor, TimeSlot))),
         send(logger, log_event(decision, alice, [allow, Doctor, TimeSlot]))
-    ;   trust_gt(TrustLevel, BlockThreshold)
+    ;   TrustNum > BlkThr
     ->  log("Alice: decision = DELEGATE — ~w in grey zone, requesting lending", [Doctor]),
         send(logger, log_event(decision, alice, [delegate, Doctor, TimeSlot])),
         send(mediator, lending_request(alice, clinic_a, consultation, TimeSlot))
@@ -150,17 +158,6 @@ consultation_doneE(Doctor, TimeSlot) :>
 fallback_aspE(TimeSlot) :>
     log("Alice: No local/delegation repair — FALLBACK to ASP re-optimization"),
     send(logger, log_event(fallback, alice, [asp_reoptimization, TimeSlot])).
-
-%% --- Helper: trust level comparison ---
-helper(trust_ge(T1, T2)) :-
-    trust_order(T1, N1), trust_order(T2, N2), N1 >= N2.
-helper(trust_gt(T1, T2)) :-
-    trust_order(T1, N1), trust_order(T2, N2), N1 > N2.
-helper(trust_order(very_low, 1)).
-helper(trust_order(low, 2)).
-helper(trust_order(medium, 3)).
-helper(trust_order(high, 4)).
-helper(trust_order(very_high, 5)).
 
 
 %% ============================================================
@@ -202,11 +199,11 @@ select_actionE(TimeSlot) :>
         believes(equivalent_action(consultation, Action)),
         believes(action_data(Action, Rho, Pref, Cost)),
         Cost =< Budget,
-        Score is LambdaRho * Rho + LambdaP * (Pref / Pmax) - LambdaC * (Cost / Budget),
-        log("Bob:   ~w — score=~2f (rho=~w, pref=~w, cost=~w)",
-            [Action, Score, Rho, Pref, Cost])
-    ), Scores),
-    sort(0, @>=, Scores, [BestScore-BestAction | _]),
+        Score is LambdaRho * Rho + LambdaP * (Pref / Pmax) - LambdaC * (Cost / Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    log("Bob: Candidate scores: ~w", [ScoresUniq]),
     log("Bob: SELECTED ~w (score=~2f) via F^prob_pi", [BestAction, BestScore]),
     assert_belief(selected_action(BestAction, TimeSlot)),
     send(logger, log_event(prob_selection, bob, [BestAction, BestScore, TimeSlot])).
@@ -366,8 +363,9 @@ repair_requestE(Patient, Action, TimeSlot) :>
         believes(doctor_available(Doc)),
         believes(doctor_trust(Doc, Trust)),
         believes(doctor_pref(Doc, Pref))
-    ), Candidates),
-    sort(0, @>=, Candidates, Sorted),
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
     log("ClinicA_Mgr: Local candidates (sorted by pref): ~w", [Sorted]),
     (   Sorted = [BestPref-BestDoc-BestTrust | _]
     ->  log("ClinicA_Mgr: Best local candidate: ~w (trust=~w, pref=~w)",
@@ -401,7 +399,8 @@ lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
         believes(member(clinic_b, Doc)),
         believes(doctor_available(Doc)),
         believes(doctor_trust(Doc, Trust))
-    ), Available),
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
     (   Available = [BestDoc-BestTrust | _]
     ->  log("ClinicB_Mgr: Offering ~w (trust=~w) for lending", [BestDoc, BestTrust]),
         send(mediator, lending_offer(BestDoc, clinic_b, BestTrust, Action, TimeSlot))
@@ -419,7 +418,14 @@ lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
 :- agent(mediator, [cycle(1)]).
 
 %% Lending trust threshold for consultation (L-DINF: tau^Pi_L)
-believes(lending_threshold(consultation, high)).
+believes(lending_threshold_num(consultation, 4)).  %% high = 4
+
+%% Trust level numeric mapping
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
 
 %% --- External event: lending request ---
 lending_requestE(Patient, RequestingClinic, Action, TimeSlot) :>
@@ -434,19 +440,20 @@ lending_requestE(Patient, RequestingClinic, Action, TimeSlot) :>
 lending_offerE(Doctor, SourceClinic, TrustLevel, Action, TimeSlot) :>
     believes(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
     log("Mediator: Offer — ~w from ~w (trust=~w)", [Doctor, SourceClinic, TrustLevel]),
-    %% L-DINF: check trust threshold for lending
-    believes(lending_threshold(Action, RequiredTrust)),
-    (   trust_ge(TrustLevel, RequiredTrust)
-    ->  log("Mediator: Trust OK (~w >= ~w) — LENDING APPROVED", [TrustLevel, RequiredTrust]),
+    %% L-DINF: check trust threshold for lending (numeric comparison)
+    believes(lending_threshold_num(Action, RequiredNum)),
+    believes(trust_val(TrustLevel, TrustNum)),
+    (   TrustNum >= RequiredNum
+    ->  log("Mediator: Trust OK (~w >= threshold) — LENDING APPROVED", [TrustLevel]),
         %% L-DINF: lend_G(i, H, phi_A) — execute lending protocol
         retract_belief(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
         assert_belief(active_lending(Doctor, SourceClinic, RequestingClinic, TimeSlot)),
         send(Doctor, lend_to(RequestingClinic, Action, TimeSlot)),
         send(logger, log_event(lending_approved, mediator,
             [Doctor, SourceClinic, RequestingClinic, TimeSlot]))
-    ;   log("Mediator: Trust INSUFFICIENT (~w < ~w) — LENDING DENIED", [TrustLevel, RequiredTrust]),
+    ;   log("Mediator: Trust INSUFFICIENT (~w < threshold) — LENDING DENIED", [TrustLevel]),
         send(Patient, fallback_asp(TimeSlot)),
-        send(logger, log_event(lending_denied, mediator, [Doctor, TrustLevel, RequiredTrust]))
+        send(logger, log_event(lending_denied, mediator, [Doctor, TrustLevel, RequiredNum]))
     ).
 
 %% --- External event: lending accepted by doctor ---
@@ -468,17 +475,6 @@ lending_deniedE(SourceClinic, Action, TimeSlot) :>
     send(Patient, fallback_asp(TimeSlot)),
     send(logger, log_event(lending_failed, mediator, [SourceClinic, Action, TimeSlot])).
 
-%% --- Helper: trust comparison ---
-helper(trust_ge(T1, T2)) :-
-    trust_order(T1, N1), trust_order(T2, N2), N1 >= N2.
-helper(trust_gt(T1, T2)) :-
-    trust_order(T1, N1), trust_order(T2, N2), N1 > N2.
-helper(trust_order(very_low, 1)).
-helper(trust_order(low, 2)).
-helper(trust_order(medium, 3)).
-helper(trust_order(high, 4)).
-helper(trust_order(very_high, 5)).
-
 
 %% ============================================================
 %% LOGGER — Explanation trace generator
@@ -491,9 +487,11 @@ log_eventE(Type, Source, Data) :>
     log("TRACE [~w] ~w: ~w", [Type, Source, Data]),
     assert_belief(logged(Type, Source, Data)).
 
-%% Condition monitor: warn when many disruptions logged
-when(believes(logged(disruption, _, _)), believes(logged(disruption, _, _))) :-
-    findall(_, believes(logged(disruption, _, _)), Disruptions),
+%% Condition-action: warn once when disruptions exceed threshold
+believes(logged(disruption, _, _)) :< 
+    \+ believes(warned_instability),
+    findall(x, believes(logged(disruption, _, _)), Disruptions),
     length(Disruptions, N),
     N > 2,
+    assert_belief(warned_instability),
     log("LOGGER WARNING: ~w disruptions recorded — system instability!", [N]).

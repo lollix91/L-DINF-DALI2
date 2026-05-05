@@ -98,9 +98,9 @@ curl.exe -X POST http://localhost:8080/api/send -H "Content-Type: application/js
 ```
 
 **Expected:** Bob evaluates three equivalent actions using `F^prob_π`:
-- `visit_standard`: score = 100×0.90 + 10×(8/10) − 20×(5/12) = 89.67
-- `visit_telemedicine`: score = 100×0.75 + 10×(6/10) − 20×(2/12) = 78.67
-- `visit_home`: score = 100×0.85 + 10×(7/10) − 20×(8/12) = 79.67
+- `visit_standard`: score = 100×0.90 + 10×(8/10) − 20×(5/12) = **89.67**
+- `visit_home`: score = 100×0.85 + 10×(7/10) − 20×(8/12) = **78.67**
+- `visit_telemedicine`: score = 100×0.75 + 10×(6/10) − 20×(2/12) = **77.67**
 
 **Selected:** `visit_standard` (highest score).
 
@@ -112,6 +112,29 @@ curl.exe http://localhost:8080/api/beliefs?agent=mediator
 curl.exe http://localhost:8080/api/beliefs?agent=bob
 curl.exe http://localhost:8080/api/logs
 ```
+
+### Verified Execution Trace
+
+The following trace was produced by the logger agent during a complete test run:
+
+```
+TRACE [schedule_loaded]     alice:          [consultation,t1,doc_jones]
+TRACE [unavailability]      doc_jones:      [t1]
+TRACE [group_update]        clinic_a_mgr:   [unavailable,doc_jones,t1]
+TRACE [disruption]          alice:          [unavailable,doc_jones,t1]
+TRACE [disruption]          bob:            [unavailable,doc_jones,t1]
+TRACE [decision]            alice:          [delegate,doc_lee,t1]
+TRACE [lending_request]     mediator:       [alice,clinic_a,consultation,t1]
+TRACE [lending_approved]    mediator:       [doc_smith,clinic_b,clinic_a,t1]
+TRACE [lending_accepted]    doc_smith:      [clinic_a,consultation,t1]
+TRACE [lending_executed]    mediator:       [doc_smith,clinic_a,t1]
+TRACE [consultation]        doc_smith:      [alice,t1]
+TRACE [delegation_complete] alice:          [doc_smith,t1]
+TRACE [consultation_done]   alice:          [doc_smith,t1]
+TRACE [prob_selection]      bob:            [visit_standard,89.67,t2]
+```
+
+Each trace entry corresponds to a formal L-DINF transition, providing a transparent account of the adaptation chain.
 
 ## L-DINF to DALI2 Mapping
 
@@ -126,8 +149,8 @@ curl.exe http://localhost:8080/api/logs
 | `do^P_i(φ_A)` | Past event in DALI2 memory |
 | `+φ` (belief update) | `assert_belief(...)` in reactive rule body |
 | `−φ` (belief removal) | `retract_belief(...)` in reactive rule body |
-| `trust_K(i, τ)` | `believes(trust(agent, level)).` |
-| `decision(allow/delegate/block)` | Trust comparison in reactive rule with branching |
+| `trust_K(i, τ)` | `believes(trust_val(level, num)).` — numeric ordering |
+| `decision(allow/delegate/block)` | Arithmetic comparison (`>=`, `>`) in reactive rule |
 | `lend_G(i, H, φ_A)` | Mediated message protocol via `mediator` agent |
 | `F^prob_π` selector | Score computation with `findall` + `sort` |
 | Explanation trace | `logger` agent recording all events |
