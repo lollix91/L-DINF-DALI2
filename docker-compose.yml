@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  dali2:
+    build:
+      context: ../DALI2
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AGENT_FILE=/app/ldinf/examples/healthcare_ldinf.pl
+    volumes:
+      - ./examples:/app/ldinf/examples
+    depends_on:
+      - redis
+    init: true
