@@ -131,6 +131,7 @@ TRACE [lending_executed]    mediator:       [doc_smith,clinic_a,t1]
 TRACE [consultation]        doc_smith:      [alice,t1]
 TRACE [delegation_complete] alice:          [doc_smith,t1]
 TRACE [consultation_done]   alice:          [doc_smith,t1]
+TRACE [return_group]        doc_smith:      [clinic_b]
 TRACE [prob_selection]      bob:            [visit_standard,89.67,t2]
 ```
 

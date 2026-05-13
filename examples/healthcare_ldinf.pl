@@ -287,7 +287,12 @@ perform_consultationE(Patient, TimeSlot) :>
     retract_belief(can_do(consultation, TimeSlot)),
     assert_belief(done(consultation, Patient, TimeSlot)),
     send(Patient, consultation_done(doc_smith, TimeSlot)),
-    send(logger, log_event(consultation, doc_smith, [Patient, TimeSlot])).
+    send(logger, log_event(consultation, doc_smith, [Patient, TimeSlot])),
+    %% Notify mediator that lending task is complete
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_smith, Clinic, TimeSlot))
+    ;   true
+    ).
 
 %% External event: return to original group after lending
 return_to_groupE :>
@@ -447,7 +452,7 @@ lending_offerE(Doctor, SourceClinic, TrustLevel, Action, TimeSlot) :>
     ->  log("Mediator: Trust OK (~w >= threshold) — LENDING APPROVED", [TrustLevel]),
         %% L-DINF: lend_G(i, H, phi_A) — execute lending protocol
         retract_belief(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
-        assert_belief(active_lending(Doctor, SourceClinic, RequestingClinic, TimeSlot)),
+        assert_belief(active_lending(Doctor, SourceClinic, RequestingClinic, Patient, TimeSlot)),
         send(Doctor, lend_to(RequestingClinic, Action, TimeSlot)),
         send(logger, log_event(lending_approved, mediator,
             [Doctor, SourceClinic, RequestingClinic, TimeSlot]))
@@ -459,13 +464,21 @@ lending_offerE(Doctor, SourceClinic, TrustLevel, Action, TimeSlot) :>
 %% --- External event: lending accepted by doctor ---
 lending_acceptedE(Doctor, RequestingClinic, Action, TimeSlot) :>
     log("Mediator: ~w accepted lending to ~w", [Doctor, RequestingClinic]),
-    believes(active_lending(Doctor, _, RequestingClinic, TimeSlot)),
+    believes(active_lending(Doctor, _, RequestingClinic, Patient, TimeSlot)),
     %% Notify patient about delegation completion
-    %% Find the patient from pending context
-    send(alice, delegation_complete(Doctor, TimeSlot)),
+    send(Patient, delegation_complete(Doctor, TimeSlot)),
     %% Schedule the actual consultation
-    send(Doctor, perform_consultation(alice, TimeSlot)),
+    send(Doctor, perform_consultation(Patient, TimeSlot)),
     send(logger, log_event(lending_executed, mediator, [Doctor, RequestingClinic, TimeSlot])).
+
+%% --- External event: lending task completed — restore group membership ---
+lending_task_doneE(Doctor, RequestingClinic, TimeSlot) :>
+    log("Mediator: Lending task done — ~w returning from ~w", [Doctor, RequestingClinic]),
+    (   believes(active_lending(Doctor, SourceClinic, RequestingClinic, _Patient, TimeSlot))
+    ->  retract_belief(active_lending(Doctor, SourceClinic, RequestingClinic, _Patient, TimeSlot)),
+        send(Doctor, return_to_group)
+    ;   true
+    ).
 
 %% --- External event: lending denied by source clinic ---
 lending_deniedE(SourceClinic, Action, TimeSlot) :>
