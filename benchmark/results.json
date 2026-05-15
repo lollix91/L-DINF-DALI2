@@ -1,0 +1,46 @@
+[
+  {
+    "wall_clock_ms": 15652.716875076294,
+    "scenario": "S1_small",
+    "run_id": 1,
+    "agents": 10,
+    "config_disruptions": 1,
+    "config_patients": 2,
+    "config_clinics": 2,
+    "config_docs_per_clinic": 2,
+    "config_equiv_actions": 3
+  },
+  {
+    "wall_clock_ms": 28820.854425430298,
+    "scenario": "S2_medium",
+    "run_id": 1,
+    "agents": 20,
+    "config_disruptions": 3,
+    "config_patients": 6,
+    "config_clinics": 3,
+    "config_docs_per_clinic": 3,
+    "config_equiv_actions": 4
+  },
+  {
+    "wall_clock_ms": 201635.10036468506,
+    "scenario": "S3_large",
+    "run_id": 1,
+    "agents": 34,
+    "config_disruptions": 5,
+    "config_patients": 12,
+    "config_clinics": 4,
+    "config_docs_per_clinic": 4,
+    "config_equiv_actions": 5
+  },
+  {
+    "wall_clock_ms": 183631.78849220276,
+    "scenario": "S4_xlarge",
+    "run_id": 1,
+    "agents": 52,
+    "config_disruptions": 10,
+    "config_patients": 20,
+    "config_clinics": 5,
+    "config_docs_per_clinic": 5,
+    "config_equiv_actions": 6
+  }
+]
