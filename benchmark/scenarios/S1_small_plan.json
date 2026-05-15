@@ -1,0 +1,28 @@
+{
+  "agents": 10,
+  "clinics": 2,
+  "doctors_per_clinic": 2,
+  "patients": 2,
+  "num_disruptions": 1,
+  "num_equiv_actions": 3,
+  "disruptions": [
+    {
+      "doctor": "doc_a_1",
+      "timeslot": "t1"
+    }
+  ],
+  "patient_selections": [
+    {
+      "patient": "patient_1",
+      "timeslot": "t1"
+    },
+    {
+      "patient": "patient_2",
+      "timeslot": "t2"
+    }
+  ],
+  "schedule_ready_patients": [
+    "patient_1",
+    "patient_2"
+  ]
+}

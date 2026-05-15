@@ -1,0 +1,154 @@
+{
+  "agents": 52,
+  "clinics": 5,
+  "doctors_per_clinic": 5,
+  "patients": 20,
+  "num_disruptions": 10,
+  "num_equiv_actions": 6,
+  "disruptions": [
+    {
+      "doctor": "doc_e_5",
+      "timeslot": "t1"
+    },
+    {
+      "doctor": "doc_a_1",
+      "timeslot": "t2"
+    },
+    {
+      "doctor": "doc_b_2",
+      "timeslot": "t3"
+    },
+    {
+      "doctor": "doc_d_4",
+      "timeslot": "t4"
+    },
+    {
+      "doctor": "doc_c_3",
+      "timeslot": "t5"
+    },
+    {
+      "doctor": "doc_b_3",
+      "timeslot": "t6"
+    },
+    {
+      "doctor": "doc_a_5",
+      "timeslot": "t7"
+    },
+    {
+      "doctor": "doc_c_2",
+      "timeslot": "t8"
+    },
+    {
+      "doctor": "doc_b_5",
+      "timeslot": "t9"
+    },
+    {
+      "doctor": "doc_e_4",
+      "timeslot": "t10"
+    }
+  ],
+  "patient_selections": [
+    {
+      "patient": "patient_1",
+      "timeslot": "t1"
+    },
+    {
+      "patient": "patient_2",
+      "timeslot": "t2"
+    },
+    {
+      "patient": "patient_3",
+      "timeslot": "t3"
+    },
+    {
+      "patient": "patient_4",
+      "timeslot": "t4"
+    },
+    {
+      "patient": "patient_5",
+      "timeslot": "t5"
+    },
+    {
+      "patient": "patient_6",
+      "timeslot": "t6"
+    },
+    {
+      "patient": "patient_7",
+      "timeslot": "t7"
+    },
+    {
+      "patient": "patient_8",
+      "timeslot": "t8"
+    },
+    {
+      "patient": "patient_9",
+      "timeslot": "t9"
+    },
+    {
+      "patient": "patient_10",
+      "timeslot": "t10"
+    },
+    {
+      "patient": "patient_11",
+      "timeslot": "t11"
+    },
+    {
+      "patient": "patient_12",
+      "timeslot": "t12"
+    },
+    {
+      "patient": "patient_13",
+      "timeslot": "t13"
+    },
+    {
+      "patient": "patient_14",
+      "timeslot": "t14"
+    },
+    {
+      "patient": "patient_15",
+      "timeslot": "t15"
+    },
+    {
+      "patient": "patient_16",
+      "timeslot": "t16"
+    },
+    {
+      "patient": "patient_17",
+      "timeslot": "t17"
+    },
+    {
+      "patient": "patient_18",
+      "timeslot": "t18"
+    },
+    {
+      "patient": "patient_19",
+      "timeslot": "t19"
+    },
+    {
+      "patient": "patient_20",
+      "timeslot": "t20"
+    }
+  ],
+  "schedule_ready_patients": [
+    "patient_1",
+    "patient_2",
+    "patient_3",
+    "patient_4",
+    "patient_5",
+    "patient_6",
+    "patient_7",
+    "patient_8",
+    "patient_9",
+    "patient_10",
+    "patient_11",
+    "patient_12",
+    "patient_13",
+    "patient_14",
+    "patient_15",
+    "patient_16",
+    "patient_17",
+    "patient_18",
+    "patient_19",
+    "patient_20"
+  ]
+}

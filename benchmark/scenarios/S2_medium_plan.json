@@ -1,0 +1,56 @@
+{
+  "agents": 20,
+  "clinics": 3,
+  "doctors_per_clinic": 3,
+  "patients": 6,
+  "num_disruptions": 3,
+  "num_equiv_actions": 4,
+  "disruptions": [
+    {
+      "doctor": "doc_c_3",
+      "timeslot": "t1"
+    },
+    {
+      "doctor": "doc_b_2",
+      "timeslot": "t2"
+    },
+    {
+      "doctor": "doc_a_1",
+      "timeslot": "t3"
+    }
+  ],
+  "patient_selections": [
+    {
+      "patient": "patient_1",
+      "timeslot": "t1"
+    },
+    {
+      "patient": "patient_2",
+      "timeslot": "t2"
+    },
+    {
+      "patient": "patient_3",
+      "timeslot": "t3"
+    },
+    {
+      "patient": "patient_4",
+      "timeslot": "t4"
+    },
+    {
+      "patient": "patient_5",
+      "timeslot": "t5"
+    },
+    {
+      "patient": "patient_6",
+      "timeslot": "t6"
+    }
+  ],
+  "schedule_ready_patients": [
+    "patient_1",
+    "patient_2",
+    "patient_3",
+    "patient_4",
+    "patient_5",
+    "patient_6"
+  ]
+}

@@ -191,6 +191,7 @@ believes(pref_max(10)).
 %% --- External event: select best action probabilistically ---
 select_actionE(TimeSlot) :>
     log("Bob: Probabilistic action selection for consultation at ~w", [TimeSlot]),
+    send(logger, log_event(selector_start, bob, [consultation, TimeSlot])),
     believes(policy_weights(LambdaRho, LambdaP, LambdaC)),
     believes(pref_max(Pmax)),
     believes(budget(Budget)),
@@ -497,14 +498,58 @@ lending_deniedE(SourceClinic, Action, TimeSlot) :>
 :- agent(logger, [cycle(1)]).
 
 log_eventE(Type, Source, Data) :>
-    log("TRACE [~w] ~w: ~w", [Type, Source, Data]),
-    assert_belief(logged(Type, Source, Data)).
+    get_time(T),
+    log("TRACE [~w] ~w: ~w @~6f", [Type, Source, Data, T]),
+    assert_belief(logged(Type, Source, Data, T)).
 
 %% Condition-action: warn once when disruptions exceed threshold
-believes(logged(disruption, _, _)) :< 
+believes(logged(disruption, _, _, _)) :< 
     \+ believes(warned_instability),
-    findall(x, believes(logged(disruption, _, _)), Disruptions),
+    findall(x, believes(logged(disruption, _, _, _)), Disruptions),
     length(Disruptions, N),
     N > 2,
     assert_belief(warned_instability),
     log("LOGGER WARNING: ~w disruptions recorded — system instability!", [N]).
+
+%% --- Helper: compute metrics summary ---
+compute_metricsE :>
+    %% Repair time: from first disruption to last consultation_done
+    findall(T, believes(logged(disruption, _, _, T)), DispTimes),
+    findall(T, believes(logged(consultation_done, _, _, T)), DoneTimes),
+    findall(T, believes(logged(lending_approved, _, _, T)), LendTimes),
+    findall(T, believes(logged(prob_selection, _, _, T)), SelTimes),
+    findall(x, believes(logged(_, _, _, _)), AllEvents),
+    length(AllEvents, TotalEvents),
+    length(DispTimes, NumDisruptions),
+    length(DoneTimes, NumRepairs),
+    length(LendTimes, NumLendings),
+    length(SelTimes, NumSelections),
+    %% Compute average repair time (disruption -> consultation_done)
+    ( DispTimes = [DT0|_], DoneTimes \= []
+    -> last(DoneTimes, DTLast),
+       AvgRepairMs is (DTLast - DT0) * 1000
+    ;  AvgRepairMs = 0
+    ),
+    %% Compute lending frequency
+    ( NumRepairs > 0
+    -> LendingPct is (NumLendings / NumDisruptions) * 100
+    ;  LendingPct = 0
+    ),
+    %% Selector overhead: time between select_action events
+    findall(T, believes(logged(selector_start, _, _, T)), SelStartTimes),
+    findall(T, believes(logged(prob_selection, _, _, T)), SelEndTimes),
+    ( SelStartTimes = [SS|_], SelEndTimes = [SE|_]
+    -> SelectorMs is (SE - SS) * 1000
+    ;  SelectorMs = 0
+    ),
+    %% Count messages
+    findall(x, believes(logged(_, _, _, _)), Msgs),
+    length(Msgs, MsgCount),
+    %% Store summary
+    assert_belief(metrics_summary(TotalEvents, NumDisruptions, NumRepairs,
+                                  NumLendings, NumSelections, AvgRepairMs,
+                                  LendingPct, SelectorMs, MsgCount)),
+    log("METRICS: events=~w disruptions=~w repairs=~w lendings=~w selections=~w",
+        [TotalEvents, NumDisruptions, NumRepairs, NumLendings, NumSelections]),
+    log("METRICS: avg_repair_ms=~2f lending_pct=~1f selector_ms=~3f msg_count=~w",
+        [AvgRepairMs, LendingPct, SelectorMs, MsgCount]).

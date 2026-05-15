@@ -1,0 +1,94 @@
+{
+  "agents": 34,
+  "clinics": 4,
+  "doctors_per_clinic": 4,
+  "patients": 12,
+  "num_disruptions": 5,
+  "num_equiv_actions": 5,
+  "disruptions": [
+    {
+      "doctor": "doc_d_4",
+      "timeslot": "t1"
+    },
+    {
+      "doctor": "doc_a_1",
+      "timeslot": "t2"
+    },
+    {
+      "doctor": "doc_b_2",
+      "timeslot": "t3"
+    },
+    {
+      "doctor": "doc_c_3",
+      "timeslot": "t4"
+    },
+    {
+      "doctor": "doc_d_1",
+      "timeslot": "t5"
+    }
+  ],
+  "patient_selections": [
+    {
+      "patient": "patient_1",
+      "timeslot": "t1"
+    },
+    {
+      "patient": "patient_2",
+      "timeslot": "t2"
+    },
+    {
+      "patient": "patient_3",
+      "timeslot": "t3"
+    },
+    {
+      "patient": "patient_4",
+      "timeslot": "t4"
+    },
+    {
+      "patient": "patient_5",
+      "timeslot": "t5"
+    },
+    {
+      "patient": "patient_6",
+      "timeslot": "t6"
+    },
+    {
+      "patient": "patient_7",
+      "timeslot": "t7"
+    },
+    {
+      "patient": "patient_8",
+      "timeslot": "t8"
+    },
+    {
+      "patient": "patient_9",
+      "timeslot": "t9"
+    },
+    {
+      "patient": "patient_10",
+      "timeslot": "t10"
+    },
+    {
+      "patient": "patient_11",
+      "timeslot": "t11"
+    },
+    {
+      "patient": "patient_12",
+      "timeslot": "t12"
+    }
+  ],
+  "schedule_ready_patients": [
+    "patient_1",
+    "patient_2",
+    "patient_3",
+    "patient_4",
+    "patient_5",
+    "patient_6",
+    "patient_7",
+    "patient_8",
+    "patient_9",
+    "patient_10",
+    "patient_11",
+    "patient_12"
+  ]
+}

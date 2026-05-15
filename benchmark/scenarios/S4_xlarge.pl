@@ -1,0 +1,5996 @@
+%% =============================================================================
+%% L-DINF Healthcare Scheduling — Generated Scenario
+%% =============================================================================
+%% Clinics: 5, Doctors/clinic: 5, Patients: 20
+%% Disruptions: 10, Equivalent actions: 6
+%% Total agents: 52
+%% Seed: 45
+%% =============================================================================
+
+
+%% === PATIENT_1 ===
+
+:- agent(patient_1, [cycle(2)]).
+
+believes(needs_consultation(t1)).
+believes(member_of(clinic_a)).
+believes(intend(consultation(t1))).
+believes(assigned_doctor(doc_a_1)).
+believes(assigned_clinic(clinic_a)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 2)).
+believes(pref_do(visit(doc_a_2), 8)).
+believes(pref_do(visit(doc_a_3), 3)).
+believes(pref_do(visit(doc_a_4), 2)).
+believes(pref_do(visit(doc_a_5), 7)).
+believes(pref_do(visit(doc_b_1), 6)).
+believes(pref_do(visit(doc_b_2), 9)).
+believes(pref_do(visit(doc_b_3), 9)).
+believes(pref_do(visit(doc_b_4), 5)).
+believes(pref_do(visit(doc_b_5), 7)).
+believes(pref_do(visit(doc_c_1), 6)).
+believes(pref_do(visit(doc_c_2), 5)).
+believes(pref_do(visit(doc_c_3), 10)).
+believes(pref_do(visit(doc_c_4), 5)).
+believes(pref_do(visit(doc_c_5), 9)).
+believes(pref_do(visit(doc_d_1), 2)).
+believes(pref_do(visit(doc_d_2), 4)).
+believes(pref_do(visit(doc_d_3), 2)).
+believes(pref_do(visit(doc_d_4), 6)).
+believes(pref_do(visit(doc_d_5), 9)).
+believes(pref_do(visit(doc_e_1), 3)).
+believes(pref_do(visit(doc_e_2), 4)).
+believes(pref_do(visit(doc_e_3), 5)).
+believes(pref_do(visit(doc_e_4), 3)).
+believes(pref_do(visit(doc_e_5), 3)).
+
+believes(success_prob(visit(doc_a_1), 0.58)).
+believes(success_prob(visit(doc_a_2), 0.61)).
+believes(success_prob(visit(doc_a_3), 0.72)).
+believes(success_prob(visit(doc_a_4), 0.81)).
+believes(success_prob(visit(doc_a_5), 0.59)).
+believes(success_prob(visit(doc_b_1), 0.85)).
+believes(success_prob(visit(doc_b_2), 0.87)).
+believes(success_prob(visit(doc_b_3), 0.74)).
+believes(success_prob(visit(doc_b_4), 0.92)).
+believes(success_prob(visit(doc_b_5), 0.72)).
+believes(success_prob(visit(doc_c_1), 0.91)).
+believes(success_prob(visit(doc_c_2), 0.71)).
+believes(success_prob(visit(doc_c_3), 0.72)).
+believes(success_prob(visit(doc_c_4), 0.71)).
+believes(success_prob(visit(doc_c_5), 0.86)).
+believes(success_prob(visit(doc_d_1), 0.93)).
+believes(success_prob(visit(doc_d_2), 0.58)).
+believes(success_prob(visit(doc_d_3), 0.8)).
+believes(success_prob(visit(doc_d_4), 0.91)).
+believes(success_prob(visit(doc_d_5), 0.85)).
+believes(success_prob(visit(doc_e_1), 0.65)).
+believes(success_prob(visit(doc_e_2), 0.71)).
+believes(success_prob(visit(doc_e_3), 0.93)).
+believes(success_prob(visit(doc_e_4), 0.64)).
+believes(success_prob(visit(doc_e_5), 0.96)).
+
+believes(action_cost(visit(doc_a_1), 7)).
+believes(action_cost(visit(doc_a_2), 1)).
+believes(action_cost(visit(doc_a_3), 7)).
+believes(action_cost(visit(doc_a_4), 1)).
+believes(action_cost(visit(doc_a_5), 8)).
+believes(action_cost(visit(doc_b_1), 1)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 4)).
+believes(action_cost(visit(doc_b_4), 4)).
+believes(action_cost(visit(doc_b_5), 1)).
+believes(action_cost(visit(doc_c_1), 1)).
+believes(action_cost(visit(doc_c_2), 2)).
+believes(action_cost(visit(doc_c_3), 6)).
+believes(action_cost(visit(doc_c_4), 5)).
+believes(action_cost(visit(doc_c_5), 6)).
+believes(action_cost(visit(doc_d_1), 8)).
+believes(action_cost(visit(doc_d_2), 7)).
+believes(action_cost(visit(doc_d_3), 1)).
+believes(action_cost(visit(doc_d_4), 7)).
+believes(action_cost(visit(doc_d_5), 8)).
+believes(action_cost(visit(doc_e_1), 7)).
+believes(action_cost(visit(doc_e_2), 1)).
+believes(action_cost(visit(doc_e_3), 7)).
+believes(action_cost(visit(doc_e_4), 4)).
+believes(action_cost(visit(doc_e_5), 7)).
+believes(budget(8)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.59, 6, 2)).
+believes(action_data(visit_type_2, 0.91, 4, 7)).
+believes(action_data(visit_type_3, 0.69, 2, 7)).
+believes(action_data(visit_type_4, 0.69, 4, 2)).
+believes(action_data(visit_type_5, 0.8, 8, 2)).
+believes(action_data(visit_type_6, 0.91, 10, 3)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_1: Baseline schedule loaded"),
+    believes(intend(consultation(t1))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_1, [consultation, t1, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_1: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_1, [unavailable, Doctor, TimeSlot])),
+    send(clinic_a_mgr, repair_request(patient_1, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_1: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_1, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_1, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_1, clinic_a, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_1, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_1, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_1, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_1: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_1, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_1, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_1, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_2 ===
+
+:- agent(patient_2, [cycle(2)]).
+
+believes(needs_consultation(t2)).
+believes(member_of(clinic_b)).
+believes(intend(consultation(t2))).
+believes(assigned_doctor(doc_b_2)).
+believes(assigned_clinic(clinic_b)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 5)).
+believes(pref_do(visit(doc_a_2), 3)).
+believes(pref_do(visit(doc_a_3), 2)).
+believes(pref_do(visit(doc_a_4), 4)).
+believes(pref_do(visit(doc_a_5), 6)).
+believes(pref_do(visit(doc_b_1), 6)).
+believes(pref_do(visit(doc_b_2), 10)).
+believes(pref_do(visit(doc_b_3), 4)).
+believes(pref_do(visit(doc_b_4), 7)).
+believes(pref_do(visit(doc_b_5), 8)).
+believes(pref_do(visit(doc_c_1), 6)).
+believes(pref_do(visit(doc_c_2), 8)).
+believes(pref_do(visit(doc_c_3), 5)).
+believes(pref_do(visit(doc_c_4), 2)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 3)).
+believes(pref_do(visit(doc_d_2), 3)).
+believes(pref_do(visit(doc_d_3), 10)).
+believes(pref_do(visit(doc_d_4), 2)).
+believes(pref_do(visit(doc_d_5), 9)).
+believes(pref_do(visit(doc_e_1), 2)).
+believes(pref_do(visit(doc_e_2), 8)).
+believes(pref_do(visit(doc_e_3), 10)).
+believes(pref_do(visit(doc_e_4), 7)).
+believes(pref_do(visit(doc_e_5), 7)).
+
+believes(success_prob(visit(doc_a_1), 0.74)).
+believes(success_prob(visit(doc_a_2), 0.82)).
+believes(success_prob(visit(doc_a_3), 0.77)).
+believes(success_prob(visit(doc_a_4), 0.67)).
+believes(success_prob(visit(doc_a_5), 0.92)).
+believes(success_prob(visit(doc_b_1), 0.9)).
+believes(success_prob(visit(doc_b_2), 0.94)).
+believes(success_prob(visit(doc_b_3), 0.6)).
+believes(success_prob(visit(doc_b_4), 0.78)).
+believes(success_prob(visit(doc_b_5), 0.65)).
+believes(success_prob(visit(doc_c_1), 0.59)).
+believes(success_prob(visit(doc_c_2), 0.95)).
+believes(success_prob(visit(doc_c_3), 0.83)).
+believes(success_prob(visit(doc_c_4), 0.75)).
+believes(success_prob(visit(doc_c_5), 0.88)).
+believes(success_prob(visit(doc_d_1), 0.91)).
+believes(success_prob(visit(doc_d_2), 0.75)).
+believes(success_prob(visit(doc_d_3), 0.6)).
+believes(success_prob(visit(doc_d_4), 0.94)).
+believes(success_prob(visit(doc_d_5), 0.77)).
+believes(success_prob(visit(doc_e_1), 0.73)).
+believes(success_prob(visit(doc_e_2), 0.63)).
+believes(success_prob(visit(doc_e_3), 0.77)).
+believes(success_prob(visit(doc_e_4), 0.92)).
+believes(success_prob(visit(doc_e_5), 0.95)).
+
+believes(action_cost(visit(doc_a_1), 3)).
+believes(action_cost(visit(doc_a_2), 7)).
+believes(action_cost(visit(doc_a_3), 2)).
+believes(action_cost(visit(doc_a_4), 8)).
+believes(action_cost(visit(doc_a_5), 3)).
+believes(action_cost(visit(doc_b_1), 7)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 7)).
+believes(action_cost(visit(doc_b_4), 3)).
+believes(action_cost(visit(doc_b_5), 5)).
+believes(action_cost(visit(doc_c_1), 1)).
+believes(action_cost(visit(doc_c_2), 6)).
+believes(action_cost(visit(doc_c_3), 1)).
+believes(action_cost(visit(doc_c_4), 2)).
+believes(action_cost(visit(doc_c_5), 4)).
+believes(action_cost(visit(doc_d_1), 8)).
+believes(action_cost(visit(doc_d_2), 8)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 3)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 1)).
+believes(action_cost(visit(doc_e_2), 6)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 4)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(16)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.68, 6, 8)).
+believes(action_data(visit_type_2, 0.9, 10, 3)).
+believes(action_data(visit_type_3, 0.7, 6, 7)).
+believes(action_data(visit_type_4, 0.59, 4, 2)).
+believes(action_data(visit_type_5, 0.91, 8, 7)).
+believes(action_data(visit_type_6, 0.87, 6, 5)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_2: Baseline schedule loaded"),
+    believes(intend(consultation(t2))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_2, [consultation, t2, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_2: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_2, [unavailable, Doctor, TimeSlot])),
+    send(clinic_b_mgr, repair_request(patient_2, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_2: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_2, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_2, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_2, clinic_b, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_2, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_2, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_2, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_2: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_2, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_2, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_2, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_3 ===
+
+:- agent(patient_3, [cycle(2)]).
+
+believes(needs_consultation(t3)).
+believes(member_of(clinic_c)).
+believes(intend(consultation(t3))).
+believes(assigned_doctor(doc_c_3)).
+believes(assigned_clinic(clinic_c)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 3)).
+believes(pref_do(visit(doc_a_2), 4)).
+believes(pref_do(visit(doc_a_3), 8)).
+believes(pref_do(visit(doc_a_4), 7)).
+believes(pref_do(visit(doc_a_5), 4)).
+believes(pref_do(visit(doc_b_1), 9)).
+believes(pref_do(visit(doc_b_2), 9)).
+believes(pref_do(visit(doc_b_3), 8)).
+believes(pref_do(visit(doc_b_4), 10)).
+believes(pref_do(visit(doc_b_5), 8)).
+believes(pref_do(visit(doc_c_1), 4)).
+believes(pref_do(visit(doc_c_2), 9)).
+believes(pref_do(visit(doc_c_3), 3)).
+believes(pref_do(visit(doc_c_4), 6)).
+believes(pref_do(visit(doc_c_5), 3)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 3)).
+believes(pref_do(visit(doc_d_3), 6)).
+believes(pref_do(visit(doc_d_4), 6)).
+believes(pref_do(visit(doc_d_5), 3)).
+believes(pref_do(visit(doc_e_1), 4)).
+believes(pref_do(visit(doc_e_2), 2)).
+believes(pref_do(visit(doc_e_3), 10)).
+believes(pref_do(visit(doc_e_4), 4)).
+believes(pref_do(visit(doc_e_5), 6)).
+
+believes(success_prob(visit(doc_a_1), 0.96)).
+believes(success_prob(visit(doc_a_2), 0.95)).
+believes(success_prob(visit(doc_a_3), 0.59)).
+believes(success_prob(visit(doc_a_4), 0.86)).
+believes(success_prob(visit(doc_a_5), 0.74)).
+believes(success_prob(visit(doc_b_1), 0.88)).
+believes(success_prob(visit(doc_b_2), 0.81)).
+believes(success_prob(visit(doc_b_3), 0.63)).
+believes(success_prob(visit(doc_b_4), 0.97)).
+believes(success_prob(visit(doc_b_5), 0.97)).
+believes(success_prob(visit(doc_c_1), 0.77)).
+believes(success_prob(visit(doc_c_2), 0.67)).
+believes(success_prob(visit(doc_c_3), 0.76)).
+believes(success_prob(visit(doc_c_4), 0.84)).
+believes(success_prob(visit(doc_c_5), 0.68)).
+believes(success_prob(visit(doc_d_1), 0.94)).
+believes(success_prob(visit(doc_d_2), 0.73)).
+believes(success_prob(visit(doc_d_3), 0.97)).
+believes(success_prob(visit(doc_d_4), 0.78)).
+believes(success_prob(visit(doc_d_5), 0.6)).
+believes(success_prob(visit(doc_e_1), 0.81)).
+believes(success_prob(visit(doc_e_2), 0.93)).
+believes(success_prob(visit(doc_e_3), 0.89)).
+believes(success_prob(visit(doc_e_4), 0.7)).
+believes(success_prob(visit(doc_e_5), 0.85)).
+
+believes(action_cost(visit(doc_a_1), 6)).
+believes(action_cost(visit(doc_a_2), 4)).
+believes(action_cost(visit(doc_a_3), 6)).
+believes(action_cost(visit(doc_a_4), 7)).
+believes(action_cost(visit(doc_a_5), 4)).
+believes(action_cost(visit(doc_b_1), 5)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 3)).
+believes(action_cost(visit(doc_b_4), 3)).
+believes(action_cost(visit(doc_b_5), 1)).
+believes(action_cost(visit(doc_c_1), 3)).
+believes(action_cost(visit(doc_c_2), 8)).
+believes(action_cost(visit(doc_c_3), 5)).
+believes(action_cost(visit(doc_c_4), 8)).
+believes(action_cost(visit(doc_c_5), 6)).
+believes(action_cost(visit(doc_d_1), 5)).
+believes(action_cost(visit(doc_d_2), 2)).
+believes(action_cost(visit(doc_d_3), 2)).
+believes(action_cost(visit(doc_d_4), 4)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 6)).
+believes(action_cost(visit(doc_e_2), 8)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 4)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(14)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.79, 8, 4)).
+believes(action_data(visit_type_2, 0.95, 6, 5)).
+believes(action_data(visit_type_3, 0.84, 7, 1)).
+believes(action_data(visit_type_4, 0.76, 10, 1)).
+believes(action_data(visit_type_5, 0.62, 9, 1)).
+believes(action_data(visit_type_6, 0.7, 7, 5)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_3: Baseline schedule loaded"),
+    believes(intend(consultation(t3))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_3, [consultation, t3, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_3: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_3, [unavailable, Doctor, TimeSlot])),
+    send(clinic_c_mgr, repair_request(patient_3, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_3: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_3, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_3, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_3, clinic_c, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_3, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_3, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_3, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_3: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_3, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_3, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_3, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_4 ===
+
+:- agent(patient_4, [cycle(2)]).
+
+believes(needs_consultation(t4)).
+believes(member_of(clinic_d)).
+believes(intend(consultation(t4))).
+believes(assigned_doctor(doc_d_4)).
+believes(assigned_clinic(clinic_d)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 3)).
+believes(pref_do(visit(doc_a_2), 5)).
+believes(pref_do(visit(doc_a_3), 9)).
+believes(pref_do(visit(doc_a_4), 5)).
+believes(pref_do(visit(doc_a_5), 9)).
+believes(pref_do(visit(doc_b_1), 5)).
+believes(pref_do(visit(doc_b_2), 6)).
+believes(pref_do(visit(doc_b_3), 10)).
+believes(pref_do(visit(doc_b_4), 4)).
+believes(pref_do(visit(doc_b_5), 5)).
+believes(pref_do(visit(doc_c_1), 4)).
+believes(pref_do(visit(doc_c_2), 4)).
+believes(pref_do(visit(doc_c_3), 9)).
+believes(pref_do(visit(doc_c_4), 4)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 9)).
+believes(pref_do(visit(doc_d_3), 9)).
+believes(pref_do(visit(doc_d_4), 9)).
+believes(pref_do(visit(doc_d_5), 8)).
+believes(pref_do(visit(doc_e_1), 6)).
+believes(pref_do(visit(doc_e_2), 10)).
+believes(pref_do(visit(doc_e_3), 8)).
+believes(pref_do(visit(doc_e_4), 8)).
+believes(pref_do(visit(doc_e_5), 5)).
+
+believes(success_prob(visit(doc_a_1), 0.96)).
+believes(success_prob(visit(doc_a_2), 0.71)).
+believes(success_prob(visit(doc_a_3), 0.55)).
+believes(success_prob(visit(doc_a_4), 0.74)).
+believes(success_prob(visit(doc_a_5), 0.78)).
+believes(success_prob(visit(doc_b_1), 0.87)).
+believes(success_prob(visit(doc_b_2), 0.82)).
+believes(success_prob(visit(doc_b_3), 0.93)).
+believes(success_prob(visit(doc_b_4), 0.65)).
+believes(success_prob(visit(doc_b_5), 0.82)).
+believes(success_prob(visit(doc_c_1), 0.91)).
+believes(success_prob(visit(doc_c_2), 0.93)).
+believes(success_prob(visit(doc_c_3), 0.9)).
+believes(success_prob(visit(doc_c_4), 0.83)).
+believes(success_prob(visit(doc_c_5), 0.73)).
+believes(success_prob(visit(doc_d_1), 0.95)).
+believes(success_prob(visit(doc_d_2), 0.87)).
+believes(success_prob(visit(doc_d_3), 0.74)).
+believes(success_prob(visit(doc_d_4), 0.95)).
+believes(success_prob(visit(doc_d_5), 0.93)).
+believes(success_prob(visit(doc_e_1), 0.97)).
+believes(success_prob(visit(doc_e_2), 0.96)).
+believes(success_prob(visit(doc_e_3), 0.96)).
+believes(success_prob(visit(doc_e_4), 0.73)).
+believes(success_prob(visit(doc_e_5), 0.72)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 4)).
+believes(action_cost(visit(doc_a_3), 5)).
+believes(action_cost(visit(doc_a_4), 7)).
+believes(action_cost(visit(doc_a_5), 6)).
+believes(action_cost(visit(doc_b_1), 8)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 5)).
+believes(action_cost(visit(doc_b_4), 8)).
+believes(action_cost(visit(doc_b_5), 5)).
+believes(action_cost(visit(doc_c_1), 4)).
+believes(action_cost(visit(doc_c_2), 3)).
+believes(action_cost(visit(doc_c_3), 6)).
+believes(action_cost(visit(doc_c_4), 4)).
+believes(action_cost(visit(doc_c_5), 2)).
+believes(action_cost(visit(doc_d_1), 5)).
+believes(action_cost(visit(doc_d_2), 6)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 1)).
+believes(action_cost(visit(doc_d_5), 3)).
+believes(action_cost(visit(doc_e_1), 8)).
+believes(action_cost(visit(doc_e_2), 5)).
+believes(action_cost(visit(doc_e_3), 3)).
+believes(action_cost(visit(doc_e_4), 2)).
+believes(action_cost(visit(doc_e_5), 8)).
+believes(budget(15)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.87, 6, 4)).
+believes(action_data(visit_type_2, 0.55, 7, 4)).
+believes(action_data(visit_type_3, 0.58, 2, 7)).
+believes(action_data(visit_type_4, 0.7, 4, 7)).
+believes(action_data(visit_type_5, 0.88, 10, 2)).
+believes(action_data(visit_type_6, 0.85, 4, 7)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_4: Baseline schedule loaded"),
+    believes(intend(consultation(t4))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_4, [consultation, t4, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_4: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_4, [unavailable, Doctor, TimeSlot])),
+    send(clinic_d_mgr, repair_request(patient_4, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_4: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_4, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_4, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_4, clinic_d, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_4, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_4, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_4, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_4: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_4, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_4, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_4, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_5 ===
+
+:- agent(patient_5, [cycle(2)]).
+
+believes(needs_consultation(t5)).
+believes(member_of(clinic_e)).
+believes(intend(consultation(t5))).
+believes(assigned_doctor(doc_e_5)).
+believes(assigned_clinic(clinic_e)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 3)).
+believes(pref_do(visit(doc_a_2), 4)).
+believes(pref_do(visit(doc_a_3), 9)).
+believes(pref_do(visit(doc_a_4), 7)).
+believes(pref_do(visit(doc_a_5), 10)).
+believes(pref_do(visit(doc_b_1), 7)).
+believes(pref_do(visit(doc_b_2), 9)).
+believes(pref_do(visit(doc_b_3), 8)).
+believes(pref_do(visit(doc_b_4), 4)).
+believes(pref_do(visit(doc_b_5), 7)).
+believes(pref_do(visit(doc_c_1), 4)).
+believes(pref_do(visit(doc_c_2), 10)).
+believes(pref_do(visit(doc_c_3), 6)).
+believes(pref_do(visit(doc_c_4), 2)).
+believes(pref_do(visit(doc_c_5), 4)).
+believes(pref_do(visit(doc_d_1), 10)).
+believes(pref_do(visit(doc_d_2), 10)).
+believes(pref_do(visit(doc_d_3), 2)).
+believes(pref_do(visit(doc_d_4), 9)).
+believes(pref_do(visit(doc_d_5), 10)).
+believes(pref_do(visit(doc_e_1), 10)).
+believes(pref_do(visit(doc_e_2), 4)).
+believes(pref_do(visit(doc_e_3), 10)).
+believes(pref_do(visit(doc_e_4), 10)).
+believes(pref_do(visit(doc_e_5), 10)).
+
+believes(success_prob(visit(doc_a_1), 0.68)).
+believes(success_prob(visit(doc_a_2), 0.9)).
+believes(success_prob(visit(doc_a_3), 0.78)).
+believes(success_prob(visit(doc_a_4), 0.92)).
+believes(success_prob(visit(doc_a_5), 0.96)).
+believes(success_prob(visit(doc_b_1), 0.63)).
+believes(success_prob(visit(doc_b_2), 0.93)).
+believes(success_prob(visit(doc_b_3), 0.82)).
+believes(success_prob(visit(doc_b_4), 0.93)).
+believes(success_prob(visit(doc_b_5), 0.57)).
+believes(success_prob(visit(doc_c_1), 0.91)).
+believes(success_prob(visit(doc_c_2), 0.87)).
+believes(success_prob(visit(doc_c_3), 0.92)).
+believes(success_prob(visit(doc_c_4), 0.67)).
+believes(success_prob(visit(doc_c_5), 0.69)).
+believes(success_prob(visit(doc_d_1), 0.83)).
+believes(success_prob(visit(doc_d_2), 0.7)).
+believes(success_prob(visit(doc_d_3), 0.78)).
+believes(success_prob(visit(doc_d_4), 0.91)).
+believes(success_prob(visit(doc_d_5), 0.71)).
+believes(success_prob(visit(doc_e_1), 0.98)).
+believes(success_prob(visit(doc_e_2), 0.93)).
+believes(success_prob(visit(doc_e_3), 0.87)).
+believes(success_prob(visit(doc_e_4), 0.92)).
+believes(success_prob(visit(doc_e_5), 0.56)).
+
+believes(action_cost(visit(doc_a_1), 4)).
+believes(action_cost(visit(doc_a_2), 6)).
+believes(action_cost(visit(doc_a_3), 1)).
+believes(action_cost(visit(doc_a_4), 2)).
+believes(action_cost(visit(doc_a_5), 4)).
+believes(action_cost(visit(doc_b_1), 8)).
+believes(action_cost(visit(doc_b_2), 1)).
+believes(action_cost(visit(doc_b_3), 3)).
+believes(action_cost(visit(doc_b_4), 4)).
+believes(action_cost(visit(doc_b_5), 3)).
+believes(action_cost(visit(doc_c_1), 6)).
+believes(action_cost(visit(doc_c_2), 7)).
+believes(action_cost(visit(doc_c_3), 2)).
+believes(action_cost(visit(doc_c_4), 3)).
+believes(action_cost(visit(doc_c_5), 4)).
+believes(action_cost(visit(doc_d_1), 6)).
+believes(action_cost(visit(doc_d_2), 6)).
+believes(action_cost(visit(doc_d_3), 2)).
+believes(action_cost(visit(doc_d_4), 3)).
+believes(action_cost(visit(doc_d_5), 8)).
+believes(action_cost(visit(doc_e_1), 4)).
+believes(action_cost(visit(doc_e_2), 3)).
+believes(action_cost(visit(doc_e_3), 8)).
+believes(action_cost(visit(doc_e_4), 4)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(11)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.79, 2, 6)).
+believes(action_data(visit_type_2, 0.82, 8, 8)).
+believes(action_data(visit_type_3, 0.89, 4, 5)).
+believes(action_data(visit_type_4, 0.84, 10, 3)).
+believes(action_data(visit_type_5, 0.89, 9, 8)).
+believes(action_data(visit_type_6, 0.9, 4, 8)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_5: Baseline schedule loaded"),
+    believes(intend(consultation(t5))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_5, [consultation, t5, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_5: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_5, [unavailable, Doctor, TimeSlot])),
+    send(clinic_e_mgr, repair_request(patient_5, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_5: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_5, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_5, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_5, clinic_e, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_5, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_5, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_5, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_5: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_5, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_5, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_5, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_6 ===
+
+:- agent(patient_6, [cycle(2)]).
+
+believes(needs_consultation(t6)).
+believes(member_of(clinic_a)).
+believes(intend(consultation(t6))).
+believes(assigned_doctor(doc_a_1)).
+believes(assigned_clinic(clinic_a)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 5)).
+believes(pref_do(visit(doc_a_2), 6)).
+believes(pref_do(visit(doc_a_3), 6)).
+believes(pref_do(visit(doc_a_4), 6)).
+believes(pref_do(visit(doc_a_5), 4)).
+believes(pref_do(visit(doc_b_1), 3)).
+believes(pref_do(visit(doc_b_2), 8)).
+believes(pref_do(visit(doc_b_3), 3)).
+believes(pref_do(visit(doc_b_4), 9)).
+believes(pref_do(visit(doc_b_5), 2)).
+believes(pref_do(visit(doc_c_1), 8)).
+believes(pref_do(visit(doc_c_2), 2)).
+believes(pref_do(visit(doc_c_3), 3)).
+believes(pref_do(visit(doc_c_4), 2)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 2)).
+believes(pref_do(visit(doc_d_2), 2)).
+believes(pref_do(visit(doc_d_3), 5)).
+believes(pref_do(visit(doc_d_4), 9)).
+believes(pref_do(visit(doc_d_5), 10)).
+believes(pref_do(visit(doc_e_1), 2)).
+believes(pref_do(visit(doc_e_2), 5)).
+believes(pref_do(visit(doc_e_3), 5)).
+believes(pref_do(visit(doc_e_4), 2)).
+believes(pref_do(visit(doc_e_5), 7)).
+
+believes(success_prob(visit(doc_a_1), 0.68)).
+believes(success_prob(visit(doc_a_2), 0.65)).
+believes(success_prob(visit(doc_a_3), 0.67)).
+believes(success_prob(visit(doc_a_4), 0.62)).
+believes(success_prob(visit(doc_a_5), 0.64)).
+believes(success_prob(visit(doc_b_1), 0.89)).
+believes(success_prob(visit(doc_b_2), 0.74)).
+believes(success_prob(visit(doc_b_3), 0.55)).
+believes(success_prob(visit(doc_b_4), 0.96)).
+believes(success_prob(visit(doc_b_5), 0.62)).
+believes(success_prob(visit(doc_c_1), 0.66)).
+believes(success_prob(visit(doc_c_2), 0.77)).
+believes(success_prob(visit(doc_c_3), 0.7)).
+believes(success_prob(visit(doc_c_4), 0.95)).
+believes(success_prob(visit(doc_c_5), 0.9)).
+believes(success_prob(visit(doc_d_1), 0.93)).
+believes(success_prob(visit(doc_d_2), 0.76)).
+believes(success_prob(visit(doc_d_3), 0.58)).
+believes(success_prob(visit(doc_d_4), 0.66)).
+believes(success_prob(visit(doc_d_5), 0.61)).
+believes(success_prob(visit(doc_e_1), 0.57)).
+believes(success_prob(visit(doc_e_2), 0.73)).
+believes(success_prob(visit(doc_e_3), 0.66)).
+believes(success_prob(visit(doc_e_4), 0.64)).
+believes(success_prob(visit(doc_e_5), 0.57)).
+
+believes(action_cost(visit(doc_a_1), 4)).
+believes(action_cost(visit(doc_a_2), 8)).
+believes(action_cost(visit(doc_a_3), 6)).
+believes(action_cost(visit(doc_a_4), 4)).
+believes(action_cost(visit(doc_a_5), 4)).
+believes(action_cost(visit(doc_b_1), 7)).
+believes(action_cost(visit(doc_b_2), 6)).
+believes(action_cost(visit(doc_b_3), 7)).
+believes(action_cost(visit(doc_b_4), 8)).
+believes(action_cost(visit(doc_b_5), 3)).
+believes(action_cost(visit(doc_c_1), 7)).
+believes(action_cost(visit(doc_c_2), 2)).
+believes(action_cost(visit(doc_c_3), 3)).
+believes(action_cost(visit(doc_c_4), 4)).
+believes(action_cost(visit(doc_c_5), 7)).
+believes(action_cost(visit(doc_d_1), 2)).
+believes(action_cost(visit(doc_d_2), 2)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 1)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 3)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 5)).
+believes(action_cost(visit(doc_e_5), 4)).
+believes(budget(9)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.8, 2, 1)).
+believes(action_data(visit_type_2, 0.66, 7, 3)).
+believes(action_data(visit_type_3, 0.59, 5, 3)).
+believes(action_data(visit_type_4, 0.94, 2, 7)).
+believes(action_data(visit_type_5, 0.96, 5, 4)).
+believes(action_data(visit_type_6, 0.65, 5, 4)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_6: Baseline schedule loaded"),
+    believes(intend(consultation(t6))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_6, [consultation, t6, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_6: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_6, [unavailable, Doctor, TimeSlot])),
+    send(clinic_a_mgr, repair_request(patient_6, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_6: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_6, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_6, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_6, clinic_a, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_6, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_6, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_6, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_6: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_6, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_6, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_6, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_7 ===
+
+:- agent(patient_7, [cycle(2)]).
+
+believes(needs_consultation(t7)).
+believes(member_of(clinic_b)).
+believes(intend(consultation(t7))).
+believes(assigned_doctor(doc_b_2)).
+believes(assigned_clinic(clinic_b)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 8)).
+believes(pref_do(visit(doc_a_2), 7)).
+believes(pref_do(visit(doc_a_3), 4)).
+believes(pref_do(visit(doc_a_4), 8)).
+believes(pref_do(visit(doc_a_5), 3)).
+believes(pref_do(visit(doc_b_1), 6)).
+believes(pref_do(visit(doc_b_2), 3)).
+believes(pref_do(visit(doc_b_3), 6)).
+believes(pref_do(visit(doc_b_4), 2)).
+believes(pref_do(visit(doc_b_5), 4)).
+believes(pref_do(visit(doc_c_1), 6)).
+believes(pref_do(visit(doc_c_2), 10)).
+believes(pref_do(visit(doc_c_3), 7)).
+believes(pref_do(visit(doc_c_4), 8)).
+believes(pref_do(visit(doc_c_5), 10)).
+believes(pref_do(visit(doc_d_1), 10)).
+believes(pref_do(visit(doc_d_2), 3)).
+believes(pref_do(visit(doc_d_3), 10)).
+believes(pref_do(visit(doc_d_4), 3)).
+believes(pref_do(visit(doc_d_5), 9)).
+believes(pref_do(visit(doc_e_1), 7)).
+believes(pref_do(visit(doc_e_2), 5)).
+believes(pref_do(visit(doc_e_3), 5)).
+believes(pref_do(visit(doc_e_4), 10)).
+believes(pref_do(visit(doc_e_5), 5)).
+
+believes(success_prob(visit(doc_a_1), 0.77)).
+believes(success_prob(visit(doc_a_2), 0.68)).
+believes(success_prob(visit(doc_a_3), 0.56)).
+believes(success_prob(visit(doc_a_4), 0.72)).
+believes(success_prob(visit(doc_a_5), 0.64)).
+believes(success_prob(visit(doc_b_1), 0.84)).
+believes(success_prob(visit(doc_b_2), 0.88)).
+believes(success_prob(visit(doc_b_3), 0.73)).
+believes(success_prob(visit(doc_b_4), 0.88)).
+believes(success_prob(visit(doc_b_5), 0.55)).
+believes(success_prob(visit(doc_c_1), 0.89)).
+believes(success_prob(visit(doc_c_2), 0.74)).
+believes(success_prob(visit(doc_c_3), 0.73)).
+believes(success_prob(visit(doc_c_4), 0.79)).
+believes(success_prob(visit(doc_c_5), 0.77)).
+believes(success_prob(visit(doc_d_1), 0.95)).
+believes(success_prob(visit(doc_d_2), 0.73)).
+believes(success_prob(visit(doc_d_3), 0.94)).
+believes(success_prob(visit(doc_d_4), 0.68)).
+believes(success_prob(visit(doc_d_5), 0.55)).
+believes(success_prob(visit(doc_e_1), 0.88)).
+believes(success_prob(visit(doc_e_2), 0.6)).
+believes(success_prob(visit(doc_e_3), 0.64)).
+believes(success_prob(visit(doc_e_4), 0.78)).
+believes(success_prob(visit(doc_e_5), 0.97)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 8)).
+believes(action_cost(visit(doc_a_3), 1)).
+believes(action_cost(visit(doc_a_4), 7)).
+believes(action_cost(visit(doc_a_5), 8)).
+believes(action_cost(visit(doc_b_1), 4)).
+believes(action_cost(visit(doc_b_2), 2)).
+believes(action_cost(visit(doc_b_3), 5)).
+believes(action_cost(visit(doc_b_4), 8)).
+believes(action_cost(visit(doc_b_5), 4)).
+believes(action_cost(visit(doc_c_1), 2)).
+believes(action_cost(visit(doc_c_2), 2)).
+believes(action_cost(visit(doc_c_3), 4)).
+believes(action_cost(visit(doc_c_4), 8)).
+believes(action_cost(visit(doc_c_5), 8)).
+believes(action_cost(visit(doc_d_1), 2)).
+believes(action_cost(visit(doc_d_2), 2)).
+believes(action_cost(visit(doc_d_3), 4)).
+believes(action_cost(visit(doc_d_4), 5)).
+believes(action_cost(visit(doc_d_5), 4)).
+believes(action_cost(visit(doc_e_1), 8)).
+believes(action_cost(visit(doc_e_2), 8)).
+believes(action_cost(visit(doc_e_3), 6)).
+believes(action_cost(visit(doc_e_4), 3)).
+believes(action_cost(visit(doc_e_5), 1)).
+believes(budget(16)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.58, 5, 7)).
+believes(action_data(visit_type_2, 0.9, 3, 6)).
+believes(action_data(visit_type_3, 0.57, 5, 3)).
+believes(action_data(visit_type_4, 0.77, 6, 2)).
+believes(action_data(visit_type_5, 0.95, 4, 8)).
+believes(action_data(visit_type_6, 0.65, 4, 6)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_7: Baseline schedule loaded"),
+    believes(intend(consultation(t7))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_7, [consultation, t7, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_7: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_7, [unavailable, Doctor, TimeSlot])),
+    send(clinic_b_mgr, repair_request(patient_7, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_7: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_7, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_7, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_7, clinic_b, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_7, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_7, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_7, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_7: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_7, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_7, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_7, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_8 ===
+
+:- agent(patient_8, [cycle(2)]).
+
+believes(needs_consultation(t8)).
+believes(member_of(clinic_c)).
+believes(intend(consultation(t8))).
+believes(assigned_doctor(doc_c_3)).
+believes(assigned_clinic(clinic_c)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 8)).
+believes(pref_do(visit(doc_a_2), 10)).
+believes(pref_do(visit(doc_a_3), 4)).
+believes(pref_do(visit(doc_a_4), 9)).
+believes(pref_do(visit(doc_a_5), 7)).
+believes(pref_do(visit(doc_b_1), 6)).
+believes(pref_do(visit(doc_b_2), 5)).
+believes(pref_do(visit(doc_b_3), 6)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 6)).
+believes(pref_do(visit(doc_c_1), 7)).
+believes(pref_do(visit(doc_c_2), 2)).
+believes(pref_do(visit(doc_c_3), 6)).
+believes(pref_do(visit(doc_c_4), 6)).
+believes(pref_do(visit(doc_c_5), 4)).
+believes(pref_do(visit(doc_d_1), 5)).
+believes(pref_do(visit(doc_d_2), 8)).
+believes(pref_do(visit(doc_d_3), 3)).
+believes(pref_do(visit(doc_d_4), 5)).
+believes(pref_do(visit(doc_d_5), 5)).
+believes(pref_do(visit(doc_e_1), 5)).
+believes(pref_do(visit(doc_e_2), 6)).
+believes(pref_do(visit(doc_e_3), 5)).
+believes(pref_do(visit(doc_e_4), 8)).
+believes(pref_do(visit(doc_e_5), 2)).
+
+believes(success_prob(visit(doc_a_1), 0.77)).
+believes(success_prob(visit(doc_a_2), 0.89)).
+believes(success_prob(visit(doc_a_3), 0.8)).
+believes(success_prob(visit(doc_a_4), 0.64)).
+believes(success_prob(visit(doc_a_5), 0.87)).
+believes(success_prob(visit(doc_b_1), 0.98)).
+believes(success_prob(visit(doc_b_2), 0.64)).
+believes(success_prob(visit(doc_b_3), 0.57)).
+believes(success_prob(visit(doc_b_4), 0.62)).
+believes(success_prob(visit(doc_b_5), 0.71)).
+believes(success_prob(visit(doc_c_1), 0.64)).
+believes(success_prob(visit(doc_c_2), 0.86)).
+believes(success_prob(visit(doc_c_3), 0.61)).
+believes(success_prob(visit(doc_c_4), 0.97)).
+believes(success_prob(visit(doc_c_5), 0.81)).
+believes(success_prob(visit(doc_d_1), 0.67)).
+believes(success_prob(visit(doc_d_2), 0.77)).
+believes(success_prob(visit(doc_d_3), 0.76)).
+believes(success_prob(visit(doc_d_4), 0.98)).
+believes(success_prob(visit(doc_d_5), 0.58)).
+believes(success_prob(visit(doc_e_1), 0.67)).
+believes(success_prob(visit(doc_e_2), 0.7)).
+believes(success_prob(visit(doc_e_3), 0.69)).
+believes(success_prob(visit(doc_e_4), 0.55)).
+believes(success_prob(visit(doc_e_5), 0.86)).
+
+believes(action_cost(visit(doc_a_1), 4)).
+believes(action_cost(visit(doc_a_2), 5)).
+believes(action_cost(visit(doc_a_3), 7)).
+believes(action_cost(visit(doc_a_4), 5)).
+believes(action_cost(visit(doc_a_5), 2)).
+believes(action_cost(visit(doc_b_1), 2)).
+believes(action_cost(visit(doc_b_2), 2)).
+believes(action_cost(visit(doc_b_3), 4)).
+believes(action_cost(visit(doc_b_4), 3)).
+believes(action_cost(visit(doc_b_5), 6)).
+believes(action_cost(visit(doc_c_1), 2)).
+believes(action_cost(visit(doc_c_2), 1)).
+believes(action_cost(visit(doc_c_3), 3)).
+believes(action_cost(visit(doc_c_4), 6)).
+believes(action_cost(visit(doc_c_5), 1)).
+believes(action_cost(visit(doc_d_1), 8)).
+believes(action_cost(visit(doc_d_2), 2)).
+believes(action_cost(visit(doc_d_3), 3)).
+believes(action_cost(visit(doc_d_4), 6)).
+believes(action_cost(visit(doc_d_5), 2)).
+believes(action_cost(visit(doc_e_1), 7)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 3)).
+believes(action_cost(visit(doc_e_4), 1)).
+believes(action_cost(visit(doc_e_5), 7)).
+believes(budget(8)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.89, 9, 5)).
+believes(action_data(visit_type_2, 0.68, 9, 5)).
+believes(action_data(visit_type_3, 0.86, 9, 8)).
+believes(action_data(visit_type_4, 0.97, 8, 1)).
+believes(action_data(visit_type_5, 0.85, 8, 3)).
+believes(action_data(visit_type_6, 0.87, 3, 3)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_8: Baseline schedule loaded"),
+    believes(intend(consultation(t8))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_8, [consultation, t8, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_8: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_8, [unavailable, Doctor, TimeSlot])),
+    send(clinic_c_mgr, repair_request(patient_8, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_8: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_8, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_8, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_8, clinic_c, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_8, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_8, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_8, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_8: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_8, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_8, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_8, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_9 ===
+
+:- agent(patient_9, [cycle(2)]).
+
+believes(needs_consultation(t9)).
+believes(member_of(clinic_d)).
+believes(intend(consultation(t9))).
+believes(assigned_doctor(doc_d_4)).
+believes(assigned_clinic(clinic_d)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 2)).
+believes(pref_do(visit(doc_a_2), 10)).
+believes(pref_do(visit(doc_a_3), 6)).
+believes(pref_do(visit(doc_a_4), 10)).
+believes(pref_do(visit(doc_a_5), 4)).
+believes(pref_do(visit(doc_b_1), 7)).
+believes(pref_do(visit(doc_b_2), 10)).
+believes(pref_do(visit(doc_b_3), 4)).
+believes(pref_do(visit(doc_b_4), 4)).
+believes(pref_do(visit(doc_b_5), 4)).
+believes(pref_do(visit(doc_c_1), 2)).
+believes(pref_do(visit(doc_c_2), 4)).
+believes(pref_do(visit(doc_c_3), 5)).
+believes(pref_do(visit(doc_c_4), 6)).
+believes(pref_do(visit(doc_c_5), 3)).
+believes(pref_do(visit(doc_d_1), 9)).
+believes(pref_do(visit(doc_d_2), 3)).
+believes(pref_do(visit(doc_d_3), 5)).
+believes(pref_do(visit(doc_d_4), 4)).
+believes(pref_do(visit(doc_d_5), 4)).
+believes(pref_do(visit(doc_e_1), 5)).
+believes(pref_do(visit(doc_e_2), 8)).
+believes(pref_do(visit(doc_e_3), 10)).
+believes(pref_do(visit(doc_e_4), 8)).
+believes(pref_do(visit(doc_e_5), 7)).
+
+believes(success_prob(visit(doc_a_1), 0.7)).
+believes(success_prob(visit(doc_a_2), 0.62)).
+believes(success_prob(visit(doc_a_3), 0.93)).
+believes(success_prob(visit(doc_a_4), 0.73)).
+believes(success_prob(visit(doc_a_5), 0.61)).
+believes(success_prob(visit(doc_b_1), 0.59)).
+believes(success_prob(visit(doc_b_2), 0.62)).
+believes(success_prob(visit(doc_b_3), 0.92)).
+believes(success_prob(visit(doc_b_4), 0.87)).
+believes(success_prob(visit(doc_b_5), 0.92)).
+believes(success_prob(visit(doc_c_1), 0.78)).
+believes(success_prob(visit(doc_c_2), 0.96)).
+believes(success_prob(visit(doc_c_3), 0.81)).
+believes(success_prob(visit(doc_c_4), 0.69)).
+believes(success_prob(visit(doc_c_5), 0.77)).
+believes(success_prob(visit(doc_d_1), 0.71)).
+believes(success_prob(visit(doc_d_2), 0.66)).
+believes(success_prob(visit(doc_d_3), 0.77)).
+believes(success_prob(visit(doc_d_4), 0.81)).
+believes(success_prob(visit(doc_d_5), 0.56)).
+believes(success_prob(visit(doc_e_1), 0.9)).
+believes(success_prob(visit(doc_e_2), 0.58)).
+believes(success_prob(visit(doc_e_3), 0.78)).
+believes(success_prob(visit(doc_e_4), 0.59)).
+believes(success_prob(visit(doc_e_5), 0.74)).
+
+believes(action_cost(visit(doc_a_1), 7)).
+believes(action_cost(visit(doc_a_2), 7)).
+believes(action_cost(visit(doc_a_3), 5)).
+believes(action_cost(visit(doc_a_4), 1)).
+believes(action_cost(visit(doc_a_5), 2)).
+believes(action_cost(visit(doc_b_1), 5)).
+believes(action_cost(visit(doc_b_2), 3)).
+believes(action_cost(visit(doc_b_3), 2)).
+believes(action_cost(visit(doc_b_4), 5)).
+believes(action_cost(visit(doc_b_5), 4)).
+believes(action_cost(visit(doc_c_1), 3)).
+believes(action_cost(visit(doc_c_2), 8)).
+believes(action_cost(visit(doc_c_3), 8)).
+believes(action_cost(visit(doc_c_4), 8)).
+believes(action_cost(visit(doc_c_5), 7)).
+believes(action_cost(visit(doc_d_1), 7)).
+believes(action_cost(visit(doc_d_2), 3)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 7)).
+believes(action_cost(visit(doc_d_5), 4)).
+believes(action_cost(visit(doc_e_1), 8)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 5)).
+believes(action_cost(visit(doc_e_5), 1)).
+believes(budget(9)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.82, 7, 5)).
+believes(action_data(visit_type_2, 0.89, 7, 7)).
+believes(action_data(visit_type_3, 0.64, 3, 8)).
+believes(action_data(visit_type_4, 0.74, 9, 6)).
+believes(action_data(visit_type_5, 0.75, 8, 6)).
+believes(action_data(visit_type_6, 0.85, 4, 7)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_9: Baseline schedule loaded"),
+    believes(intend(consultation(t9))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_9, [consultation, t9, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_9: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_9, [unavailable, Doctor, TimeSlot])),
+    send(clinic_d_mgr, repair_request(patient_9, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_9: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_9, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_9, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_9, clinic_d, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_9, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_9, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_9, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_9: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_9, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_9, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_9, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_10 ===
+
+:- agent(patient_10, [cycle(2)]).
+
+believes(needs_consultation(t10)).
+believes(member_of(clinic_e)).
+believes(intend(consultation(t10))).
+believes(assigned_doctor(doc_e_5)).
+believes(assigned_clinic(clinic_e)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 5)).
+believes(pref_do(visit(doc_a_2), 6)).
+believes(pref_do(visit(doc_a_3), 8)).
+believes(pref_do(visit(doc_a_4), 7)).
+believes(pref_do(visit(doc_a_5), 2)).
+believes(pref_do(visit(doc_b_1), 2)).
+believes(pref_do(visit(doc_b_2), 6)).
+believes(pref_do(visit(doc_b_3), 10)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 2)).
+believes(pref_do(visit(doc_c_1), 5)).
+believes(pref_do(visit(doc_c_2), 5)).
+believes(pref_do(visit(doc_c_3), 6)).
+believes(pref_do(visit(doc_c_4), 7)).
+believes(pref_do(visit(doc_c_5), 7)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 2)).
+believes(pref_do(visit(doc_d_3), 9)).
+believes(pref_do(visit(doc_d_4), 9)).
+believes(pref_do(visit(doc_d_5), 9)).
+believes(pref_do(visit(doc_e_1), 6)).
+believes(pref_do(visit(doc_e_2), 5)).
+believes(pref_do(visit(doc_e_3), 6)).
+believes(pref_do(visit(doc_e_4), 2)).
+believes(pref_do(visit(doc_e_5), 2)).
+
+believes(success_prob(visit(doc_a_1), 0.76)).
+believes(success_prob(visit(doc_a_2), 0.87)).
+believes(success_prob(visit(doc_a_3), 0.8)).
+believes(success_prob(visit(doc_a_4), 0.56)).
+believes(success_prob(visit(doc_a_5), 0.66)).
+believes(success_prob(visit(doc_b_1), 0.7)).
+believes(success_prob(visit(doc_b_2), 0.97)).
+believes(success_prob(visit(doc_b_3), 0.9)).
+believes(success_prob(visit(doc_b_4), 0.92)).
+believes(success_prob(visit(doc_b_5), 0.67)).
+believes(success_prob(visit(doc_c_1), 0.77)).
+believes(success_prob(visit(doc_c_2), 0.68)).
+believes(success_prob(visit(doc_c_3), 0.77)).
+believes(success_prob(visit(doc_c_4), 0.85)).
+believes(success_prob(visit(doc_c_5), 0.58)).
+believes(success_prob(visit(doc_d_1), 0.97)).
+believes(success_prob(visit(doc_d_2), 0.76)).
+believes(success_prob(visit(doc_d_3), 0.92)).
+believes(success_prob(visit(doc_d_4), 0.83)).
+believes(success_prob(visit(doc_d_5), 0.68)).
+believes(success_prob(visit(doc_e_1), 0.75)).
+believes(success_prob(visit(doc_e_2), 0.74)).
+believes(success_prob(visit(doc_e_3), 0.57)).
+believes(success_prob(visit(doc_e_4), 0.62)).
+believes(success_prob(visit(doc_e_5), 0.68)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 3)).
+believes(action_cost(visit(doc_a_3), 7)).
+believes(action_cost(visit(doc_a_4), 1)).
+believes(action_cost(visit(doc_a_5), 6)).
+believes(action_cost(visit(doc_b_1), 2)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 7)).
+believes(action_cost(visit(doc_b_4), 3)).
+believes(action_cost(visit(doc_b_5), 4)).
+believes(action_cost(visit(doc_c_1), 4)).
+believes(action_cost(visit(doc_c_2), 4)).
+believes(action_cost(visit(doc_c_3), 3)).
+believes(action_cost(visit(doc_c_4), 7)).
+believes(action_cost(visit(doc_c_5), 3)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 6)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 5)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 4)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 6)).
+believes(action_cost(visit(doc_e_4), 8)).
+believes(action_cost(visit(doc_e_5), 5)).
+believes(budget(20)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.79, 3, 7)).
+believes(action_data(visit_type_2, 0.55, 2, 2)).
+believes(action_data(visit_type_3, 0.66, 4, 7)).
+believes(action_data(visit_type_4, 0.62, 2, 7)).
+believes(action_data(visit_type_5, 0.88, 10, 4)).
+believes(action_data(visit_type_6, 0.66, 5, 1)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_10: Baseline schedule loaded"),
+    believes(intend(consultation(t10))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_10, [consultation, t10, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_10: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_10, [unavailable, Doctor, TimeSlot])),
+    send(clinic_e_mgr, repair_request(patient_10, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_10: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_10, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_10, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_10, clinic_e, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_10, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_10, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_10, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_10: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_10, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_10, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_10, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_11 ===
+
+:- agent(patient_11, [cycle(2)]).
+
+believes(needs_consultation(t11)).
+believes(member_of(clinic_a)).
+believes(intend(consultation(t11))).
+believes(assigned_doctor(doc_a_1)).
+believes(assigned_clinic(clinic_a)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 7)).
+believes(pref_do(visit(doc_a_2), 9)).
+believes(pref_do(visit(doc_a_3), 4)).
+believes(pref_do(visit(doc_a_4), 5)).
+believes(pref_do(visit(doc_a_5), 5)).
+believes(pref_do(visit(doc_b_1), 2)).
+believes(pref_do(visit(doc_b_2), 7)).
+believes(pref_do(visit(doc_b_3), 7)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 8)).
+believes(pref_do(visit(doc_c_1), 6)).
+believes(pref_do(visit(doc_c_2), 3)).
+believes(pref_do(visit(doc_c_3), 2)).
+believes(pref_do(visit(doc_c_4), 2)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 2)).
+believes(pref_do(visit(doc_d_2), 4)).
+believes(pref_do(visit(doc_d_3), 5)).
+believes(pref_do(visit(doc_d_4), 4)).
+believes(pref_do(visit(doc_d_5), 8)).
+believes(pref_do(visit(doc_e_1), 3)).
+believes(pref_do(visit(doc_e_2), 10)).
+believes(pref_do(visit(doc_e_3), 2)).
+believes(pref_do(visit(doc_e_4), 10)).
+believes(pref_do(visit(doc_e_5), 7)).
+
+believes(success_prob(visit(doc_a_1), 0.67)).
+believes(success_prob(visit(doc_a_2), 0.83)).
+believes(success_prob(visit(doc_a_3), 0.75)).
+believes(success_prob(visit(doc_a_4), 0.66)).
+believes(success_prob(visit(doc_a_5), 0.72)).
+believes(success_prob(visit(doc_b_1), 0.78)).
+believes(success_prob(visit(doc_b_2), 0.9)).
+believes(success_prob(visit(doc_b_3), 0.94)).
+believes(success_prob(visit(doc_b_4), 0.7)).
+believes(success_prob(visit(doc_b_5), 0.87)).
+believes(success_prob(visit(doc_c_1), 0.78)).
+believes(success_prob(visit(doc_c_2), 0.73)).
+believes(success_prob(visit(doc_c_3), 0.75)).
+believes(success_prob(visit(doc_c_4), 0.64)).
+believes(success_prob(visit(doc_c_5), 0.92)).
+believes(success_prob(visit(doc_d_1), 0.87)).
+believes(success_prob(visit(doc_d_2), 0.59)).
+believes(success_prob(visit(doc_d_3), 0.64)).
+believes(success_prob(visit(doc_d_4), 0.83)).
+believes(success_prob(visit(doc_d_5), 0.78)).
+believes(success_prob(visit(doc_e_1), 0.87)).
+believes(success_prob(visit(doc_e_2), 0.97)).
+believes(success_prob(visit(doc_e_3), 0.72)).
+believes(success_prob(visit(doc_e_4), 0.87)).
+believes(success_prob(visit(doc_e_5), 0.56)).
+
+believes(action_cost(visit(doc_a_1), 6)).
+believes(action_cost(visit(doc_a_2), 1)).
+believes(action_cost(visit(doc_a_3), 4)).
+believes(action_cost(visit(doc_a_4), 4)).
+believes(action_cost(visit(doc_a_5), 8)).
+believes(action_cost(visit(doc_b_1), 6)).
+believes(action_cost(visit(doc_b_2), 1)).
+believes(action_cost(visit(doc_b_3), 3)).
+believes(action_cost(visit(doc_b_4), 5)).
+believes(action_cost(visit(doc_b_5), 2)).
+believes(action_cost(visit(doc_c_1), 6)).
+believes(action_cost(visit(doc_c_2), 2)).
+believes(action_cost(visit(doc_c_3), 2)).
+believes(action_cost(visit(doc_c_4), 5)).
+believes(action_cost(visit(doc_c_5), 1)).
+believes(action_cost(visit(doc_d_1), 3)).
+believes(action_cost(visit(doc_d_2), 8)).
+believes(action_cost(visit(doc_d_3), 2)).
+believes(action_cost(visit(doc_d_4), 4)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 6)).
+believes(action_cost(visit(doc_e_2), 1)).
+believes(action_cost(visit(doc_e_3), 1)).
+believes(action_cost(visit(doc_e_4), 3)).
+believes(action_cost(visit(doc_e_5), 7)).
+believes(budget(8)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.88, 10, 2)).
+believes(action_data(visit_type_2, 0.92, 6, 2)).
+believes(action_data(visit_type_3, 0.56, 7, 1)).
+believes(action_data(visit_type_4, 0.57, 10, 8)).
+believes(action_data(visit_type_5, 0.82, 8, 6)).
+believes(action_data(visit_type_6, 0.71, 4, 3)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_11: Baseline schedule loaded"),
+    believes(intend(consultation(t11))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_11, [consultation, t11, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_11: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_11, [unavailable, Doctor, TimeSlot])),
+    send(clinic_a_mgr, repair_request(patient_11, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_11: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_11, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_11, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_11, clinic_a, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_11, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_11, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_11, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_11: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_11, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_11, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_11, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_12 ===
+
+:- agent(patient_12, [cycle(2)]).
+
+believes(needs_consultation(t12)).
+believes(member_of(clinic_b)).
+believes(intend(consultation(t12))).
+believes(assigned_doctor(doc_b_2)).
+believes(assigned_clinic(clinic_b)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 4)).
+believes(pref_do(visit(doc_a_2), 2)).
+believes(pref_do(visit(doc_a_3), 10)).
+believes(pref_do(visit(doc_a_4), 9)).
+believes(pref_do(visit(doc_a_5), 3)).
+believes(pref_do(visit(doc_b_1), 4)).
+believes(pref_do(visit(doc_b_2), 5)).
+believes(pref_do(visit(doc_b_3), 4)).
+believes(pref_do(visit(doc_b_4), 9)).
+believes(pref_do(visit(doc_b_5), 4)).
+believes(pref_do(visit(doc_c_1), 10)).
+believes(pref_do(visit(doc_c_2), 4)).
+believes(pref_do(visit(doc_c_3), 2)).
+believes(pref_do(visit(doc_c_4), 3)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 5)).
+believes(pref_do(visit(doc_d_3), 6)).
+believes(pref_do(visit(doc_d_4), 3)).
+believes(pref_do(visit(doc_d_5), 3)).
+believes(pref_do(visit(doc_e_1), 8)).
+believes(pref_do(visit(doc_e_2), 6)).
+believes(pref_do(visit(doc_e_3), 4)).
+believes(pref_do(visit(doc_e_4), 8)).
+believes(pref_do(visit(doc_e_5), 10)).
+
+believes(success_prob(visit(doc_a_1), 0.81)).
+believes(success_prob(visit(doc_a_2), 0.91)).
+believes(success_prob(visit(doc_a_3), 0.64)).
+believes(success_prob(visit(doc_a_4), 0.77)).
+believes(success_prob(visit(doc_a_5), 0.78)).
+believes(success_prob(visit(doc_b_1), 0.74)).
+believes(success_prob(visit(doc_b_2), 0.58)).
+believes(success_prob(visit(doc_b_3), 0.57)).
+believes(success_prob(visit(doc_b_4), 0.59)).
+believes(success_prob(visit(doc_b_5), 0.72)).
+believes(success_prob(visit(doc_c_1), 0.59)).
+believes(success_prob(visit(doc_c_2), 0.64)).
+believes(success_prob(visit(doc_c_3), 0.77)).
+believes(success_prob(visit(doc_c_4), 0.76)).
+believes(success_prob(visit(doc_c_5), 0.74)).
+believes(success_prob(visit(doc_d_1), 0.83)).
+believes(success_prob(visit(doc_d_2), 0.88)).
+believes(success_prob(visit(doc_d_3), 0.61)).
+believes(success_prob(visit(doc_d_4), 0.71)).
+believes(success_prob(visit(doc_d_5), 0.95)).
+believes(success_prob(visit(doc_e_1), 0.9)).
+believes(success_prob(visit(doc_e_2), 0.72)).
+believes(success_prob(visit(doc_e_3), 0.92)).
+believes(success_prob(visit(doc_e_4), 0.87)).
+believes(success_prob(visit(doc_e_5), 0.59)).
+
+believes(action_cost(visit(doc_a_1), 5)).
+believes(action_cost(visit(doc_a_2), 7)).
+believes(action_cost(visit(doc_a_3), 3)).
+believes(action_cost(visit(doc_a_4), 8)).
+believes(action_cost(visit(doc_a_5), 5)).
+believes(action_cost(visit(doc_b_1), 4)).
+believes(action_cost(visit(doc_b_2), 7)).
+believes(action_cost(visit(doc_b_3), 6)).
+believes(action_cost(visit(doc_b_4), 8)).
+believes(action_cost(visit(doc_b_5), 5)).
+believes(action_cost(visit(doc_c_1), 4)).
+believes(action_cost(visit(doc_c_2), 7)).
+believes(action_cost(visit(doc_c_3), 6)).
+believes(action_cost(visit(doc_c_4), 3)).
+believes(action_cost(visit(doc_c_5), 3)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 1)).
+believes(action_cost(visit(doc_d_3), 5)).
+believes(action_cost(visit(doc_d_4), 5)).
+believes(action_cost(visit(doc_d_5), 3)).
+believes(action_cost(visit(doc_e_1), 3)).
+believes(action_cost(visit(doc_e_2), 2)).
+believes(action_cost(visit(doc_e_3), 1)).
+believes(action_cost(visit(doc_e_4), 6)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(14)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.67, 3, 1)).
+believes(action_data(visit_type_2, 0.56, 6, 2)).
+believes(action_data(visit_type_3, 0.78, 9, 5)).
+believes(action_data(visit_type_4, 0.97, 4, 6)).
+believes(action_data(visit_type_5, 0.63, 9, 6)).
+believes(action_data(visit_type_6, 0.67, 6, 8)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_12: Baseline schedule loaded"),
+    believes(intend(consultation(t12))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_12, [consultation, t12, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_12: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_12, [unavailable, Doctor, TimeSlot])),
+    send(clinic_b_mgr, repair_request(patient_12, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_12: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_12, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_12, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_12, clinic_b, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_12, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_12, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_12, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_12: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_12, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_12, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_12, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_13 ===
+
+:- agent(patient_13, [cycle(2)]).
+
+believes(needs_consultation(t13)).
+believes(member_of(clinic_c)).
+believes(intend(consultation(t13))).
+believes(assigned_doctor(doc_c_3)).
+believes(assigned_clinic(clinic_c)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 3)).
+believes(pref_do(visit(doc_a_2), 8)).
+believes(pref_do(visit(doc_a_3), 7)).
+believes(pref_do(visit(doc_a_4), 4)).
+believes(pref_do(visit(doc_a_5), 9)).
+believes(pref_do(visit(doc_b_1), 3)).
+believes(pref_do(visit(doc_b_2), 5)).
+believes(pref_do(visit(doc_b_3), 7)).
+believes(pref_do(visit(doc_b_4), 7)).
+believes(pref_do(visit(doc_b_5), 5)).
+believes(pref_do(visit(doc_c_1), 7)).
+believes(pref_do(visit(doc_c_2), 3)).
+believes(pref_do(visit(doc_c_3), 2)).
+believes(pref_do(visit(doc_c_4), 6)).
+believes(pref_do(visit(doc_c_5), 6)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 9)).
+believes(pref_do(visit(doc_d_3), 2)).
+believes(pref_do(visit(doc_d_4), 8)).
+believes(pref_do(visit(doc_d_5), 5)).
+believes(pref_do(visit(doc_e_1), 8)).
+believes(pref_do(visit(doc_e_2), 5)).
+believes(pref_do(visit(doc_e_3), 8)).
+believes(pref_do(visit(doc_e_4), 9)).
+believes(pref_do(visit(doc_e_5), 3)).
+
+believes(success_prob(visit(doc_a_1), 0.84)).
+believes(success_prob(visit(doc_a_2), 0.93)).
+believes(success_prob(visit(doc_a_3), 0.9)).
+believes(success_prob(visit(doc_a_4), 0.58)).
+believes(success_prob(visit(doc_a_5), 0.8)).
+believes(success_prob(visit(doc_b_1), 0.57)).
+believes(success_prob(visit(doc_b_2), 0.77)).
+believes(success_prob(visit(doc_b_3), 0.89)).
+believes(success_prob(visit(doc_b_4), 0.87)).
+believes(success_prob(visit(doc_b_5), 0.83)).
+believes(success_prob(visit(doc_c_1), 0.85)).
+believes(success_prob(visit(doc_c_2), 0.81)).
+believes(success_prob(visit(doc_c_3), 0.81)).
+believes(success_prob(visit(doc_c_4), 0.97)).
+believes(success_prob(visit(doc_c_5), 0.69)).
+believes(success_prob(visit(doc_d_1), 0.67)).
+believes(success_prob(visit(doc_d_2), 0.95)).
+believes(success_prob(visit(doc_d_3), 0.56)).
+believes(success_prob(visit(doc_d_4), 0.82)).
+believes(success_prob(visit(doc_d_5), 0.97)).
+believes(success_prob(visit(doc_e_1), 0.63)).
+believes(success_prob(visit(doc_e_2), 0.61)).
+believes(success_prob(visit(doc_e_3), 0.61)).
+believes(success_prob(visit(doc_e_4), 0.81)).
+believes(success_prob(visit(doc_e_5), 0.68)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 3)).
+believes(action_cost(visit(doc_a_3), 4)).
+believes(action_cost(visit(doc_a_4), 5)).
+believes(action_cost(visit(doc_a_5), 4)).
+believes(action_cost(visit(doc_b_1), 8)).
+believes(action_cost(visit(doc_b_2), 5)).
+believes(action_cost(visit(doc_b_3), 6)).
+believes(action_cost(visit(doc_b_4), 3)).
+believes(action_cost(visit(doc_b_5), 2)).
+believes(action_cost(visit(doc_c_1), 7)).
+believes(action_cost(visit(doc_c_2), 5)).
+believes(action_cost(visit(doc_c_3), 7)).
+believes(action_cost(visit(doc_c_4), 1)).
+believes(action_cost(visit(doc_c_5), 7)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 8)).
+believes(action_cost(visit(doc_d_3), 8)).
+believes(action_cost(visit(doc_d_4), 3)).
+believes(action_cost(visit(doc_d_5), 1)).
+believes(action_cost(visit(doc_e_1), 1)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 8)).
+believes(action_cost(visit(doc_e_5), 1)).
+believes(budget(12)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.72, 9, 4)).
+believes(action_data(visit_type_2, 0.69, 5, 4)).
+believes(action_data(visit_type_3, 0.83, 3, 3)).
+believes(action_data(visit_type_4, 0.82, 6, 3)).
+believes(action_data(visit_type_5, 0.73, 3, 2)).
+believes(action_data(visit_type_6, 0.87, 4, 3)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_13: Baseline schedule loaded"),
+    believes(intend(consultation(t13))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_13, [consultation, t13, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_13: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_13, [unavailable, Doctor, TimeSlot])),
+    send(clinic_c_mgr, repair_request(patient_13, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_13: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_13, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_13, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_13, clinic_c, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_13, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_13, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_13, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_13: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_13, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_13, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_13, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_14 ===
+
+:- agent(patient_14, [cycle(2)]).
+
+believes(needs_consultation(t14)).
+believes(member_of(clinic_d)).
+believes(intend(consultation(t14))).
+believes(assigned_doctor(doc_d_4)).
+believes(assigned_clinic(clinic_d)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 6)).
+believes(pref_do(visit(doc_a_2), 4)).
+believes(pref_do(visit(doc_a_3), 9)).
+believes(pref_do(visit(doc_a_4), 5)).
+believes(pref_do(visit(doc_a_5), 7)).
+believes(pref_do(visit(doc_b_1), 7)).
+believes(pref_do(visit(doc_b_2), 6)).
+believes(pref_do(visit(doc_b_3), 6)).
+believes(pref_do(visit(doc_b_4), 2)).
+believes(pref_do(visit(doc_b_5), 7)).
+believes(pref_do(visit(doc_c_1), 7)).
+believes(pref_do(visit(doc_c_2), 4)).
+believes(pref_do(visit(doc_c_3), 10)).
+believes(pref_do(visit(doc_c_4), 8)).
+believes(pref_do(visit(doc_c_5), 6)).
+believes(pref_do(visit(doc_d_1), 5)).
+believes(pref_do(visit(doc_d_2), 2)).
+believes(pref_do(visit(doc_d_3), 10)).
+believes(pref_do(visit(doc_d_4), 9)).
+believes(pref_do(visit(doc_d_5), 7)).
+believes(pref_do(visit(doc_e_1), 9)).
+believes(pref_do(visit(doc_e_2), 4)).
+believes(pref_do(visit(doc_e_3), 8)).
+believes(pref_do(visit(doc_e_4), 3)).
+believes(pref_do(visit(doc_e_5), 8)).
+
+believes(success_prob(visit(doc_a_1), 0.64)).
+believes(success_prob(visit(doc_a_2), 0.69)).
+believes(success_prob(visit(doc_a_3), 0.79)).
+believes(success_prob(visit(doc_a_4), 0.95)).
+believes(success_prob(visit(doc_a_5), 0.58)).
+believes(success_prob(visit(doc_b_1), 0.72)).
+believes(success_prob(visit(doc_b_2), 0.83)).
+believes(success_prob(visit(doc_b_3), 0.98)).
+believes(success_prob(visit(doc_b_4), 0.67)).
+believes(success_prob(visit(doc_b_5), 0.83)).
+believes(success_prob(visit(doc_c_1), 0.58)).
+believes(success_prob(visit(doc_c_2), 0.67)).
+believes(success_prob(visit(doc_c_3), 0.83)).
+believes(success_prob(visit(doc_c_4), 0.82)).
+believes(success_prob(visit(doc_c_5), 0.86)).
+believes(success_prob(visit(doc_d_1), 0.77)).
+believes(success_prob(visit(doc_d_2), 0.73)).
+believes(success_prob(visit(doc_d_3), 0.7)).
+believes(success_prob(visit(doc_d_4), 0.98)).
+believes(success_prob(visit(doc_d_5), 0.57)).
+believes(success_prob(visit(doc_e_1), 0.74)).
+believes(success_prob(visit(doc_e_2), 0.69)).
+believes(success_prob(visit(doc_e_3), 0.67)).
+believes(success_prob(visit(doc_e_4), 0.81)).
+believes(success_prob(visit(doc_e_5), 0.95)).
+
+believes(action_cost(visit(doc_a_1), 7)).
+believes(action_cost(visit(doc_a_2), 2)).
+believes(action_cost(visit(doc_a_3), 4)).
+believes(action_cost(visit(doc_a_4), 1)).
+believes(action_cost(visit(doc_a_5), 3)).
+believes(action_cost(visit(doc_b_1), 3)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 1)).
+believes(action_cost(visit(doc_b_4), 5)).
+believes(action_cost(visit(doc_b_5), 3)).
+believes(action_cost(visit(doc_c_1), 6)).
+believes(action_cost(visit(doc_c_2), 3)).
+believes(action_cost(visit(doc_c_3), 3)).
+believes(action_cost(visit(doc_c_4), 7)).
+believes(action_cost(visit(doc_c_5), 5)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 3)).
+believes(action_cost(visit(doc_d_3), 2)).
+believes(action_cost(visit(doc_d_4), 2)).
+believes(action_cost(visit(doc_d_5), 1)).
+believes(action_cost(visit(doc_e_1), 7)).
+believes(action_cost(visit(doc_e_2), 4)).
+believes(action_cost(visit(doc_e_3), 8)).
+believes(action_cost(visit(doc_e_4), 6)).
+believes(action_cost(visit(doc_e_5), 8)).
+believes(budget(14)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.83, 9, 4)).
+believes(action_data(visit_type_2, 0.76, 2, 7)).
+believes(action_data(visit_type_3, 0.78, 5, 3)).
+believes(action_data(visit_type_4, 0.81, 4, 1)).
+believes(action_data(visit_type_5, 0.68, 6, 4)).
+believes(action_data(visit_type_6, 0.65, 8, 4)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_14: Baseline schedule loaded"),
+    believes(intend(consultation(t14))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_14, [consultation, t14, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_14: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_14, [unavailable, Doctor, TimeSlot])),
+    send(clinic_d_mgr, repair_request(patient_14, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_14: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_14, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_14, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_14, clinic_d, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_14, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_14, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_14, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_14: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_14, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_14, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_14, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_15 ===
+
+:- agent(patient_15, [cycle(2)]).
+
+believes(needs_consultation(t15)).
+believes(member_of(clinic_e)).
+believes(intend(consultation(t15))).
+believes(assigned_doctor(doc_e_5)).
+believes(assigned_clinic(clinic_e)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 4)).
+believes(pref_do(visit(doc_a_2), 5)).
+believes(pref_do(visit(doc_a_3), 9)).
+believes(pref_do(visit(doc_a_4), 9)).
+believes(pref_do(visit(doc_a_5), 8)).
+believes(pref_do(visit(doc_b_1), 8)).
+believes(pref_do(visit(doc_b_2), 6)).
+believes(pref_do(visit(doc_b_3), 5)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 2)).
+believes(pref_do(visit(doc_c_1), 2)).
+believes(pref_do(visit(doc_c_2), 4)).
+believes(pref_do(visit(doc_c_3), 9)).
+believes(pref_do(visit(doc_c_4), 8)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 5)).
+believes(pref_do(visit(doc_d_2), 4)).
+believes(pref_do(visit(doc_d_3), 7)).
+believes(pref_do(visit(doc_d_4), 5)).
+believes(pref_do(visit(doc_d_5), 2)).
+believes(pref_do(visit(doc_e_1), 6)).
+believes(pref_do(visit(doc_e_2), 6)).
+believes(pref_do(visit(doc_e_3), 7)).
+believes(pref_do(visit(doc_e_4), 2)).
+believes(pref_do(visit(doc_e_5), 6)).
+
+believes(success_prob(visit(doc_a_1), 0.8)).
+believes(success_prob(visit(doc_a_2), 0.85)).
+believes(success_prob(visit(doc_a_3), 0.61)).
+believes(success_prob(visit(doc_a_4), 0.58)).
+believes(success_prob(visit(doc_a_5), 0.59)).
+believes(success_prob(visit(doc_b_1), 0.78)).
+believes(success_prob(visit(doc_b_2), 0.85)).
+believes(success_prob(visit(doc_b_3), 0.82)).
+believes(success_prob(visit(doc_b_4), 0.72)).
+believes(success_prob(visit(doc_b_5), 0.71)).
+believes(success_prob(visit(doc_c_1), 0.66)).
+believes(success_prob(visit(doc_c_2), 0.86)).
+believes(success_prob(visit(doc_c_3), 0.82)).
+believes(success_prob(visit(doc_c_4), 0.89)).
+believes(success_prob(visit(doc_c_5), 0.91)).
+believes(success_prob(visit(doc_d_1), 0.77)).
+believes(success_prob(visit(doc_d_2), 0.64)).
+believes(success_prob(visit(doc_d_3), 0.6)).
+believes(success_prob(visit(doc_d_4), 0.74)).
+believes(success_prob(visit(doc_d_5), 0.65)).
+believes(success_prob(visit(doc_e_1), 0.64)).
+believes(success_prob(visit(doc_e_2), 0.6)).
+believes(success_prob(visit(doc_e_3), 0.8)).
+believes(success_prob(visit(doc_e_4), 0.9)).
+believes(success_prob(visit(doc_e_5), 0.6)).
+
+believes(action_cost(visit(doc_a_1), 3)).
+believes(action_cost(visit(doc_a_2), 6)).
+believes(action_cost(visit(doc_a_3), 8)).
+believes(action_cost(visit(doc_a_4), 4)).
+believes(action_cost(visit(doc_a_5), 2)).
+believes(action_cost(visit(doc_b_1), 4)).
+believes(action_cost(visit(doc_b_2), 8)).
+believes(action_cost(visit(doc_b_3), 5)).
+believes(action_cost(visit(doc_b_4), 5)).
+believes(action_cost(visit(doc_b_5), 6)).
+believes(action_cost(visit(doc_c_1), 3)).
+believes(action_cost(visit(doc_c_2), 6)).
+believes(action_cost(visit(doc_c_3), 4)).
+believes(action_cost(visit(doc_c_4), 3)).
+believes(action_cost(visit(doc_c_5), 8)).
+believes(action_cost(visit(doc_d_1), 8)).
+believes(action_cost(visit(doc_d_2), 8)).
+believes(action_cost(visit(doc_d_3), 5)).
+believes(action_cost(visit(doc_d_4), 3)).
+believes(action_cost(visit(doc_d_5), 4)).
+believes(action_cost(visit(doc_e_1), 1)).
+believes(action_cost(visit(doc_e_2), 8)).
+believes(action_cost(visit(doc_e_3), 4)).
+believes(action_cost(visit(doc_e_4), 1)).
+believes(action_cost(visit(doc_e_5), 5)).
+believes(budget(17)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.84, 3, 3)).
+believes(action_data(visit_type_2, 0.56, 9, 6)).
+believes(action_data(visit_type_3, 0.98, 3, 7)).
+believes(action_data(visit_type_4, 0.57, 9, 7)).
+believes(action_data(visit_type_5, 0.69, 2, 1)).
+believes(action_data(visit_type_6, 0.87, 5, 5)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_15: Baseline schedule loaded"),
+    believes(intend(consultation(t15))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_15, [consultation, t15, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_15: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_15, [unavailable, Doctor, TimeSlot])),
+    send(clinic_e_mgr, repair_request(patient_15, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_15: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_15, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_15, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_15, clinic_e, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_15, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_15, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_15, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_15: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_15, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_15, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_15, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_16 ===
+
+:- agent(patient_16, [cycle(2)]).
+
+believes(needs_consultation(t16)).
+believes(member_of(clinic_a)).
+believes(intend(consultation(t16))).
+believes(assigned_doctor(doc_a_1)).
+believes(assigned_clinic(clinic_a)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 4)).
+believes(pref_do(visit(doc_a_2), 2)).
+believes(pref_do(visit(doc_a_3), 10)).
+believes(pref_do(visit(doc_a_4), 6)).
+believes(pref_do(visit(doc_a_5), 2)).
+believes(pref_do(visit(doc_b_1), 9)).
+believes(pref_do(visit(doc_b_2), 9)).
+believes(pref_do(visit(doc_b_3), 6)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 10)).
+believes(pref_do(visit(doc_c_1), 7)).
+believes(pref_do(visit(doc_c_2), 5)).
+believes(pref_do(visit(doc_c_3), 6)).
+believes(pref_do(visit(doc_c_4), 5)).
+believes(pref_do(visit(doc_c_5), 6)).
+believes(pref_do(visit(doc_d_1), 5)).
+believes(pref_do(visit(doc_d_2), 7)).
+believes(pref_do(visit(doc_d_3), 7)).
+believes(pref_do(visit(doc_d_4), 7)).
+believes(pref_do(visit(doc_d_5), 2)).
+believes(pref_do(visit(doc_e_1), 6)).
+believes(pref_do(visit(doc_e_2), 6)).
+believes(pref_do(visit(doc_e_3), 10)).
+believes(pref_do(visit(doc_e_4), 7)).
+believes(pref_do(visit(doc_e_5), 10)).
+
+believes(success_prob(visit(doc_a_1), 0.65)).
+believes(success_prob(visit(doc_a_2), 0.87)).
+believes(success_prob(visit(doc_a_3), 0.71)).
+believes(success_prob(visit(doc_a_4), 0.61)).
+believes(success_prob(visit(doc_a_5), 0.68)).
+believes(success_prob(visit(doc_b_1), 0.65)).
+believes(success_prob(visit(doc_b_2), 0.69)).
+believes(success_prob(visit(doc_b_3), 0.93)).
+believes(success_prob(visit(doc_b_4), 0.7)).
+believes(success_prob(visit(doc_b_5), 0.88)).
+believes(success_prob(visit(doc_c_1), 0.57)).
+believes(success_prob(visit(doc_c_2), 0.82)).
+believes(success_prob(visit(doc_c_3), 0.9)).
+believes(success_prob(visit(doc_c_4), 0.69)).
+believes(success_prob(visit(doc_c_5), 0.71)).
+believes(success_prob(visit(doc_d_1), 0.67)).
+believes(success_prob(visit(doc_d_2), 0.56)).
+believes(success_prob(visit(doc_d_3), 0.82)).
+believes(success_prob(visit(doc_d_4), 0.59)).
+believes(success_prob(visit(doc_d_5), 0.7)).
+believes(success_prob(visit(doc_e_1), 0.84)).
+believes(success_prob(visit(doc_e_2), 0.9)).
+believes(success_prob(visit(doc_e_3), 0.82)).
+believes(success_prob(visit(doc_e_4), 0.9)).
+believes(success_prob(visit(doc_e_5), 0.75)).
+
+believes(action_cost(visit(doc_a_1), 5)).
+believes(action_cost(visit(doc_a_2), 1)).
+believes(action_cost(visit(doc_a_3), 7)).
+believes(action_cost(visit(doc_a_4), 2)).
+believes(action_cost(visit(doc_a_5), 7)).
+believes(action_cost(visit(doc_b_1), 3)).
+believes(action_cost(visit(doc_b_2), 5)).
+believes(action_cost(visit(doc_b_3), 1)).
+believes(action_cost(visit(doc_b_4), 7)).
+believes(action_cost(visit(doc_b_5), 7)).
+believes(action_cost(visit(doc_c_1), 6)).
+believes(action_cost(visit(doc_c_2), 6)).
+believes(action_cost(visit(doc_c_3), 7)).
+believes(action_cost(visit(doc_c_4), 1)).
+believes(action_cost(visit(doc_c_5), 6)).
+believes(action_cost(visit(doc_d_1), 1)).
+believes(action_cost(visit(doc_d_2), 4)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 6)).
+believes(action_cost(visit(doc_d_5), 2)).
+believes(action_cost(visit(doc_e_1), 1)).
+believes(action_cost(visit(doc_e_2), 2)).
+believes(action_cost(visit(doc_e_3), 5)).
+believes(action_cost(visit(doc_e_4), 7)).
+believes(action_cost(visit(doc_e_5), 6)).
+believes(budget(18)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.96, 10, 3)).
+believes(action_data(visit_type_2, 0.6, 3, 5)).
+believes(action_data(visit_type_3, 0.78, 5, 8)).
+believes(action_data(visit_type_4, 0.56, 9, 4)).
+believes(action_data(visit_type_5, 0.96, 5, 3)).
+believes(action_data(visit_type_6, 0.88, 3, 8)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_16: Baseline schedule loaded"),
+    believes(intend(consultation(t16))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_16, [consultation, t16, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_16: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_16, [unavailable, Doctor, TimeSlot])),
+    send(clinic_a_mgr, repair_request(patient_16, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_16: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_16, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_16, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_16, clinic_a, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_16, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_16, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_16, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_16: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_16, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_16, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_16, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_17 ===
+
+:- agent(patient_17, [cycle(2)]).
+
+believes(needs_consultation(t17)).
+believes(member_of(clinic_b)).
+believes(intend(consultation(t17))).
+believes(assigned_doctor(doc_b_2)).
+believes(assigned_clinic(clinic_b)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 4)).
+believes(pref_do(visit(doc_a_2), 10)).
+believes(pref_do(visit(doc_a_3), 4)).
+believes(pref_do(visit(doc_a_4), 5)).
+believes(pref_do(visit(doc_a_5), 8)).
+believes(pref_do(visit(doc_b_1), 2)).
+believes(pref_do(visit(doc_b_2), 7)).
+believes(pref_do(visit(doc_b_3), 10)).
+believes(pref_do(visit(doc_b_4), 3)).
+believes(pref_do(visit(doc_b_5), 2)).
+believes(pref_do(visit(doc_c_1), 5)).
+believes(pref_do(visit(doc_c_2), 10)).
+believes(pref_do(visit(doc_c_3), 6)).
+believes(pref_do(visit(doc_c_4), 4)).
+believes(pref_do(visit(doc_c_5), 10)).
+believes(pref_do(visit(doc_d_1), 2)).
+believes(pref_do(visit(doc_d_2), 5)).
+believes(pref_do(visit(doc_d_3), 5)).
+believes(pref_do(visit(doc_d_4), 3)).
+believes(pref_do(visit(doc_d_5), 10)).
+believes(pref_do(visit(doc_e_1), 5)).
+believes(pref_do(visit(doc_e_2), 6)).
+believes(pref_do(visit(doc_e_3), 7)).
+believes(pref_do(visit(doc_e_4), 9)).
+believes(pref_do(visit(doc_e_5), 6)).
+
+believes(success_prob(visit(doc_a_1), 0.67)).
+believes(success_prob(visit(doc_a_2), 0.91)).
+believes(success_prob(visit(doc_a_3), 0.96)).
+believes(success_prob(visit(doc_a_4), 0.65)).
+believes(success_prob(visit(doc_a_5), 0.59)).
+believes(success_prob(visit(doc_b_1), 0.62)).
+believes(success_prob(visit(doc_b_2), 0.7)).
+believes(success_prob(visit(doc_b_3), 0.9)).
+believes(success_prob(visit(doc_b_4), 0.66)).
+believes(success_prob(visit(doc_b_5), 0.56)).
+believes(success_prob(visit(doc_c_1), 0.67)).
+believes(success_prob(visit(doc_c_2), 0.64)).
+believes(success_prob(visit(doc_c_3), 0.63)).
+believes(success_prob(visit(doc_c_4), 0.67)).
+believes(success_prob(visit(doc_c_5), 0.87)).
+believes(success_prob(visit(doc_d_1), 0.83)).
+believes(success_prob(visit(doc_d_2), 0.61)).
+believes(success_prob(visit(doc_d_3), 0.66)).
+believes(success_prob(visit(doc_d_4), 0.89)).
+believes(success_prob(visit(doc_d_5), 0.86)).
+believes(success_prob(visit(doc_e_1), 0.59)).
+believes(success_prob(visit(doc_e_2), 0.72)).
+believes(success_prob(visit(doc_e_3), 0.56)).
+believes(success_prob(visit(doc_e_4), 0.62)).
+believes(success_prob(visit(doc_e_5), 0.73)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 3)).
+believes(action_cost(visit(doc_a_3), 7)).
+believes(action_cost(visit(doc_a_4), 4)).
+believes(action_cost(visit(doc_a_5), 2)).
+believes(action_cost(visit(doc_b_1), 3)).
+believes(action_cost(visit(doc_b_2), 8)).
+believes(action_cost(visit(doc_b_3), 1)).
+believes(action_cost(visit(doc_b_4), 8)).
+believes(action_cost(visit(doc_b_5), 2)).
+believes(action_cost(visit(doc_c_1), 5)).
+believes(action_cost(visit(doc_c_2), 5)).
+believes(action_cost(visit(doc_c_3), 2)).
+believes(action_cost(visit(doc_c_4), 1)).
+believes(action_cost(visit(doc_c_5), 3)).
+believes(action_cost(visit(doc_d_1), 8)).
+believes(action_cost(visit(doc_d_2), 8)).
+believes(action_cost(visit(doc_d_3), 7)).
+believes(action_cost(visit(doc_d_4), 3)).
+believes(action_cost(visit(doc_d_5), 8)).
+believes(action_cost(visit(doc_e_1), 3)).
+believes(action_cost(visit(doc_e_2), 1)).
+believes(action_cost(visit(doc_e_3), 1)).
+believes(action_cost(visit(doc_e_4), 8)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(20)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.86, 10, 2)).
+believes(action_data(visit_type_2, 0.81, 7, 3)).
+believes(action_data(visit_type_3, 0.75, 4, 6)).
+believes(action_data(visit_type_4, 0.86, 4, 6)).
+believes(action_data(visit_type_5, 0.7, 8, 5)).
+believes(action_data(visit_type_6, 0.6, 7, 8)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_17: Baseline schedule loaded"),
+    believes(intend(consultation(t17))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_17, [consultation, t17, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_17: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_17, [unavailable, Doctor, TimeSlot])),
+    send(clinic_b_mgr, repair_request(patient_17, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_17: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_17, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_17, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_17, clinic_b, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_17, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_17, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_17, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_17: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_17, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_17, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_17, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_18 ===
+
+:- agent(patient_18, [cycle(2)]).
+
+believes(needs_consultation(t18)).
+believes(member_of(clinic_c)).
+believes(intend(consultation(t18))).
+believes(assigned_doctor(doc_c_3)).
+believes(assigned_clinic(clinic_c)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 3)).
+believes(pref_do(visit(doc_a_2), 10)).
+believes(pref_do(visit(doc_a_3), 2)).
+believes(pref_do(visit(doc_a_4), 5)).
+believes(pref_do(visit(doc_a_5), 4)).
+believes(pref_do(visit(doc_b_1), 6)).
+believes(pref_do(visit(doc_b_2), 8)).
+believes(pref_do(visit(doc_b_3), 9)).
+believes(pref_do(visit(doc_b_4), 6)).
+believes(pref_do(visit(doc_b_5), 3)).
+believes(pref_do(visit(doc_c_1), 6)).
+believes(pref_do(visit(doc_c_2), 3)).
+believes(pref_do(visit(doc_c_3), 7)).
+believes(pref_do(visit(doc_c_4), 8)).
+believes(pref_do(visit(doc_c_5), 3)).
+believes(pref_do(visit(doc_d_1), 3)).
+believes(pref_do(visit(doc_d_2), 8)).
+believes(pref_do(visit(doc_d_3), 7)).
+believes(pref_do(visit(doc_d_4), 6)).
+believes(pref_do(visit(doc_d_5), 2)).
+believes(pref_do(visit(doc_e_1), 3)).
+believes(pref_do(visit(doc_e_2), 9)).
+believes(pref_do(visit(doc_e_3), 3)).
+believes(pref_do(visit(doc_e_4), 4)).
+believes(pref_do(visit(doc_e_5), 6)).
+
+believes(success_prob(visit(doc_a_1), 0.67)).
+believes(success_prob(visit(doc_a_2), 0.97)).
+believes(success_prob(visit(doc_a_3), 0.82)).
+believes(success_prob(visit(doc_a_4), 0.57)).
+believes(success_prob(visit(doc_a_5), 0.8)).
+believes(success_prob(visit(doc_b_1), 0.64)).
+believes(success_prob(visit(doc_b_2), 0.69)).
+believes(success_prob(visit(doc_b_3), 0.71)).
+believes(success_prob(visit(doc_b_4), 0.65)).
+believes(success_prob(visit(doc_b_5), 0.98)).
+believes(success_prob(visit(doc_c_1), 0.8)).
+believes(success_prob(visit(doc_c_2), 0.58)).
+believes(success_prob(visit(doc_c_3), 0.75)).
+believes(success_prob(visit(doc_c_4), 0.93)).
+believes(success_prob(visit(doc_c_5), 0.56)).
+believes(success_prob(visit(doc_d_1), 0.55)).
+believes(success_prob(visit(doc_d_2), 0.97)).
+believes(success_prob(visit(doc_d_3), 0.9)).
+believes(success_prob(visit(doc_d_4), 0.75)).
+believes(success_prob(visit(doc_d_5), 0.82)).
+believes(success_prob(visit(doc_e_1), 0.91)).
+believes(success_prob(visit(doc_e_2), 0.69)).
+believes(success_prob(visit(doc_e_3), 0.65)).
+believes(success_prob(visit(doc_e_4), 0.94)).
+believes(success_prob(visit(doc_e_5), 0.76)).
+
+believes(action_cost(visit(doc_a_1), 8)).
+believes(action_cost(visit(doc_a_2), 4)).
+believes(action_cost(visit(doc_a_3), 5)).
+believes(action_cost(visit(doc_a_4), 1)).
+believes(action_cost(visit(doc_a_5), 6)).
+believes(action_cost(visit(doc_b_1), 3)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 3)).
+believes(action_cost(visit(doc_b_4), 5)).
+believes(action_cost(visit(doc_b_5), 7)).
+believes(action_cost(visit(doc_c_1), 4)).
+believes(action_cost(visit(doc_c_2), 3)).
+believes(action_cost(visit(doc_c_3), 7)).
+believes(action_cost(visit(doc_c_4), 8)).
+believes(action_cost(visit(doc_c_5), 3)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 5)).
+believes(action_cost(visit(doc_d_3), 6)).
+believes(action_cost(visit(doc_d_4), 2)).
+believes(action_cost(visit(doc_d_5), 3)).
+believes(action_cost(visit(doc_e_1), 1)).
+believes(action_cost(visit(doc_e_2), 2)).
+believes(action_cost(visit(doc_e_3), 8)).
+believes(action_cost(visit(doc_e_4), 4)).
+believes(action_cost(visit(doc_e_5), 3)).
+believes(budget(19)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.83, 5, 7)).
+believes(action_data(visit_type_2, 0.72, 6, 1)).
+believes(action_data(visit_type_3, 0.75, 5, 5)).
+believes(action_data(visit_type_4, 0.72, 4, 7)).
+believes(action_data(visit_type_5, 0.62, 6, 5)).
+believes(action_data(visit_type_6, 0.97, 3, 5)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_18: Baseline schedule loaded"),
+    believes(intend(consultation(t18))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_18, [consultation, t18, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_18: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_18, [unavailable, Doctor, TimeSlot])),
+    send(clinic_c_mgr, repair_request(patient_18, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_18: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_18, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_18, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_18, clinic_c, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_18, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_18, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_18, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_18: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_18, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_18, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_18, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_19 ===
+
+:- agent(patient_19, [cycle(2)]).
+
+believes(needs_consultation(t19)).
+believes(member_of(clinic_d)).
+believes(intend(consultation(t19))).
+believes(assigned_doctor(doc_d_4)).
+believes(assigned_clinic(clinic_d)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 8)).
+believes(pref_do(visit(doc_a_2), 6)).
+believes(pref_do(visit(doc_a_3), 5)).
+believes(pref_do(visit(doc_a_4), 4)).
+believes(pref_do(visit(doc_a_5), 5)).
+believes(pref_do(visit(doc_b_1), 8)).
+believes(pref_do(visit(doc_b_2), 3)).
+believes(pref_do(visit(doc_b_3), 7)).
+believes(pref_do(visit(doc_b_4), 5)).
+believes(pref_do(visit(doc_b_5), 3)).
+believes(pref_do(visit(doc_c_1), 2)).
+believes(pref_do(visit(doc_c_2), 10)).
+believes(pref_do(visit(doc_c_3), 5)).
+believes(pref_do(visit(doc_c_4), 6)).
+believes(pref_do(visit(doc_c_5), 5)).
+believes(pref_do(visit(doc_d_1), 6)).
+believes(pref_do(visit(doc_d_2), 3)).
+believes(pref_do(visit(doc_d_3), 5)).
+believes(pref_do(visit(doc_d_4), 5)).
+believes(pref_do(visit(doc_d_5), 7)).
+believes(pref_do(visit(doc_e_1), 7)).
+believes(pref_do(visit(doc_e_2), 4)).
+believes(pref_do(visit(doc_e_3), 4)).
+believes(pref_do(visit(doc_e_4), 7)).
+believes(pref_do(visit(doc_e_5), 5)).
+
+believes(success_prob(visit(doc_a_1), 0.63)).
+believes(success_prob(visit(doc_a_2), 0.93)).
+believes(success_prob(visit(doc_a_3), 0.56)).
+believes(success_prob(visit(doc_a_4), 0.96)).
+believes(success_prob(visit(doc_a_5), 0.97)).
+believes(success_prob(visit(doc_b_1), 0.94)).
+believes(success_prob(visit(doc_b_2), 0.94)).
+believes(success_prob(visit(doc_b_3), 0.75)).
+believes(success_prob(visit(doc_b_4), 0.97)).
+believes(success_prob(visit(doc_b_5), 0.76)).
+believes(success_prob(visit(doc_c_1), 0.76)).
+believes(success_prob(visit(doc_c_2), 0.63)).
+believes(success_prob(visit(doc_c_3), 0.86)).
+believes(success_prob(visit(doc_c_4), 0.91)).
+believes(success_prob(visit(doc_c_5), 0.62)).
+believes(success_prob(visit(doc_d_1), 0.94)).
+believes(success_prob(visit(doc_d_2), 0.66)).
+believes(success_prob(visit(doc_d_3), 0.71)).
+believes(success_prob(visit(doc_d_4), 0.64)).
+believes(success_prob(visit(doc_d_5), 0.55)).
+believes(success_prob(visit(doc_e_1), 0.79)).
+believes(success_prob(visit(doc_e_2), 0.62)).
+believes(success_prob(visit(doc_e_3), 0.74)).
+believes(success_prob(visit(doc_e_4), 0.67)).
+believes(success_prob(visit(doc_e_5), 0.59)).
+
+believes(action_cost(visit(doc_a_1), 1)).
+believes(action_cost(visit(doc_a_2), 1)).
+believes(action_cost(visit(doc_a_3), 2)).
+believes(action_cost(visit(doc_a_4), 6)).
+believes(action_cost(visit(doc_a_5), 4)).
+believes(action_cost(visit(doc_b_1), 8)).
+believes(action_cost(visit(doc_b_2), 4)).
+believes(action_cost(visit(doc_b_3), 7)).
+believes(action_cost(visit(doc_b_4), 7)).
+believes(action_cost(visit(doc_b_5), 8)).
+believes(action_cost(visit(doc_c_1), 2)).
+believes(action_cost(visit(doc_c_2), 3)).
+believes(action_cost(visit(doc_c_3), 6)).
+believes(action_cost(visit(doc_c_4), 2)).
+believes(action_cost(visit(doc_c_5), 7)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 4)).
+believes(action_cost(visit(doc_d_3), 7)).
+believes(action_cost(visit(doc_d_4), 4)).
+believes(action_cost(visit(doc_d_5), 6)).
+believes(action_cost(visit(doc_e_1), 4)).
+believes(action_cost(visit(doc_e_2), 3)).
+believes(action_cost(visit(doc_e_3), 8)).
+believes(action_cost(visit(doc_e_4), 2)).
+believes(action_cost(visit(doc_e_5), 8)).
+believes(budget(9)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.89, 3, 8)).
+believes(action_data(visit_type_2, 0.6, 2, 1)).
+believes(action_data(visit_type_3, 0.78, 8, 3)).
+believes(action_data(visit_type_4, 0.57, 3, 5)).
+believes(action_data(visit_type_5, 0.77, 10, 8)).
+believes(action_data(visit_type_6, 0.96, 8, 5)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_19: Baseline schedule loaded"),
+    believes(intend(consultation(t19))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_19, [consultation, t19, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_19: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_19, [unavailable, Doctor, TimeSlot])),
+    send(clinic_d_mgr, repair_request(patient_19, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_19: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_19, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_19, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_19, clinic_d, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_19, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_19, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_19, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_19: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_19, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_19, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_19, [asp_reoptimization, TimeSlot])).
+
+
+%% === PATIENT_20 ===
+
+:- agent(patient_20, [cycle(2)]).
+
+believes(needs_consultation(t20)).
+believes(member_of(clinic_e)).
+believes(intend(consultation(t20))).
+believes(assigned_doctor(doc_e_5)).
+believes(assigned_clinic(clinic_e)).
+
+believes(trust(doc_a_1, high)).
+believes(trust(doc_a_2, very_high)).
+believes(trust(doc_a_3, low)).
+believes(trust(doc_a_4, high)).
+believes(trust(doc_a_5, low)).
+believes(trust(doc_b_1, low)).
+believes(trust(doc_b_2, high)).
+believes(trust(doc_b_3, high)).
+believes(trust(doc_b_4, low)).
+believes(trust(doc_b_5, high)).
+believes(trust(doc_c_1, medium)).
+believes(trust(doc_c_2, low)).
+believes(trust(doc_c_3, medium)).
+believes(trust(doc_c_4, low)).
+believes(trust(doc_c_5, high)).
+believes(trust(doc_d_1, high)).
+believes(trust(doc_d_2, low)).
+believes(trust(doc_d_3, low)).
+believes(trust(doc_d_4, high)).
+believes(trust(doc_d_5, very_high)).
+believes(trust(doc_e_1, high)).
+believes(trust(doc_e_2, very_high)).
+believes(trust(doc_e_3, medium)).
+believes(trust(doc_e_4, medium)).
+believes(trust(doc_e_5, medium)).
+
+believes(pref_do(visit(doc_a_1), 10)).
+believes(pref_do(visit(doc_a_2), 3)).
+believes(pref_do(visit(doc_a_3), 2)).
+believes(pref_do(visit(doc_a_4), 3)).
+believes(pref_do(visit(doc_a_5), 2)).
+believes(pref_do(visit(doc_b_1), 5)).
+believes(pref_do(visit(doc_b_2), 3)).
+believes(pref_do(visit(doc_b_3), 3)).
+believes(pref_do(visit(doc_b_4), 4)).
+believes(pref_do(visit(doc_b_5), 2)).
+believes(pref_do(visit(doc_c_1), 8)).
+believes(pref_do(visit(doc_c_2), 9)).
+believes(pref_do(visit(doc_c_3), 2)).
+believes(pref_do(visit(doc_c_4), 10)).
+believes(pref_do(visit(doc_c_5), 3)).
+believes(pref_do(visit(doc_d_1), 5)).
+believes(pref_do(visit(doc_d_2), 8)).
+believes(pref_do(visit(doc_d_3), 8)).
+believes(pref_do(visit(doc_d_4), 3)).
+believes(pref_do(visit(doc_d_5), 5)).
+believes(pref_do(visit(doc_e_1), 3)).
+believes(pref_do(visit(doc_e_2), 4)).
+believes(pref_do(visit(doc_e_3), 4)).
+believes(pref_do(visit(doc_e_4), 10)).
+believes(pref_do(visit(doc_e_5), 3)).
+
+believes(success_prob(visit(doc_a_1), 0.58)).
+believes(success_prob(visit(doc_a_2), 0.8)).
+believes(success_prob(visit(doc_a_3), 0.69)).
+believes(success_prob(visit(doc_a_4), 0.87)).
+believes(success_prob(visit(doc_a_5), 0.75)).
+believes(success_prob(visit(doc_b_1), 0.82)).
+believes(success_prob(visit(doc_b_2), 0.96)).
+believes(success_prob(visit(doc_b_3), 0.63)).
+believes(success_prob(visit(doc_b_4), 0.55)).
+believes(success_prob(visit(doc_b_5), 0.7)).
+believes(success_prob(visit(doc_c_1), 0.85)).
+believes(success_prob(visit(doc_c_2), 0.79)).
+believes(success_prob(visit(doc_c_3), 0.76)).
+believes(success_prob(visit(doc_c_4), 0.66)).
+believes(success_prob(visit(doc_c_5), 0.75)).
+believes(success_prob(visit(doc_d_1), 0.85)).
+believes(success_prob(visit(doc_d_2), 0.73)).
+believes(success_prob(visit(doc_d_3), 0.84)).
+believes(success_prob(visit(doc_d_4), 0.83)).
+believes(success_prob(visit(doc_d_5), 0.81)).
+believes(success_prob(visit(doc_e_1), 0.95)).
+believes(success_prob(visit(doc_e_2), 0.94)).
+believes(success_prob(visit(doc_e_3), 0.77)).
+believes(success_prob(visit(doc_e_4), 0.58)).
+believes(success_prob(visit(doc_e_5), 0.76)).
+
+believes(action_cost(visit(doc_a_1), 3)).
+believes(action_cost(visit(doc_a_2), 8)).
+believes(action_cost(visit(doc_a_3), 6)).
+believes(action_cost(visit(doc_a_4), 4)).
+believes(action_cost(visit(doc_a_5), 3)).
+believes(action_cost(visit(doc_b_1), 7)).
+believes(action_cost(visit(doc_b_2), 2)).
+believes(action_cost(visit(doc_b_3), 5)).
+believes(action_cost(visit(doc_b_4), 2)).
+believes(action_cost(visit(doc_b_5), 6)).
+believes(action_cost(visit(doc_c_1), 8)).
+believes(action_cost(visit(doc_c_2), 7)).
+believes(action_cost(visit(doc_c_3), 7)).
+believes(action_cost(visit(doc_c_4), 4)).
+believes(action_cost(visit(doc_c_5), 3)).
+believes(action_cost(visit(doc_d_1), 4)).
+believes(action_cost(visit(doc_d_2), 3)).
+believes(action_cost(visit(doc_d_3), 7)).
+believes(action_cost(visit(doc_d_4), 5)).
+believes(action_cost(visit(doc_d_5), 3)).
+believes(action_cost(visit(doc_e_1), 8)).
+believes(action_cost(visit(doc_e_2), 7)).
+believes(action_cost(visit(doc_e_3), 7)).
+believes(action_cost(visit(doc_e_4), 1)).
+believes(action_cost(visit(doc_e_5), 2)).
+believes(budget(16)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+believes(trust_threshold_num(consultation, intention, 3)).
+believes(trust_threshold_num(consultation, feasibility, 3)).
+believes(trust_threshold_num(consultation, lending, 4)).
+believes(trust_threshold_num(consultation, blocking, 1)).
+believes(trust_threshold_num(consultation, autonomy, 4)).
+
+believes(equivalent_action(consultation, visit_type_1)).
+believes(equivalent_action(consultation, visit_type_2)).
+believes(equivalent_action(consultation, visit_type_3)).
+believes(equivalent_action(consultation, visit_type_4)).
+believes(equivalent_action(consultation, visit_type_5)).
+believes(equivalent_action(consultation, visit_type_6)).
+
+believes(action_data(visit_type_1, 0.76, 8, 7)).
+believes(action_data(visit_type_2, 0.56, 4, 8)).
+believes(action_data(visit_type_3, 0.69, 6, 7)).
+believes(action_data(visit_type_4, 0.68, 3, 5)).
+believes(action_data(visit_type_5, 0.75, 6, 5)).
+believes(action_data(visit_type_6, 0.98, 8, 1)).
+believes(policy_weights(100, 10, 20)).
+believes(pref_max(10)).
+
+schedule_readyE :>
+    log("patient_20: Baseline schedule loaded"),
+    believes(intend(consultation(t20))),
+    believes(assigned_doctor(Doc)),
+    send(logger, log_event(schedule_loaded, patient_20, [consultation, t20, Doc])).
+
+unavailableE(Doctor, TimeSlot) :>
+    log("patient_20: DISRUPTION — ~w unavailable at ~w", [Doctor, TimeSlot]),
+    assert_belief(unavailable(Doctor, TimeSlot)),
+    retract_belief(assigned_doctor(Doctor)),
+    send(logger, log_event(disruption, patient_20, [unavailable, Doctor, TimeSlot])),
+    send(clinic_e_mgr, repair_request(patient_20, consultation, TimeSlot)).
+
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+    log("patient_20: Local repair offered — ~w (trust=~w, pref=~w)", [Doctor, TrustLevel, PrefDegree]),
+    believes(trust_val(TrustLevel, TrustNum)),
+    believes(trust_threshold_num(consultation, autonomy, AutThr)),
+    believes(trust_threshold_num(consultation, blocking, BlkThr)),
+    (   TrustNum >= AutThr
+    ->  assert_belief(assigned_doctor(Doctor)),
+        retract_belief(intend(consultation(TimeSlot))),
+        assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+        send(logger, log_event(decision, patient_20, [allow, Doctor, TimeSlot]))
+    ;   TrustNum > BlkThr
+    ->  send(logger, log_event(decision, patient_20, [delegate, Doctor, TimeSlot])),
+        send(mediator, lending_request(patient_20, clinic_e, consultation, TimeSlot))
+    ;   send(logger, log_event(decision, patient_20, [block, Doctor, TimeSlot]))
+    ).
+
+delegation_completeE(Doctor, TimeSlot) :>
+    assert_belief(assigned_doctor(Doctor)),
+    retract_belief(intend(consultation(TimeSlot))),
+    assert_belief(intend(consultation_with(Doctor, TimeSlot))),
+    send(logger, log_event(delegation_complete, patient_20, [Doctor, TimeSlot])).
+
+consultation_doneE(Doctor, TimeSlot) :>
+    assert_belief(done(consultation_with(Doctor, TimeSlot))),
+    retract_belief(intend(consultation_with(Doctor, TimeSlot))),
+    retract_belief(needs_consultation(TimeSlot)),
+    send(logger, log_event(consultation_done, patient_20, [Doctor, TimeSlot])).
+
+select_actionE(TimeSlot) :>
+    log("patient_20: Probabilistic action selection"),
+    send(logger, log_event(selector_start, patient_20, [consultation, TimeSlot])),
+    believes(policy_weights(LR, LP, LC)),
+    believes(pref_max(Pmax)),
+    believes(budget(Budget)),
+    findall(Score-Action, (
+        believes(equivalent_action(consultation, Action)),
+        believes(action_data(Action, Rho, Pref, Cost)),
+        Cost =< Budget,
+        Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+    ), ScoresRaw),
+    sort(ScoresRaw, ScoresUniq),
+    reverse(ScoresUniq, [BestScore-BestAction | _]),
+    assert_belief(selected_action(BestAction, TimeSlot)),
+    send(logger, log_event(prob_selection, patient_20, [BestAction, BestScore, TimeSlot])).
+
+fallback_aspE(TimeSlot) :>
+    send(logger, log_event(fallback, patient_20, [asp_reoptimization, TimeSlot])).
+
+
+%% === DOC_A_1 ===
+
+:- agent(doc_a_1, [cycle(2)]).
+
+believes(member_of(clinic_a)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_a_1: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_a_mgr, doctor_unavailable(doc_a_1, TimeSlot)),
+    send(logger, log_event(unavailability, doc_a_1, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_a_1: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_a_1, TimeSlot)),
+    send(logger, log_event(consultation, doc_a_1, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_a_1, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_a_1, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_a_1, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_a_1, [clinic_a])).
+
+
+%% === DOC_A_2 ===
+
+:- agent(doc_a_2, [cycle(2)]).
+
+believes(member_of(clinic_a)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(very_high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_a_2: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_a_mgr, doctor_unavailable(doc_a_2, TimeSlot)),
+    send(logger, log_event(unavailability, doc_a_2, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_a_2: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_a_2, TimeSlot)),
+    send(logger, log_event(consultation, doc_a_2, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_a_2, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_a_2, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_a_2, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_a_2, [clinic_a])).
+
+
+%% === DOC_A_3 ===
+
+:- agent(doc_a_3, [cycle(2)]).
+
+believes(member_of(clinic_a)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_a_3: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_a_mgr, doctor_unavailable(doc_a_3, TimeSlot)),
+    send(logger, log_event(unavailability, doc_a_3, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_a_3: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_a_3, TimeSlot)),
+    send(logger, log_event(consultation, doc_a_3, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_a_3, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_a_3, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_a_3, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_a_3, [clinic_a])).
+
+
+%% === DOC_A_4 ===
+
+:- agent(doc_a_4, [cycle(2)]).
+
+believes(member_of(clinic_a)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_a_4: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_a_mgr, doctor_unavailable(doc_a_4, TimeSlot)),
+    send(logger, log_event(unavailability, doc_a_4, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_a_4: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_a_4, TimeSlot)),
+    send(logger, log_event(consultation, doc_a_4, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_a_4, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_a_4, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_a_4, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_a_4, [clinic_a])).
+
+
+%% === DOC_A_5 ===
+
+:- agent(doc_a_5, [cycle(2)]).
+
+believes(member_of(clinic_a)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_a_5: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_a_mgr, doctor_unavailable(doc_a_5, TimeSlot)),
+    send(logger, log_event(unavailability, doc_a_5, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_a_5: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_a_5, TimeSlot)),
+    send(logger, log_event(consultation, doc_a_5, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_a_5, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_a_5, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_a_5, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_a_5, [clinic_a])).
+
+
+%% === DOC_B_1 ===
+
+:- agent(doc_b_1, [cycle(2)]).
+
+believes(member_of(clinic_b)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_b_1: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_b_mgr, doctor_unavailable(doc_b_1, TimeSlot)),
+    send(logger, log_event(unavailability, doc_b_1, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_b_1: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_b_1, TimeSlot)),
+    send(logger, log_event(consultation, doc_b_1, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_b_1, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_b_1, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_b_1, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_b_1, [clinic_b])).
+
+
+%% === DOC_B_2 ===
+
+:- agent(doc_b_2, [cycle(2)]).
+
+believes(member_of(clinic_b)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_b_2: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_b_mgr, doctor_unavailable(doc_b_2, TimeSlot)),
+    send(logger, log_event(unavailability, doc_b_2, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_b_2: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_b_2, TimeSlot)),
+    send(logger, log_event(consultation, doc_b_2, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_b_2, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_b_2, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_b_2, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_b_2, [clinic_b])).
+
+
+%% === DOC_B_3 ===
+
+:- agent(doc_b_3, [cycle(2)]).
+
+believes(member_of(clinic_b)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_b_3: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_b_mgr, doctor_unavailable(doc_b_3, TimeSlot)),
+    send(logger, log_event(unavailability, doc_b_3, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_b_3: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_b_3, TimeSlot)),
+    send(logger, log_event(consultation, doc_b_3, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_b_3, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_b_3, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_b_3, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_b_3, [clinic_b])).
+
+
+%% === DOC_B_4 ===
+
+:- agent(doc_b_4, [cycle(2)]).
+
+believes(member_of(clinic_b)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_b_4: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_b_mgr, doctor_unavailable(doc_b_4, TimeSlot)),
+    send(logger, log_event(unavailability, doc_b_4, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_b_4: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_b_4, TimeSlot)),
+    send(logger, log_event(consultation, doc_b_4, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_b_4, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_b_4, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_b_4, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_b_4, [clinic_b])).
+
+
+%% === DOC_B_5 ===
+
+:- agent(doc_b_5, [cycle(2)]).
+
+believes(member_of(clinic_b)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_b_5: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_b_mgr, doctor_unavailable(doc_b_5, TimeSlot)),
+    send(logger, log_event(unavailability, doc_b_5, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_b_5: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_b_5, TimeSlot)),
+    send(logger, log_event(consultation, doc_b_5, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_b_5, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_b_5, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_b_5, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_b_5, [clinic_b])).
+
+
+%% === DOC_C_1 ===
+
+:- agent(doc_c_1, [cycle(2)]).
+
+believes(member_of(clinic_c)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(medium)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_c_1: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_c_mgr, doctor_unavailable(doc_c_1, TimeSlot)),
+    send(logger, log_event(unavailability, doc_c_1, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_c_1: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_c_1, TimeSlot)),
+    send(logger, log_event(consultation, doc_c_1, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_c_1, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_c_1, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_c_1, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_c_1, [clinic_c])).
+
+
+%% === DOC_C_2 ===
+
+:- agent(doc_c_2, [cycle(2)]).
+
+believes(member_of(clinic_c)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_c_2: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_c_mgr, doctor_unavailable(doc_c_2, TimeSlot)),
+    send(logger, log_event(unavailability, doc_c_2, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_c_2: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_c_2, TimeSlot)),
+    send(logger, log_event(consultation, doc_c_2, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_c_2, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_c_2, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_c_2, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_c_2, [clinic_c])).
+
+
+%% === DOC_C_3 ===
+
+:- agent(doc_c_3, [cycle(2)]).
+
+believes(member_of(clinic_c)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(medium)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_c_3: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_c_mgr, doctor_unavailable(doc_c_3, TimeSlot)),
+    send(logger, log_event(unavailability, doc_c_3, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_c_3: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_c_3, TimeSlot)),
+    send(logger, log_event(consultation, doc_c_3, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_c_3, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_c_3, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_c_3, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_c_3, [clinic_c])).
+
+
+%% === DOC_C_4 ===
+
+:- agent(doc_c_4, [cycle(2)]).
+
+believes(member_of(clinic_c)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_c_4: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_c_mgr, doctor_unavailable(doc_c_4, TimeSlot)),
+    send(logger, log_event(unavailability, doc_c_4, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_c_4: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_c_4, TimeSlot)),
+    send(logger, log_event(consultation, doc_c_4, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_c_4, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_c_4, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_c_4, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_c_4, [clinic_c])).
+
+
+%% === DOC_C_5 ===
+
+:- agent(doc_c_5, [cycle(2)]).
+
+believes(member_of(clinic_c)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_c_5: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_c_mgr, doctor_unavailable(doc_c_5, TimeSlot)),
+    send(logger, log_event(unavailability, doc_c_5, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_c_5: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_c_5, TimeSlot)),
+    send(logger, log_event(consultation, doc_c_5, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_c_5, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_c_5, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_c_5, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_c_5, [clinic_c])).
+
+
+%% === DOC_D_1 ===
+
+:- agent(doc_d_1, [cycle(2)]).
+
+believes(member_of(clinic_d)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_d_1: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_d_mgr, doctor_unavailable(doc_d_1, TimeSlot)),
+    send(logger, log_event(unavailability, doc_d_1, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_d_1: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_d_1, TimeSlot)),
+    send(logger, log_event(consultation, doc_d_1, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_d_1, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_d_1, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_d_1, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_d_1, [clinic_d])).
+
+
+%% === DOC_D_2 ===
+
+:- agent(doc_d_2, [cycle(2)]).
+
+believes(member_of(clinic_d)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_d_2: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_d_mgr, doctor_unavailable(doc_d_2, TimeSlot)),
+    send(logger, log_event(unavailability, doc_d_2, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_d_2: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_d_2, TimeSlot)),
+    send(logger, log_event(consultation, doc_d_2, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_d_2, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_d_2, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_d_2, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_d_2, [clinic_d])).
+
+
+%% === DOC_D_3 ===
+
+:- agent(doc_d_3, [cycle(2)]).
+
+believes(member_of(clinic_d)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(low)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_d_3: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_d_mgr, doctor_unavailable(doc_d_3, TimeSlot)),
+    send(logger, log_event(unavailability, doc_d_3, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_d_3: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_d_3, TimeSlot)),
+    send(logger, log_event(consultation, doc_d_3, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_d_3, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_d_3, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_d_3, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_d_3, [clinic_d])).
+
+
+%% === DOC_D_4 ===
+
+:- agent(doc_d_4, [cycle(2)]).
+
+believes(member_of(clinic_d)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_d_4: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_d_mgr, doctor_unavailable(doc_d_4, TimeSlot)),
+    send(logger, log_event(unavailability, doc_d_4, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_d_4: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_d_4, TimeSlot)),
+    send(logger, log_event(consultation, doc_d_4, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_d_4, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_d_4, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_d_4, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_d_4, [clinic_d])).
+
+
+%% === DOC_D_5 ===
+
+:- agent(doc_d_5, [cycle(2)]).
+
+believes(member_of(clinic_d)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(very_high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_d_5: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_d_mgr, doctor_unavailable(doc_d_5, TimeSlot)),
+    send(logger, log_event(unavailability, doc_d_5, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_d_5: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_d_5, TimeSlot)),
+    send(logger, log_event(consultation, doc_d_5, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_d_5, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_d_5, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_d_5, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_d_5, [clinic_d])).
+
+
+%% === DOC_E_1 ===
+
+:- agent(doc_e_1, [cycle(2)]).
+
+believes(member_of(clinic_e)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_e_1: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_e_mgr, doctor_unavailable(doc_e_1, TimeSlot)),
+    send(logger, log_event(unavailability, doc_e_1, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_e_1: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_e_1, TimeSlot)),
+    send(logger, log_event(consultation, doc_e_1, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_e_1, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_e_1, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_e_1, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_e_1, [clinic_e])).
+
+
+%% === DOC_E_2 ===
+
+:- agent(doc_e_2, [cycle(2)]).
+
+believes(member_of(clinic_e)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(very_high)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_e_2: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_e_mgr, doctor_unavailable(doc_e_2, TimeSlot)),
+    send(logger, log_event(unavailability, doc_e_2, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_e_2: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_e_2, TimeSlot)),
+    send(logger, log_event(consultation, doc_e_2, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_e_2, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_e_2, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_e_2, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_e_2, [clinic_e])).
+
+
+%% === DOC_E_3 ===
+
+:- agent(doc_e_3, [cycle(2)]).
+
+believes(member_of(clinic_e)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(medium)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_e_3: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_e_mgr, doctor_unavailable(doc_e_3, TimeSlot)),
+    send(logger, log_event(unavailability, doc_e_3, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_e_3: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_e_3, TimeSlot)),
+    send(logger, log_event(consultation, doc_e_3, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_e_3, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_e_3, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_e_3, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_e_3, [clinic_e])).
+
+
+%% === DOC_E_4 ===
+
+:- agent(doc_e_4, [cycle(2)]).
+
+believes(member_of(clinic_e)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(medium)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_e_4: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_e_mgr, doctor_unavailable(doc_e_4, TimeSlot)),
+    send(logger, log_event(unavailability, doc_e_4, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_e_4: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_e_4, TimeSlot)),
+    send(logger, log_event(consultation, doc_e_4, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_e_4, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_e_4, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_e_4, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_e_4, [clinic_e])).
+
+
+%% === DOC_E_5 ===
+
+:- agent(doc_e_5, [cycle(2)]).
+
+believes(member_of(clinic_e)).
+believes(role(doctor)).
+believes(specialization(general_practice)).
+believes(trust_level(medium)).
+believes(can_do(consultation, t1)).
+believes(available(t1)).
+believes(can_do(consultation, t2)).
+believes(available(t2)).
+believes(can_do(consultation, t3)).
+believes(available(t3)).
+believes(can_do(consultation, t4)).
+believes(available(t4)).
+believes(can_do(consultation, t5)).
+believes(available(t5)).
+believes(can_do(consultation, t6)).
+believes(available(t6)).
+believes(can_do(consultation, t7)).
+believes(available(t7)).
+
+become_unavailableE(TimeSlot) :>
+    log("doc_e_5: Becoming unavailable at ~w", [TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    retract_belief(available(TimeSlot)),
+    assert_belief(unavailable(TimeSlot)),
+    send(clinic_e_mgr, doctor_unavailable(doc_e_5, TimeSlot)),
+    send(logger, log_event(unavailability, doc_e_5, [TimeSlot])).
+
+perform_consultationE(Patient, TimeSlot) :>
+    believes(can_do(consultation, TimeSlot)),
+    log("doc_e_5: Performing consultation for ~w at ~w", [Patient, TimeSlot]),
+    retract_belief(can_do(consultation, TimeSlot)),
+    assert_belief(done(consultation, Patient, TimeSlot)),
+    send(Patient, consultation_done(doc_e_5, TimeSlot)),
+    send(logger, log_event(consultation, doc_e_5, [Patient, TimeSlot])),
+    (   believes(temporarily_in(Clinic))
+    ->  send(mediator, lending_task_done(doc_e_5, Clinic, TimeSlot))
+    ;   true
+    ).
+
+lend_toE(RequestingClinic, Action, TimeSlot) :>
+    believes(can_do(Action, TimeSlot)),
+    believes(available(TimeSlot)),
+    assert_belief(temporarily_in(RequestingClinic)),
+    retract_belief(available(TimeSlot)),
+    send(mediator, lending_accepted(doc_e_5, RequestingClinic, Action, TimeSlot)),
+    send(logger, log_event(lending_accepted, doc_e_5, [RequestingClinic, Action, TimeSlot])).
+
+return_to_groupE :>
+    believes(temporarily_in(Clinic)),
+    retract_belief(temporarily_in(Clinic)),
+    send(logger, log_event(return_group, doc_e_5, [clinic_e])).
+
+
+%% === CLINIC_A_MGR ===
+
+:- agent(clinic_a_mgr, [cycle(1)]).
+
+believes(member(clinic_a, doc_a_1)).
+believes(member(clinic_a, doc_a_2)).
+believes(member(clinic_a, doc_a_3)).
+believes(member(clinic_a, doc_a_4)).
+believes(member(clinic_a, doc_a_5)).
+believes(member(clinic_a, patient_1)).
+believes(member(clinic_a, patient_6)).
+believes(member(clinic_a, patient_11)).
+believes(member(clinic_a, patient_16)).
+
+believes(doctor_trust(doc_a_1, high)).
+believes(doctor_pref(doc_a_1, 8)).
+believes(doctor_available(doc_a_1)).
+believes(doctor_trust(doc_a_2, very_high)).
+believes(doctor_pref(doc_a_2, 6)).
+believes(doctor_available(doc_a_2)).
+believes(doctor_trust(doc_a_3, low)).
+believes(doctor_pref(doc_a_3, 6)).
+believes(doctor_available(doc_a_3)).
+believes(doctor_trust(doc_a_4, high)).
+believes(doctor_pref(doc_a_4, 2)).
+believes(doctor_available(doc_a_4)).
+believes(doctor_trust(doc_a_5, low)).
+believes(doctor_pref(doc_a_5, 9)).
+believes(doctor_available(doc_a_5)).
+
+doctor_unavailableE(Doctor, TimeSlot) :>
+    log("clinic_a_mgr: ~w unavailable at ~w", [Doctor, TimeSlot]),
+    retract_belief(doctor_available(Doctor)),
+    assert_belief(doctor_unavailable_at(Doctor, TimeSlot)),
+    send(patient_1, unavailable(Doctor, TimeSlot)),
+    send(patient_6, unavailable(Doctor, TimeSlot)),
+    send(patient_11, unavailable(Doctor, TimeSlot)),
+    send(patient_16, unavailable(Doctor, TimeSlot)),
+    send(logger, log_event(group_update, clinic_a_mgr, [unavailable, Doctor, TimeSlot])).
+
+repair_requestE(Patient, Action, TimeSlot) :>
+    findall(Pref-Doc-Trust, (
+        believes(member(clinic_a, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust)),
+        believes(doctor_pref(Doc, Pref))
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
+    (   Sorted = [BestPref-BestDoc-BestTrust | _]
+    ->  send(Patient, local_repair(BestDoc, TimeSlot, BestTrust, BestPref))
+    ;   send(mediator, lending_request(Patient, clinic_a, Action, TimeSlot)),
+        send(logger, log_event(no_local_repair, clinic_a_mgr, [Patient, TimeSlot]))
+    ).
+
+lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
+    findall(Doc-Trust, (
+        believes(member(clinic_a, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust))
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
+    (   Available = [BestDoc-BestTrust | _]
+    ->  send(mediator, lending_offer(BestDoc, clinic_a, BestTrust, Action, TimeSlot))
+    ;   send(mediator, lending_denied(clinic_a, Action, TimeSlot))
+    ).
+
+
+%% === CLINIC_B_MGR ===
+
+:- agent(clinic_b_mgr, [cycle(1)]).
+
+believes(member(clinic_b, doc_b_1)).
+believes(member(clinic_b, doc_b_2)).
+believes(member(clinic_b, doc_b_3)).
+believes(member(clinic_b, doc_b_4)).
+believes(member(clinic_b, doc_b_5)).
+believes(member(clinic_b, patient_2)).
+believes(member(clinic_b, patient_7)).
+believes(member(clinic_b, patient_12)).
+believes(member(clinic_b, patient_17)).
+
+believes(doctor_trust(doc_b_1, low)).
+believes(doctor_pref(doc_b_1, 3)).
+believes(doctor_available(doc_b_1)).
+believes(doctor_trust(doc_b_2, high)).
+believes(doctor_pref(doc_b_2, 3)).
+believes(doctor_available(doc_b_2)).
+believes(doctor_trust(doc_b_3, high)).
+believes(doctor_pref(doc_b_3, 2)).
+believes(doctor_available(doc_b_3)).
+believes(doctor_trust(doc_b_4, low)).
+believes(doctor_pref(doc_b_4, 4)).
+believes(doctor_available(doc_b_4)).
+believes(doctor_trust(doc_b_5, high)).
+believes(doctor_pref(doc_b_5, 4)).
+believes(doctor_available(doc_b_5)).
+
+doctor_unavailableE(Doctor, TimeSlot) :>
+    log("clinic_b_mgr: ~w unavailable at ~w", [Doctor, TimeSlot]),
+    retract_belief(doctor_available(Doctor)),
+    assert_belief(doctor_unavailable_at(Doctor, TimeSlot)),
+    send(patient_2, unavailable(Doctor, TimeSlot)),
+    send(patient_7, unavailable(Doctor, TimeSlot)),
+    send(patient_12, unavailable(Doctor, TimeSlot)),
+    send(patient_17, unavailable(Doctor, TimeSlot)),
+    send(logger, log_event(group_update, clinic_b_mgr, [unavailable, Doctor, TimeSlot])).
+
+repair_requestE(Patient, Action, TimeSlot) :>
+    findall(Pref-Doc-Trust, (
+        believes(member(clinic_b, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust)),
+        believes(doctor_pref(Doc, Pref))
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
+    (   Sorted = [BestPref-BestDoc-BestTrust | _]
+    ->  send(Patient, local_repair(BestDoc, TimeSlot, BestTrust, BestPref))
+    ;   send(mediator, lending_request(Patient, clinic_b, Action, TimeSlot)),
+        send(logger, log_event(no_local_repair, clinic_b_mgr, [Patient, TimeSlot]))
+    ).
+
+lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
+    findall(Doc-Trust, (
+        believes(member(clinic_b, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust))
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
+    (   Available = [BestDoc-BestTrust | _]
+    ->  send(mediator, lending_offer(BestDoc, clinic_b, BestTrust, Action, TimeSlot))
+    ;   send(mediator, lending_denied(clinic_b, Action, TimeSlot))
+    ).
+
+
+%% === CLINIC_C_MGR ===
+
+:- agent(clinic_c_mgr, [cycle(1)]).
+
+believes(member(clinic_c, doc_c_1)).
+believes(member(clinic_c, doc_c_2)).
+believes(member(clinic_c, doc_c_3)).
+believes(member(clinic_c, doc_c_4)).
+believes(member(clinic_c, doc_c_5)).
+believes(member(clinic_c, patient_3)).
+believes(member(clinic_c, patient_8)).
+believes(member(clinic_c, patient_13)).
+believes(member(clinic_c, patient_18)).
+
+believes(doctor_trust(doc_c_1, medium)).
+believes(doctor_pref(doc_c_1, 8)).
+believes(doctor_available(doc_c_1)).
+believes(doctor_trust(doc_c_2, low)).
+believes(doctor_pref(doc_c_2, 8)).
+believes(doctor_available(doc_c_2)).
+believes(doctor_trust(doc_c_3, medium)).
+believes(doctor_pref(doc_c_3, 2)).
+believes(doctor_available(doc_c_3)).
+believes(doctor_trust(doc_c_4, low)).
+believes(doctor_pref(doc_c_4, 4)).
+believes(doctor_available(doc_c_4)).
+believes(doctor_trust(doc_c_5, high)).
+believes(doctor_pref(doc_c_5, 6)).
+believes(doctor_available(doc_c_5)).
+
+doctor_unavailableE(Doctor, TimeSlot) :>
+    log("clinic_c_mgr: ~w unavailable at ~w", [Doctor, TimeSlot]),
+    retract_belief(doctor_available(Doctor)),
+    assert_belief(doctor_unavailable_at(Doctor, TimeSlot)),
+    send(patient_3, unavailable(Doctor, TimeSlot)),
+    send(patient_8, unavailable(Doctor, TimeSlot)),
+    send(patient_13, unavailable(Doctor, TimeSlot)),
+    send(patient_18, unavailable(Doctor, TimeSlot)),
+    send(logger, log_event(group_update, clinic_c_mgr, [unavailable, Doctor, TimeSlot])).
+
+repair_requestE(Patient, Action, TimeSlot) :>
+    findall(Pref-Doc-Trust, (
+        believes(member(clinic_c, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust)),
+        believes(doctor_pref(Doc, Pref))
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
+    (   Sorted = [BestPref-BestDoc-BestTrust | _]
+    ->  send(Patient, local_repair(BestDoc, TimeSlot, BestTrust, BestPref))
+    ;   send(mediator, lending_request(Patient, clinic_c, Action, TimeSlot)),
+        send(logger, log_event(no_local_repair, clinic_c_mgr, [Patient, TimeSlot]))
+    ).
+
+lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
+    findall(Doc-Trust, (
+        believes(member(clinic_c, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust))
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
+    (   Available = [BestDoc-BestTrust | _]
+    ->  send(mediator, lending_offer(BestDoc, clinic_c, BestTrust, Action, TimeSlot))
+    ;   send(mediator, lending_denied(clinic_c, Action, TimeSlot))
+    ).
+
+
+%% === CLINIC_D_MGR ===
+
+:- agent(clinic_d_mgr, [cycle(1)]).
+
+believes(member(clinic_d, doc_d_1)).
+believes(member(clinic_d, doc_d_2)).
+believes(member(clinic_d, doc_d_3)).
+believes(member(clinic_d, doc_d_4)).
+believes(member(clinic_d, doc_d_5)).
+believes(member(clinic_d, patient_4)).
+believes(member(clinic_d, patient_9)).
+believes(member(clinic_d, patient_14)).
+believes(member(clinic_d, patient_19)).
+
+believes(doctor_trust(doc_d_1, high)).
+believes(doctor_pref(doc_d_1, 7)).
+believes(doctor_available(doc_d_1)).
+believes(doctor_trust(doc_d_2, low)).
+believes(doctor_pref(doc_d_2, 8)).
+believes(doctor_available(doc_d_2)).
+believes(doctor_trust(doc_d_3, low)).
+believes(doctor_pref(doc_d_3, 2)).
+believes(doctor_available(doc_d_3)).
+believes(doctor_trust(doc_d_4, high)).
+believes(doctor_pref(doc_d_4, 7)).
+believes(doctor_available(doc_d_4)).
+believes(doctor_trust(doc_d_5, very_high)).
+believes(doctor_pref(doc_d_5, 10)).
+believes(doctor_available(doc_d_5)).
+
+doctor_unavailableE(Doctor, TimeSlot) :>
+    log("clinic_d_mgr: ~w unavailable at ~w", [Doctor, TimeSlot]),
+    retract_belief(doctor_available(Doctor)),
+    assert_belief(doctor_unavailable_at(Doctor, TimeSlot)),
+    send(patient_4, unavailable(Doctor, TimeSlot)),
+    send(patient_9, unavailable(Doctor, TimeSlot)),
+    send(patient_14, unavailable(Doctor, TimeSlot)),
+    send(patient_19, unavailable(Doctor, TimeSlot)),
+    send(logger, log_event(group_update, clinic_d_mgr, [unavailable, Doctor, TimeSlot])).
+
+repair_requestE(Patient, Action, TimeSlot) :>
+    findall(Pref-Doc-Trust, (
+        believes(member(clinic_d, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust)),
+        believes(doctor_pref(Doc, Pref))
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
+    (   Sorted = [BestPref-BestDoc-BestTrust | _]
+    ->  send(Patient, local_repair(BestDoc, TimeSlot, BestTrust, BestPref))
+    ;   send(mediator, lending_request(Patient, clinic_d, Action, TimeSlot)),
+        send(logger, log_event(no_local_repair, clinic_d_mgr, [Patient, TimeSlot]))
+    ).
+
+lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
+    findall(Doc-Trust, (
+        believes(member(clinic_d, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust))
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
+    (   Available = [BestDoc-BestTrust | _]
+    ->  send(mediator, lending_offer(BestDoc, clinic_d, BestTrust, Action, TimeSlot))
+    ;   send(mediator, lending_denied(clinic_d, Action, TimeSlot))
+    ).
+
+
+%% === CLINIC_E_MGR ===
+
+:- agent(clinic_e_mgr, [cycle(1)]).
+
+believes(member(clinic_e, doc_e_1)).
+believes(member(clinic_e, doc_e_2)).
+believes(member(clinic_e, doc_e_3)).
+believes(member(clinic_e, doc_e_4)).
+believes(member(clinic_e, doc_e_5)).
+believes(member(clinic_e, patient_5)).
+believes(member(clinic_e, patient_10)).
+believes(member(clinic_e, patient_15)).
+believes(member(clinic_e, patient_20)).
+
+believes(doctor_trust(doc_e_1, high)).
+believes(doctor_pref(doc_e_1, 2)).
+believes(doctor_available(doc_e_1)).
+believes(doctor_trust(doc_e_2, very_high)).
+believes(doctor_pref(doc_e_2, 7)).
+believes(doctor_available(doc_e_2)).
+believes(doctor_trust(doc_e_3, medium)).
+believes(doctor_pref(doc_e_3, 7)).
+believes(doctor_available(doc_e_3)).
+believes(doctor_trust(doc_e_4, medium)).
+believes(doctor_pref(doc_e_4, 2)).
+believes(doctor_available(doc_e_4)).
+believes(doctor_trust(doc_e_5, medium)).
+believes(doctor_pref(doc_e_5, 9)).
+believes(doctor_available(doc_e_5)).
+
+doctor_unavailableE(Doctor, TimeSlot) :>
+    log("clinic_e_mgr: ~w unavailable at ~w", [Doctor, TimeSlot]),
+    retract_belief(doctor_available(Doctor)),
+    assert_belief(doctor_unavailable_at(Doctor, TimeSlot)),
+    send(patient_5, unavailable(Doctor, TimeSlot)),
+    send(patient_10, unavailable(Doctor, TimeSlot)),
+    send(patient_15, unavailable(Doctor, TimeSlot)),
+    send(patient_20, unavailable(Doctor, TimeSlot)),
+    send(logger, log_event(group_update, clinic_e_mgr, [unavailable, Doctor, TimeSlot])).
+
+repair_requestE(Patient, Action, TimeSlot) :>
+    findall(Pref-Doc-Trust, (
+        believes(member(clinic_e, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust)),
+        believes(doctor_pref(Doc, Pref))
+    ), CandidatesRaw),
+    sort(CandidatesRaw, CandidatesUniq),
+    reverse(CandidatesUniq, Sorted),
+    (   Sorted = [BestPref-BestDoc-BestTrust | _]
+    ->  send(Patient, local_repair(BestDoc, TimeSlot, BestTrust, BestPref))
+    ;   send(mediator, lending_request(Patient, clinic_e, Action, TimeSlot)),
+        send(logger, log_event(no_local_repair, clinic_e_mgr, [Patient, TimeSlot]))
+    ).
+
+lending_inquiryE(RequestingClinic, Action, TimeSlot) :>
+    findall(Doc-Trust, (
+        believes(member(clinic_e, Doc)),
+        believes(doctor_available(Doc)),
+        believes(doctor_trust(Doc, Trust))
+    ), AvailableRaw),
+    sort(AvailableRaw, Available),
+    (   Available = [BestDoc-BestTrust | _]
+    ->  send(mediator, lending_offer(BestDoc, clinic_e, BestTrust, Action, TimeSlot))
+    ;   send(mediator, lending_denied(clinic_e, Action, TimeSlot))
+    ).
+
+
+%% === MEDIATOR ===
+
+:- agent(mediator, [cycle(1)]).
+
+believes(lending_threshold_num(consultation, 4)).
+
+believes(trust_val(very_low, 1)).
+believes(trust_val(low, 2)).
+believes(trust_val(medium, 3)).
+believes(trust_val(high, 4)).
+believes(trust_val(very_high, 5)).
+
+lending_requestE(Patient, RequestingClinic, Action, TimeSlot) :>
+    assert_belief(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
+    (   RequestingClinic \= clinic_a
+    ->  send(clinic_a_mgr, lending_inquiry(RequestingClinic, Action, TimeSlot))
+    ;   true
+    ),
+    (   RequestingClinic \= clinic_b
+    ->  send(clinic_b_mgr, lending_inquiry(RequestingClinic, Action, TimeSlot))
+    ;   true
+    ),
+    (   RequestingClinic \= clinic_c
+    ->  send(clinic_c_mgr, lending_inquiry(RequestingClinic, Action, TimeSlot))
+    ;   true
+    ),
+    (   RequestingClinic \= clinic_d
+    ->  send(clinic_d_mgr, lending_inquiry(RequestingClinic, Action, TimeSlot))
+    ;   true
+    ),
+    (   RequestingClinic \= clinic_e
+    ->  send(clinic_e_mgr, lending_inquiry(RequestingClinic, Action, TimeSlot))
+    ;   true
+    ),
+    send(logger, log_event(lending_request, mediator, [Patient, RequestingClinic, Action, TimeSlot])).
+
+lending_offerE(Doctor, SourceClinic, TrustLevel, Action, TimeSlot) :>
+    (   believes(pending_lending(Patient, RequestingClinic, Action, TimeSlot))
+    ->  believes(lending_threshold_num(Action, RequiredNum)),
+        believes(trust_val(TrustLevel, TrustNum)),
+        (   TrustNum >= RequiredNum
+        ->  retract_belief(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
+            assert_belief(active_lending(Doctor, SourceClinic, RequestingClinic, Patient, TimeSlot)),
+            send(Doctor, lend_to(RequestingClinic, Action, TimeSlot)),
+            send(logger, log_event(lending_approved, mediator, [Doctor, SourceClinic, RequestingClinic, TimeSlot]))
+        ;   send(Patient, fallback_asp(TimeSlot)),
+            send(logger, log_event(lending_denied, mediator, [Doctor, TrustLevel, RequiredNum]))
+        )
+    ;   true  %% already handled, ignore duplicate offer
+    ).
+
+lending_acceptedE(Doctor, RequestingClinic, Action, TimeSlot) :>
+    believes(active_lending(Doctor, _, RequestingClinic, Patient, TimeSlot)),
+    send(Patient, delegation_complete(Doctor, TimeSlot)),
+    send(Doctor, perform_consultation(Patient, TimeSlot)),
+    send(logger, log_event(lending_executed, mediator, [Doctor, RequestingClinic, TimeSlot])).
+
+lending_task_doneE(Doctor, RequestingClinic, TimeSlot) :>
+    (   believes(active_lending(Doctor, SourceClinic, RequestingClinic, _Patient, TimeSlot))
+    ->  retract_belief(active_lending(Doctor, SourceClinic, RequestingClinic, _Patient, TimeSlot)),
+        send(Doctor, return_to_group)
+    ;   true
+    ).
+
+lending_deniedE(SourceClinic, Action, TimeSlot) :>
+    believes(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
+    retract_belief(pending_lending(Patient, RequestingClinic, Action, TimeSlot)),
+    send(Patient, fallback_asp(TimeSlot)),
+    send(logger, log_event(lending_failed, mediator, [SourceClinic, Action, TimeSlot])).
+
+
+%% === LOGGER ===
+
+:- agent(logger, [cycle(1)]).
+
+log_eventE(Type, Source, Data) :>
+    get_time(T),
+    log("TRACE [~w] ~w: ~w @~6f", [Type, Source, Data, T]),
+    assert_belief(logged(Type, Source, Data, T)).
+
+believes(logged(disruption, _, _, _)) :< 
+    \+ believes(warned_instability),
+    findall(x, believes(logged(disruption, _, _, _)), Disruptions),
+    length(Disruptions, N),
+    N > 2,
+    assert_belief(warned_instability),
+    log("LOGGER WARNING: ~w disruptions recorded!", [N]).
+
+compute_metricsE :>
+    findall(T, believes(logged(disruption, _, _, T)), DispTimes),
+    findall(T, believes(logged(consultation_done, _, _, T)), DoneTimes),
+    findall(T, believes(logged(lending_approved, _, _, T)), LendTimes),
+    findall(T, believes(logged(prob_selection, _, _, T)), SelTimes),
+    findall(x, believes(logged(_, _, _, _)), AllEvents),
+    length(AllEvents, TotalEvents),
+    length(DispTimes, NumDisruptions),
+    length(DoneTimes, NumRepairs),
+    length(LendTimes, NumLendings),
+    length(SelTimes, NumSelections),
+    ( DispTimes = [DT0|_], DoneTimes \= []
+    -> last(DoneTimes, DTLast),
+       AvgRepairMs is (DTLast - DT0) * 1000
+    ;  AvgRepairMs = 0
+    ),
+    ( NumDisruptions > 0
+    -> LendingPct is (NumLendings / NumDisruptions) * 100
+    ;  LendingPct = 0
+    ),
+    findall(T, believes(logged(selector_start, _, _, T)), SelStartTimes),
+    findall(T, believes(logged(prob_selection, _, _, T)), SelEndTimes),
+    ( SelStartTimes = [SS|_], SelEndTimes = [SE|_]
+    -> SelectorMs is (SE - SS) * 1000
+    ;  SelectorMs = 0
+    ),
+    assert_belief(metrics_summary(TotalEvents, NumDisruptions, NumRepairs,
+                                  NumLendings, NumSelections, AvgRepairMs,
+                                  LendingPct, SelectorMs)),
+    log("METRICS: events=~w disruptions=~w repairs=~w lendings=~w selections=~w",
+        [TotalEvents, NumDisruptions, NumRepairs, NumLendings, NumSelections]),
+    log("METRICS: repair_ms=~2f lending_pct=~1f selector_ms=~3f",
+        [AvgRepairMs, LendingPct, SelectorMs]).
