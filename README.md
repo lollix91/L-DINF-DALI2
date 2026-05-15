@@ -137,6 +137,59 @@ TRACE [prob_selection]      bob:            [visit_standard,89.67,t2]
 
 Each trace entry corresponds to a formal L-DINF transition, providing a transparent account of the adaptation chain.
 
+### Annotated Rule Listings
+
+#### Trust-Aware Decision (Alice)
+
+The `local_repairE` reactive rule implements the three-valued trust policy from L-DINF. When a local repair candidate is proposed, Alice compares the candidate's trust level against the autonomy and blocking thresholds to decide **allow**, **delegate**, or **block**:
+
+```prolog
+local_repairE(Doctor, TimeSlot, TrustLevel, PrefDegree) :>
+  believes(trust_val(TrustLevel, TrustNum)),
+  believes(trust_threshold_num(consultation, autonomy, AutThr)),
+  believes(trust_threshold_num(consultation, blocking, BlkThr)),
+  ( TrustNum >= AutThr
+  -> log("decision = ALLOW"),
+     assert_belief(assigned_doctor(Doctor)),
+     retract_belief(intend(consultation(TimeSlot))),
+     assert_belief(intend(consultation_with(Doctor, TimeSlot)))
+  ; TrustNum > BlkThr
+  -> log("decision = DELEGATE"),
+     send(mediator, lending_request(alice, clinic_a,
+          consultation, TimeSlot))
+  ; log("decision = BLOCK"),
+    send(logger, log_event(decision, alice,
+        [block, Doctor, TimeSlot]))
+  ).
+```
+
+- **Allow** (`TrustNum >= AutThr`): The candidate is trusted enough for autonomous reassignment.
+- **Delegate** (`TrustNum > BlkThr`): Intermediate trust — escalate to the mediator for inter-group lending.
+- **Block** (`TrustNum =< BlkThr`): Trust too low — the action is inhibited.
+
+#### Probability-Aware Selector (Bob)
+
+The `select_actionE` reactive rule implements the L-DINF probabilistic selector `F^prob_π`. It collects all equivalent feasible actions, computes a weighted score combining success probability (ρ), preference, and cost, and selects the best candidate:
+
+```prolog
+select_actionE(TimeSlot) :>
+  believes(policy_weights(LR, LP, LC)),
+  believes(pref_max(Pmax)),
+  believes(budget(Budget)),
+  findall(Score-Action, (
+    believes(equivalent_action(consultation, Action)),
+    believes(action_data(Action, Rho, Pref, Cost)),
+    Cost =< Budget,
+    Score is LR*Rho + LP*(Pref/Pmax) - LC*(Cost/Budget)
+  ), ScoresRaw),
+  sort(ScoresRaw, ScoresUniq),
+  reverse(ScoresUniq, [BestScore-BestAction | _]),
+  log("SELECTED ~w (score=~2f)", [BestAction, BestScore]),
+  assert_belief(selected_action(BestAction, TimeSlot)).
+```
+
+The score formula corresponds to the L-DINF selector: `score = λ_ρ·ρ + λ_P·(Pref/P_max) − λ_C·(Cost/Budget)`. Success probability is used as a soft component; a stricter variant could add `Rho >= Theta` as a hard admissibility filter before candidate ranking.
+
 ## L-DINF to DALI2 Mapping
 
 | L-DINF Construct | DALI2 Implementation |
