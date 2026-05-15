@@ -1,50 +1,42 @@
 {
-  "agents": 52,
-  "clinics": 5,
-  "doctors_per_clinic": 5,
-  "patients": 20,
-  "num_disruptions": 10,
+  "agents": 28,
+  "clinics": 4,
+  "doctors_per_clinic": 3,
+  "patients": 10,
+  "num_disruptions": 8,
   "num_equiv_actions": 6,
   "disruptions": [
     {
-      "doctor": "doc_e_5",
+      "doctor": "doc_b_2",
       "timeslot": "t1"
     },
     {
-      "doctor": "doc_a_1",
+      "doctor": "doc_d_1",
       "timeslot": "t2"
     },
     {
-      "doctor": "doc_b_2",
+      "doctor": "doc_c_3",
       "timeslot": "t3"
     },
     {
-      "doctor": "doc_d_4",
+      "doctor": "doc_b_1",
       "timeslot": "t4"
     },
     {
-      "doctor": "doc_c_3",
+      "doctor": "doc_c_1",
       "timeslot": "t5"
     },
     {
-      "doctor": "doc_b_3",
+      "doctor": "doc_a_1",
       "timeslot": "t6"
     },
     {
-      "doctor": "doc_a_5",
+      "doctor": "doc_d_2",
       "timeslot": "t7"
     },
     {
-      "doctor": "doc_c_2",
+      "doctor": "doc_b_3",
       "timeslot": "t8"
-    },
-    {
-      "doctor": "doc_b_5",
-      "timeslot": "t9"
-    },
-    {
-      "doctor": "doc_e_4",
-      "timeslot": "t10"
     }
   ],
   "patient_selections": [
@@ -87,46 +79,6 @@
     {
       "patient": "patient_10",
       "timeslot": "t10"
-    },
-    {
-      "patient": "patient_11",
-      "timeslot": "t11"
-    },
-    {
-      "patient": "patient_12",
-      "timeslot": "t12"
-    },
-    {
-      "patient": "patient_13",
-      "timeslot": "t13"
-    },
-    {
-      "patient": "patient_14",
-      "timeslot": "t14"
-    },
-    {
-      "patient": "patient_15",
-      "timeslot": "t15"
-    },
-    {
-      "patient": "patient_16",
-      "timeslot": "t16"
-    },
-    {
-      "patient": "patient_17",
-      "timeslot": "t17"
-    },
-    {
-      "patient": "patient_18",
-      "timeslot": "t18"
-    },
-    {
-      "patient": "patient_19",
-      "timeslot": "t19"
-    },
-    {
-      "patient": "patient_20",
-      "timeslot": "t20"
     }
   ],
   "schedule_ready_patients": [
@@ -139,16 +91,6 @@
     "patient_7",
     "patient_8",
     "patient_9",
-    "patient_10",
-    "patient_11",
-    "patient_12",
-    "patient_13",
-    "patient_14",
-    "patient_15",
-    "patient_16",
-    "patient_17",
-    "patient_18",
-    "patient_19",
-    "patient_20"
+    "patient_10"
   ]
 }

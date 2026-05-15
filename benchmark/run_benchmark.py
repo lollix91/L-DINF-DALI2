@@ -39,8 +39,37 @@ SETTLE_DELAY = 3.0     # seconds between event phases
 METRICS_DELAY = 5.0    # seconds to wait before collecting metrics
 
 
+def check_redis():
+    """Ensure Redis container is running. Start it if needed."""
+    try:
+        result = subprocess.run(
+            ["docker", "exec", "ldinf-redis", "redis-cli", "PING"],
+            capture_output=True, text=True, timeout=5
+        )
+        if "PONG" in result.stdout:
+            return True
+    except Exception:
+        pass
+    # Try to start it
+    print("  Redis not running, starting container...")
+    try:
+        subprocess.run(["docker", "start", "ldinf-redis"],
+                        capture_output=True, timeout=10)
+        time.sleep(2)
+        result = subprocess.run(
+            ["docker", "exec", "ldinf-redis", "redis-cli", "PING"],
+            capture_output=True, text=True, timeout=5
+        )
+        return "PONG" in result.stdout
+    except Exception:
+        return False
+
+
 def flush_redis():
     """Flush Redis to ensure clean state between runs."""
+    if not check_redis():
+        print("  ERROR: Redis is not available!")
+        return False
     try:
         result = subprocess.run(
             ["docker", "exec", "ldinf-redis", "redis-cli", "FLUSHALL"],
@@ -60,7 +89,7 @@ def kill_orphan_swipl():
         else:
             subprocess.run(["pkill", "-f", "swipl"],
                            capture_output=True, timeout=5)
-        time.sleep(1)
+        time.sleep(3)  # Wait longer for ports/handles to be released on Windows
     except Exception:
         pass
 
@@ -195,12 +224,16 @@ def run_single_scenario(scenario_name, pl_path, plan_path, dali2_dir, port, run_
         str(port), pl_abs
     ]
     print(f"  Starting server: {' '.join(cmd)}")
-    # IMPORTANT: Use DEVNULL, not PIPE. If we pipe stdout and never read it,
+    # IMPORTANT: Use a log file, not PIPE. If we pipe stdout and never read it,
     # the buffer fills up and the server process deadlocks on write.
+    log_dir = os.path.join(os.path.dirname(pl_abs), "logs")
+    os.makedirs(log_dir, exist_ok=True)
+    log_file = os.path.join(log_dir, f"{scenario_name}_run{run_id}.log")
+    log_fh = open(log_file, "w")
     proc = subprocess.Popen(
         cmd,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
+        stdout=log_fh,
+        stderr=log_fh,
         cwd=dali2_abs
     )
 
@@ -286,6 +319,7 @@ def run_single_scenario(scenario_name, pl_path, plan_path, dali2_dir, port, run_
             proc.wait(timeout=5)
         except subprocess.TimeoutExpired:
             proc.kill()
+        log_fh.close()
 
 
 def aggregate_results(all_results):

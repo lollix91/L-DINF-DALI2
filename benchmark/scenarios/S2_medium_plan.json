@@ -7,7 +7,7 @@
   "num_equiv_actions": 4,
   "disruptions": [
     {
-      "doctor": "doc_c_3",
+      "doctor": "doc_a_1",
       "timeslot": "t1"
     },
     {
@@ -15,7 +15,7 @@
       "timeslot": "t2"
     },
     {
-      "doctor": "doc_a_1",
+      "doctor": "doc_c_3",
       "timeslot": "t3"
     }
   ],

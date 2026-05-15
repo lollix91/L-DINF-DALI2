@@ -1,0 +1,5 @@
+scenario,agents,clinics,docs_per_clinic,patients,disruptions_cfg,runs,avg_events,avg_disruptions,avg_decisions,avg_allows,avg_delegates,avg_blocks,avg_lendings,avg_repairs_done,avg_repair_ms,avg_lending_pct,avg_selector_ms
+S1_small,10,2,2,2,1,3,10.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,2423.09,0.0,5.62
+S2_medium,20,3,3,6,3,3,49.67,6.0,6.0,4.0,2.0,0.0,1.67,1.67,7564.25,27.77,5.14
+S3_large,25,3,4,8,5,3,82.33,13.0,13.0,7.0,6.0,0.0,2.0,1.67,19010.23,15.4,12.88
+S4_xlarge,28,4,3,10,8,3,138.67,19.0,16.0,4.0,12.0,0.0,8.33,4.33,19201.16,44.03,11.15

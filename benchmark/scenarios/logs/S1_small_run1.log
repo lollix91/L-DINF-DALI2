@@ -1,0 +1,130 @@
+
+=== DALI2 Multi-Agent System ===
+Node: node-8082 | Port: 8082
+[Redis] Connected to localhost:6379
+Loading agents from: D:\Repository\L-DINF-DALI2\benchmark\scenarios\S1_small.pl
+Agents defined: [patient_1,patient_2,doc_a_1,doc_a_2,doc_b_1,doc_b_2,clinic_a_mgr,clinic_b_mgr,mediator,logger]
+Server started, launching agent processes...
+[16:36:27] [patient_1] Agent process started (PID: 2276, Redis)
+[16:36:27] [patient_2] Agent process started (PID: 29024, Redis)
+[16:36:27] [doc_a_1] Agent process started (PID: 28496, Redis)
+[16:36:27] [doc_a_2] Agent process started (PID: 10036, Redis)
+[16:36:27] [doc_b_1] Agent process started (PID: 36628, Redis)
+[16:36:27] [doc_b_2] Agent process started (PID: 37624, Redis)
+[16:36:27] [clinic_a_mgr] Agent process started (PID: 21736, Redis)
+[16:36:27] [clinic_b_mgr] Agent process started (PID: 31896, Redis)
+[16:36:27] [mediator] Agent process started (PID: 5316, Redis)
+[16:36:27] [logger] Agent process started (PID: 22424, Redis)
+[patient_2] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_a_1] Starting agent process
+[patient_1] Starting agent process
+[Redis] Connected to localhost:6379
+[Redis] Connected to localhost:6379
+[patient_2] Agent process started (Redis)
+[doc_a_1] Agent process started (Redis)
+[patient_1] Agent process started (Redis)
+[doc_b_1] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_b_1] Agent process started (Redis)
+[doc_a_2] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_a_2] Agent process started (Redis)
+[doc_b_2] Starting agent process
+[clinic_a_mgr] Starting agent process
+[Redis] Connected to localhost:6379
+[Redis] Connected to localhost:6379
+[clinic_a_mgr] Agent process started (Redis)
+[doc_b_2] Agent process started (Redis)
+[clinic_b_mgr] Starting agent process
+[Redis] Connected to localhost:6379
+[clinic_b_mgr] Agent process started (Redis)
+[logger] Starting agent process
+[Redis] Connected to localhost:6379
+[logger] Agent process started (Redis)
+[mediator] Starting agent process
+[Redis] Connected to localhost:6379
+[mediator] Agent process started (Redis)
+[16:36:31] [patient_1] Message sent from web UI: schedule_ready
+[16:36:32] [patient_1] Received from user: schedule_ready
+[16:36:32] [patient_1] patient_1: Baseline schedule loaded
+[16:36:32] [patient_1] Sent to logger: log_event(schedule_loaded,patient_1,[consultation,t1,doc_a_1])
+[16:36:33] [logger] Received from patient_1: log_event(schedule_loaded,patient_1,[consultation,t1,doc_a_1])
+[16:36:33] [logger] TRACE [schedule_loaded] patient_1: [consultation,t1,doc_a_1] @1778855793.053607
+[16:36:33] [logger] Belief added: logged(schedule_loaded,patient_1,[consultation,t1,doc_a_1],1778855793.053607)
+[16:36:34] [patient_2] Message sent from web UI: schedule_ready
+[16:36:34] [patient_2] Received from user: schedule_ready
+[16:36:34] [patient_2] patient_2: Baseline schedule loaded
+[16:36:34] [patient_2] Sent to logger: log_event(schedule_loaded,patient_2,[consultation,t2,doc_b_2])
+[16:36:35] [logger] Received from patient_2: log_event(schedule_loaded,patient_2,[consultation,t2,doc_b_2])
+[16:36:35] [logger] TRACE [schedule_loaded] patient_2: [consultation,t2,doc_b_2] @1778855795.132650
+[16:36:35] [logger] Belief added: logged(schedule_loaded,patient_2,[consultation,t2,doc_b_2],1778855795.13265)
+[16:36:39] [doc_a_1] Message sent from web UI: become_unavailable(t1)
+[16:36:40] [doc_a_1] Received from user: become_unavailable(t1)
+[16:36:40] [doc_a_1] doc_a_1: Becoming unavailable at t1
+[16:36:40] [doc_a_1] Belief removed: can_do(consultation,t1)
+[16:36:40] [doc_a_1] Belief removed: available(t1)
+[16:36:40] [doc_a_1] Belief added: unavailable(t1)
+[16:36:40] [doc_a_1] Sent to clinic_a_mgr: doctor_unavailable(doc_a_1,t1)
+[16:36:40] [doc_a_1] Sent to logger: log_event(unavailability,doc_a_1,[t1])
+[16:36:40] [clinic_a_mgr] Received from doc_a_1: doctor_unavailable(doc_a_1,t1)
+[16:36:41] [clinic_a_mgr] clinic_a_mgr: doc_a_1 unavailable at t1
+[16:36:41] [clinic_a_mgr] Belief removed: doctor_available(doc_a_1)
+[16:36:41] [clinic_a_mgr] Belief added: doctor_unavailable_at(doc_a_1,t1)
+[16:36:41] [clinic_a_mgr] Sent to patient_1: unavailable(doc_a_1,t1)
+[16:36:41] [clinic_a_mgr] Sent to logger: log_event(group_update,clinic_a_mgr,[unavailable,doc_a_1,t1])
+[16:36:41] [logger] Received from doc_a_1: log_event(unavailability,doc_a_1,[t1])
+[16:36:41] [logger] TRACE [unavailability] doc_a_1: [t1] @1778855801.170424
+[16:36:41] [logger] Belief added: logged(unavailability,doc_a_1,[t1],1778855801.170424)
+[16:36:41] [logger] Received from clinic_a_mgr: log_event(group_update,clinic_a_mgr,[unavailable,doc_a_1,t1])
+[16:36:41] [logger] TRACE [group_update] clinic_a_mgr: [unavailable,doc_a_1,t1] @1778855801.181336
+[16:36:41] [logger] Belief added: logged(group_update,clinic_a_mgr,[unavailable,doc_a_1,t1],1778855801.181336)
+[16:36:42] [patient_1] Received from clinic_a_mgr: unavailable(doc_a_1,t1)
+[16:36:42] [patient_1] patient_1: DISRUPTION — doc_a_1 unavailable at t1
+[16:36:42] [patient_1] Belief added: unavailable(doc_a_1,t1)
+[16:36:42] [patient_1] Belief removed: assigned_doctor(doc_a_1)
+[16:36:42] [patient_1] Sent to logger: log_event(disruption,patient_1,[unavailable,doc_a_1,t1])
+[16:36:42] [patient_1] Sent to clinic_a_mgr: repair_request(patient_1,consultation,t1)
+[16:36:43] [clinic_a_mgr] Received from patient_1: repair_request(patient_1,consultation,t1)
+[16:36:43] [clinic_a_mgr] Sent to patient_1: local_repair(doc_a_2,t1,high,5)
+[16:36:43] [logger] Received from patient_1: log_event(disruption,patient_1,[unavailable,doc_a_1,t1])
+[16:36:43] [logger] TRACE [disruption] patient_1: [unavailable,doc_a_1,t1] @1778855803.202277
+[16:36:43] [logger] Belief added: logged(disruption,patient_1,[unavailable,doc_a_1,t1],1778855803.202277)
+[16:36:44] [patient_1] Received from clinic_a_mgr: local_repair(doc_a_2,t1,high,5)
+[16:36:44] [patient_1] patient_1: Local repair offered — doc_a_2 (trust=high, pref=5)
+[16:36:44] [patient_1] Belief added: assigned_doctor(doc_a_2)
+[16:36:44] [patient_1] Belief removed: intend(consultation(t1))
+[16:36:44] [patient_1] Belief added: intend(consultation_with(doc_a_2,t1))
+[16:36:44] [patient_1] Sent to logger: log_event(decision,patient_1,[allow,doc_a_2,t1])
+[16:36:45] [logger] Received from patient_1: log_event(decision,patient_1,[allow,doc_a_2,t1])
+[16:36:45] [logger] TRACE [decision] patient_1: [allow,doc_a_2,t1] @1778855805.340494
+[16:36:45] [logger] Belief added: logged(decision,patient_1,[allow,doc_a_2,t1],1778855805.340494)
+[16:36:51] [patient_1] Message sent from web UI: select_action(t1)
+[16:36:52] [patient_1] Received from user: select_action(t1)
+[16:36:52] [patient_1] patient_1: Probabilistic action selection
+[16:36:52] [patient_1] Sent to logger: log_event(selector_start,patient_1,[consultation,t1])
+[16:36:52] [patient_1] Belief added: selected_action(visit_type_3,t1)
+[16:36:52] [patient_1] Sent to logger: log_event(prob_selection,patient_1,[visit_type_3,101.0,t1])
+[16:36:53] [logger] Received from patient_1: log_event(selector_start,patient_1,[consultation,t1])
+[16:36:53] [logger] TRACE [selector_start] patient_1: [consultation,t1] @1778855813.615886
+[16:36:53] [logger] Belief added: logged(selector_start,patient_1,[consultation,t1],1778855813.615886)
+[16:36:53] [logger] Received from patient_1: log_event(prob_selection,patient_1,[visit_type_3,101.0,t1])
+[16:36:53] [logger] TRACE [prob_selection] patient_1: [visit_type_3,101.0,t1] @1778855813.619464
+[16:36:53] [logger] Belief added: logged(prob_selection,patient_1,[visit_type_3,101.0,t1],1778855813.619464)
+[16:36:54] [patient_2] Message sent from web UI: select_action(t2)
+[16:36:54] [patient_2] Received from user: select_action(t2)
+[16:36:54] [patient_2] patient_2: Probabilistic action selection
+[16:36:54] [patient_2] Sent to logger: log_event(selector_start,patient_2,[consultation,t2])
+[16:36:54] [patient_2] Belief added: selected_action(visit_type_3,t2)
+[16:36:54] [patient_2] Sent to logger: log_event(prob_selection,patient_2,[visit_type_3,86.55555555555556,t2])
+[16:36:54] [logger] Received from patient_2: log_event(selector_start,patient_2,[consultation,t2])
+[16:36:54] [logger] TRACE [selector_start] patient_2: [consultation,t2] @1778855814.633777
+[16:36:54] [logger] Belief added: logged(selector_start,patient_2,[consultation,t2],1778855814.633777)
+[16:36:54] [logger] Received from patient_2: log_event(prob_selection,patient_2,[visit_type_3,86.55555555555556,t2])
+[16:36:54] [logger] TRACE [prob_selection] patient_2: [visit_type_3,86.55555555555556,t2] @1778855814.637683
+[16:36:54] [logger] Belief added: logged(prob_selection,patient_2,[visit_type_3,86.55555555555556,t2],1778855814.637683)
+[16:36:59] [logger] Message sent from web UI: compute_metrics
+[16:37:00] [logger] Received from user: compute_metrics
+[16:37:00] [logger] Belief added: metrics_summary(20,2,0,0,4,0,0,3.5779476165771484)
+[16:37:00] [logger] METRICS: events=20 disruptions=2 repairs=0 lendings=0 selections=4
+[16:37:00] [logger] METRICS: repair_ms=0.00 lending_pct=0.0 selector_ms=3.578

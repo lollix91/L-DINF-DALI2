@@ -1,13 +1,13 @@
 {
-  "agents": 34,
-  "clinics": 4,
+  "agents": 25,
+  "clinics": 3,
   "doctors_per_clinic": 4,
-  "patients": 12,
+  "patients": 8,
   "num_disruptions": 5,
   "num_equiv_actions": 5,
   "disruptions": [
     {
-      "doctor": "doc_d_4",
+      "doctor": "doc_c_3",
       "timeslot": "t1"
     },
     {
@@ -15,15 +15,15 @@
       "timeslot": "t2"
     },
     {
-      "doctor": "doc_b_2",
+      "doctor": "doc_b_1",
       "timeslot": "t3"
     },
     {
-      "doctor": "doc_c_3",
+      "doctor": "doc_b_2",
       "timeslot": "t4"
     },
     {
-      "doctor": "doc_d_1",
+      "doctor": "doc_c_2",
       "timeslot": "t5"
     }
   ],
@@ -59,22 +59,6 @@
     {
       "patient": "patient_8",
       "timeslot": "t8"
-    },
-    {
-      "patient": "patient_9",
-      "timeslot": "t9"
-    },
-    {
-      "patient": "patient_10",
-      "timeslot": "t10"
-    },
-    {
-      "patient": "patient_11",
-      "timeslot": "t11"
-    },
-    {
-      "patient": "patient_12",
-      "timeslot": "t12"
     }
   ],
   "schedule_ready_patients": [
@@ -85,10 +69,6 @@
     "patient_5",
     "patient_6",
     "patient_7",
-    "patient_8",
-    "patient_9",
-    "patient_10",
-    "patient_11",
-    "patient_12"
+    "patient_8"
   ]
 }

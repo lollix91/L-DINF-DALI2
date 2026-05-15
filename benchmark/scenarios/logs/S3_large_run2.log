@@ -1,0 +1,885 @@
+
+=== DALI2 Multi-Agent System ===
+Node: node-8082 | Port: 8082
+[Redis] Connected to localhost:6379
+Loading agents from: D:\Repository\L-DINF-DALI2\benchmark\scenarios\S3_large.pl
+Agents defined: [patient_1,patient_2,patient_3,patient_4,patient_5,patient_6,patient_7,patient_8,doc_a_1,doc_a_2,doc_a_3,doc_a_4,doc_b_1,doc_b_2,doc_b_3,doc_b_4,doc_c_1,doc_c_2,doc_c_3,doc_c_4,clinic_a_mgr,clinic_b_mgr,clinic_c_mgr,mediator,logger]
+Server started, launching agent processes...
+[16:44:43] [patient_1] Agent process started (PID: 30668, Redis)
+[16:44:43] [patient_2] Agent process started (PID: 30340, Redis)
+[16:44:43] [patient_3] Agent process started (PID: 24800, Redis)
+[16:44:43] [patient_4] Agent process started (PID: 2140, Redis)
+[16:44:43] [patient_5] Agent process started (PID: 2120, Redis)
+[16:44:43] [patient_6] Agent process started (PID: 6972, Redis)
+[16:44:43] [patient_7] Agent process started (PID: 38448, Redis)
+[16:44:43] [patient_8] Agent process started (PID: 1504, Redis)
+[16:44:44] [doc_a_1] Agent process started (PID: 4888, Redis)
+[16:44:44] [doc_a_2] Agent process started (PID: 8564, Redis)
+[16:44:44] [doc_a_3] Agent process started (PID: 30592, Redis)
+[16:44:44] [doc_a_4] Agent process started (PID: 31908, Redis)
+[16:44:44] [doc_b_1] Agent process started (PID: 40376, Redis)
+[patient_1] Starting agent process
+[16:44:44] [doc_b_2] Agent process started (PID: 30128, Redis)
+[Redis] Connected to localhost:6379
+[patient_3] Starting agent process
+[patient_2] Starting agent process
+[16:44:44] [doc_b_3] Agent process started (PID: 20332, Redis)
+[Redis] Connected to localhost:6379
+[patient_1] Agent process started (Redis)
+[Redis] Connected to localhost:6379
+[patient_5] Starting agent process
+[patient_3] Agent process started (Redis)
+[patient_2] Agent process started (Redis)
+[16:44:44] [doc_b_4] Agent process started (PID: 13560, Redis)
+[Redis] Connected to localhost:6379
+[patient_4] Starting agent process
+[patient_5] Agent process started (Redis)
+[Redis] Connected to localhost:6379
+[16:44:45] [doc_c_1] Agent process started (PID: 24580, Redis)
+[patient_4] Agent process started (Redis)
+[patient_6] Starting agent process
+[16:44:45] [doc_c_2] Agent process started (PID: 7108, Redis)
+[Redis] Connected to localhost:6379
+[patient_6] Agent process started (Redis)
+[patient_7] Starting agent process
+[patient_8] Starting agent process
+[Redis] Connected to localhost:6379
+[Redis] Connected to localhost:6379
+[patient_8] Agent process started (Redis)
+[16:44:45] [doc_c_3] Agent process started (PID: 36964, Redis)
+[patient_7] Agent process started (Redis)
+[doc_a_1] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_a_1] Agent process started (Redis)
+[16:44:45] [doc_c_4] Agent process started (PID: 31772, Redis)
+[doc_a_3] Starting agent process
+[Redis] Connected to localhost:6379
+[16:44:45] [clinic_a_mgr] Agent process started (PID: 17684, Redis)
+[doc_a_3] Agent process started (Redis)
+[doc_a_2] Starting agent process
+[16:44:46] [clinic_b_mgr] Agent process started (PID: 29372, Redis)
+[Redis] Connected to localhost:6379
+[doc_a_2] Agent process started (Redis)
+[16:44:46] [clinic_c_mgr] Agent process started (PID: 11100, Redis)
+[doc_b_2] Starting agent process
+[doc_a_4] Starting agent process
+[doc_b_1] Starting agent process
+[Redis] Connected to localhost:6379
+[Redis] Connected to localhost:6379
+[16:44:46] [mediator] Agent process started (PID: 6284, Redis)
+[Redis] Connected to localhost:6379
+[doc_a_4] Agent process started (Redis)
+[doc_b_2] Agent process started (Redis)
+[doc_b_1] Agent process started (Redis)
+[doc_b_4] Starting agent process
+[16:44:46] [logger] Agent process started (PID: 7356, Redis)
+[doc_b_3] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_c_1] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_b_4] Agent process started (Redis)
+[doc_b_3] Agent process started (Redis)
+[Redis] Connected to localhost:6379
+[doc_c_1] Agent process started (Redis)
+[doc_c_2] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_c_3] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_c_2] Agent process started (Redis)
+[doc_c_3] Agent process started (Redis)
+[doc_c_4] Starting agent process
+[Redis] Connected to localhost:6379
+[doc_c_4] Agent process started (Redis)
+[clinic_a_mgr] Starting agent process
+[clinic_c_mgr] Starting agent process
+[Redis] Connected to localhost:6379
+[clinic_b_mgr] Starting agent process
+[Redis] Connected to localhost:6379
+[clinic_a_mgr] Agent process started (Redis)
+[clinic_c_mgr] Agent process started (Redis)
+[Redis] Connected to localhost:6379
+[clinic_b_mgr] Agent process started (Redis)
+[mediator] Starting agent process
+[logger] Starting agent process
+[Redis] Connected to localhost:6379
+[Redis] Connected to localhost:6379
+[mediator] Agent process started (Redis)
+[logger] Agent process started (Redis)
+[16:44:49] [patient_1] Message sent from web UI: schedule_ready
+[16:44:51] [patient_1] Received from user: schedule_ready
+[16:44:51] [patient_1] patient_1: Baseline schedule loaded
+[16:44:51] [patient_1] Sent to logger: log_event(schedule_loaded,patient_1,[consultation,t1,doc_a_1])
+[16:44:51] [logger] Received from patient_1: log_event(schedule_loaded,patient_1,[consultation,t1,doc_a_1])
+[16:44:51] [logger] TRACE [schedule_loaded] patient_1: [consultation,t1,doc_a_1] @1778856291.317574
+[16:44:51] [logger] Belief added: logged(schedule_loaded,patient_1,[consultation,t1,doc_a_1],1778856291.317574)
+[16:44:52] [patient_2] Message sent from web UI: schedule_ready
+[16:44:53] [patient_2] Received from user: schedule_ready
+[16:44:53] [patient_2] patient_2: Baseline schedule loaded
+[16:44:53] [patient_2] Sent to logger: log_event(schedule_loaded,patient_2,[consultation,t2,doc_b_2])
+[16:44:53] [logger] Received from patient_2: log_event(schedule_loaded,patient_2,[consultation,t2,doc_b_2])
+[16:44:53] [logger] TRACE [schedule_loaded] patient_2: [consultation,t2,doc_b_2] @1778856293.350175
+[16:44:53] [logger] Belief added: logged(schedule_loaded,patient_2,[consultation,t2,doc_b_2],1778856293.350175)
+[16:44:55] [patient_3] Message sent from web UI: schedule_ready
+[16:44:57] [patient_3] Received from user: schedule_ready
+[16:44:57] [patient_3] patient_3: Baseline schedule loaded
+[16:44:57] [patient_3] Sent to logger: log_event(schedule_loaded,patient_3,[consultation,t3,doc_c_3])
+[16:44:57] [logger] Received from patient_3: log_event(schedule_loaded,patient_3,[consultation,t3,doc_c_3])
+[16:44:57] [logger] TRACE [schedule_loaded] patient_3: [consultation,t3,doc_c_3] @1778856297.416609
+[16:44:57] [logger] Belief added: logged(schedule_loaded,patient_3,[consultation,t3,doc_c_3],1778856297.416609)
+[16:44:59] [patient_4] Message sent from web UI: schedule_ready
+[16:44:59] [patient_4] Received from user: schedule_ready
+[16:44:59] [patient_4] patient_4: Baseline schedule loaded
+[16:44:59] [patient_4] Sent to logger: log_event(schedule_loaded,patient_4,[consultation,t4,doc_a_4])
+[16:45:00] [logger] Received from patient_4: log_event(schedule_loaded,patient_4,[consultation,t4,doc_a_4])
+[16:45:00] [logger] TRACE [schedule_loaded] patient_4: [consultation,t4,doc_a_4] @1778856300.599191
+[16:45:00] [logger] Belief added: logged(schedule_loaded,patient_4,[consultation,t4,doc_a_4],1778856300.599191)
+[16:45:02] [patient_5] Message sent from web UI: schedule_ready
+[16:45:03] [patient_5] Received from user: schedule_ready
+[16:45:03] [patient_5] patient_5: Baseline schedule loaded
+[16:45:03] [patient_5] Sent to logger: log_event(schedule_loaded,patient_5,[consultation,t5,doc_b_1])
+[16:45:03] [logger] Received from patient_5: log_event(schedule_loaded,patient_5,[consultation,t5,doc_b_1])
+[16:45:03] [logger] TRACE [schedule_loaded] patient_5: [consultation,t5,doc_b_1] @1778856303.866293
+[16:45:03] [logger] Belief added: logged(schedule_loaded,patient_5,[consultation,t5,doc_b_1],1778856303.866293)
+[16:45:05] [patient_6] Message sent from web UI: schedule_ready
+[16:45:05] [patient_6] Received from user: schedule_ready
+[16:45:05] [patient_6] patient_6: Baseline schedule loaded
+[16:45:06] [patient_6] Sent to logger: log_event(schedule_loaded,patient_6,[consultation,t6,doc_c_2])
+[16:45:07] [logger] Received from patient_6: log_event(schedule_loaded,patient_6,[consultation,t6,doc_c_2])
+[16:45:07] [logger] TRACE [schedule_loaded] patient_6: [consultation,t6,doc_c_2] @1778856307.078530
+[16:45:07] [logger] Belief added: logged(schedule_loaded,patient_6,[consultation,t6,doc_c_2],1778856307.07853)
+[16:45:09] [patient_7] Message sent from web UI: schedule_ready
+[16:45:10] [patient_7] Received from user: schedule_ready
+[16:45:10] [patient_7] patient_7: Baseline schedule loaded
+[16:45:10] [patient_7] Sent to logger: log_event(schedule_loaded,patient_7,[consultation,t7,doc_a_3])
+[16:45:10] [logger] Received from patient_7: log_event(schedule_loaded,patient_7,[consultation,t7,doc_a_3])
+[16:45:10] [logger] TRACE [schedule_loaded] patient_7: [consultation,t7,doc_a_3] @1778856310.433396
+[16:45:10] [logger] Belief added: logged(schedule_loaded,patient_7,[consultation,t7,doc_a_3],1778856310.433396)
+[16:45:13] [patient_8] Message sent from web UI: schedule_ready
+[16:45:14] [patient_8] Received from user: schedule_ready
+[16:45:14] [patient_8] patient_8: Baseline schedule loaded
+[16:45:14] [patient_8] Sent to logger: log_event(schedule_loaded,patient_8,[consultation,t8,doc_b_4])
+[16:45:14] [logger] Received from patient_8: log_event(schedule_loaded,patient_8,[consultation,t8,doc_b_4])
+[16:45:14] [logger] TRACE [schedule_loaded] patient_8: [consultation,t8,doc_b_4] @1778856314.691441
+[16:45:14] [logger] Belief added: logged(schedule_loaded,patient_8,[consultation,t8,doc_b_4],1778856314.691441)
+[16:45:19] [doc_c_3] Message sent from web UI: become_unavailable(t1)
+[16:45:19] [doc_c_3] Received from user: become_unavailable(t1)
+[16:45:20] [doc_c_3] doc_c_3: Becoming unavailable at t1
+[16:45:20] [doc_c_3] Belief removed: can_do(consultation,t1)
+[16:45:20] [doc_c_3] Belief removed: available(t1)
+[16:45:20] [doc_c_3] Belief added: unavailable(t1)
+[16:45:20] [doc_c_3] Sent to clinic_c_mgr: doctor_unavailable(doc_c_3,t1)
+[16:45:20] [doc_c_3] Sent to logger: log_event(unavailability,doc_c_3,[t1])
+[16:45:20] [logger] Received from doc_c_3: log_event(unavailability,doc_c_3,[t1])
+[16:45:20] [logger] TRACE [unavailability] doc_c_3: [t1] @1778856320.891465
+[16:45:20] [clinic_c_mgr] Received from doc_c_3: doctor_unavailable(doc_c_3,t1)
+[16:45:20] [logger] Belief added: logged(unavailability,doc_c_3,[t1],1778856320.891465)
+[16:45:21] [clinic_c_mgr] clinic_c_mgr: doc_c_3 unavailable at t1
+[16:45:21] [clinic_c_mgr] Belief removed: doctor_available(doc_c_3)
+[16:45:21] [clinic_c_mgr] Belief added: doctor_unavailable_at(doc_c_3,t1)
+[16:45:21] [clinic_c_mgr] Sent to patient_3: unavailable(doc_c_3,t1)
+[16:45:21] [clinic_c_mgr] Sent to patient_6: unavailable(doc_c_3,t1)
+[16:45:21] [clinic_c_mgr] Sent to logger: log_event(group_update,clinic_c_mgr,[unavailable,doc_c_3,t1])
+[16:45:21] [patient_3] Received from clinic_c_mgr: unavailable(doc_c_3,t1)
+[16:45:21] [patient_3] patient_3: DISRUPTION — doc_c_3 unavailable at t1
+[16:45:21] [patient_3] Belief added: unavailable(doc_c_3,t1)
+[16:45:21] [patient_3] Belief removed: assigned_doctor(doc_c_3)
+[16:45:22] [logger] Received from clinic_c_mgr: log_event(group_update,clinic_c_mgr,[unavailable,doc_c_3,t1])
+[16:45:22] [patient_3] Sent to logger: log_event(disruption,patient_3,[unavailable,doc_c_3,t1])
+[16:45:22] [logger] TRACE [group_update] clinic_c_mgr: [unavailable,doc_c_3,t1] @1778856322.203803
+[16:45:22] [patient_6] Received from clinic_c_mgr: unavailable(doc_c_3,t1)
+[16:45:22] [logger] Belief added: logged(group_update,clinic_c_mgr,[unavailable,doc_c_3,t1],1778856322.203803)
+[16:45:22] [patient_3] Sent to clinic_c_mgr: repair_request(patient_3,consultation,t1)
+[16:45:22] [patient_6] patient_6: DISRUPTION — doc_c_3 unavailable at t1
+[16:45:22] [patient_6] Belief added: unavailable(doc_c_3,t1)
+[16:45:22] [patient_6] Belief removed: assigned_doctor(doc_c_3)
+[16:45:22] [patient_6] Sent to logger: log_event(disruption,patient_6,[unavailable,doc_c_3,t1])
+[16:45:22] [patient_6] Sent to clinic_c_mgr: repair_request(patient_6,consultation,t1)
+[16:45:22] [clinic_c_mgr] Received from patient_3: repair_request(patient_3,consultation,t1)
+[16:45:22] [clinic_c_mgr] Sent to patient_3: local_repair(doc_c_1,t1,very_high,7)
+[16:45:22] [clinic_c_mgr] Received from patient_6: repair_request(patient_6,consultation,t1)
+[16:45:22] [clinic_c_mgr] Sent to patient_6: local_repair(doc_c_1,t1,very_high,7)
+[16:45:23] [logger] Received from patient_3: log_event(disruption,patient_3,[unavailable,doc_c_3,t1])
+[16:45:23] [logger] TRACE [disruption] patient_3: [unavailable,doc_c_3,t1] @1778856323.334622
+[16:45:23] [logger] Belief added: logged(disruption,patient_3,[unavailable,doc_c_3,t1],1778856323.334622)
+[16:45:23] [doc_a_1] Message sent from web UI: become_unavailable(t2)
+[16:45:23] [logger] Received from patient_6: log_event(disruption,patient_6,[unavailable,doc_c_3,t1])
+[16:45:23] [logger] TRACE [disruption] patient_6: [unavailable,doc_c_3,t1] @1778856323.428964
+[16:45:23] [logger] Belief added: logged(disruption,patient_6,[unavailable,doc_c_3,t1],1778856323.428964)
+[16:45:23] [logger] Belief added: warned_instability
+[16:45:23] [logger] LOGGER WARNING: 4 disruptions recorded!
+[16:45:24] [patient_3] Received from clinic_c_mgr: local_repair(doc_c_1,t1,very_high,7)
+[16:45:24] [patient_6] Received from clinic_c_mgr: local_repair(doc_c_1,t1,very_high,7)
+[16:45:24] [patient_3] patient_3: Local repair offered — doc_c_1 (trust=very_high, pref=7)
+[16:45:24] [patient_6] patient_6: Local repair offered — doc_c_1 (trust=very_high, pref=7)
+[16:45:24] [doc_a_1] Received from user: become_unavailable(t2)
+[16:45:24] [patient_3] Belief added: assigned_doctor(doc_c_1)
+[16:45:24] [patient_6] Belief added: assigned_doctor(doc_c_1)
+[16:45:24] [patient_6] Belief removed: intend(consultation(t1))
+[16:45:24] [patient_3] Belief removed: intend(consultation(t1))
+[16:45:24] [doc_a_1] doc_a_1: Becoming unavailable at t2
+[16:45:24] [patient_3] Belief added: intend(consultation_with(doc_c_1,t1))
+[16:45:24] [patient_6] Belief added: intend(consultation_with(doc_c_1,t1))
+[16:45:25] [doc_a_1] Belief removed: can_do(consultation,t2)
+[16:45:25] [patient_6] Sent to logger: log_event(decision,patient_6,[allow,doc_c_1,t1])
+[16:45:25] [doc_a_1] Belief removed: available(t2)
+[16:45:25] [patient_3] Sent to logger: log_event(decision,patient_3,[allow,doc_c_1,t1])
+[16:45:25] [doc_a_1] Belief added: unavailable(t2)
+[16:45:25] [doc_a_1] Sent to clinic_a_mgr: doctor_unavailable(doc_a_1,t2)
+[16:45:25] [doc_a_1] Sent to logger: log_event(unavailability,doc_a_1,[t2])
+[16:45:25] [clinic_a_mgr] Received from doc_a_1: doctor_unavailable(doc_a_1,t2)
+[16:45:25] [clinic_a_mgr] clinic_a_mgr: doc_a_1 unavailable at t2
+[16:45:25] [clinic_a_mgr] Belief removed: doctor_available(doc_a_1)
+[16:45:25] [clinic_a_mgr] Belief added: doctor_unavailable_at(doc_a_1,t2)
+[16:45:25] [clinic_a_mgr] Sent to patient_1: unavailable(doc_a_1,t2)
+[16:45:25] [clinic_a_mgr] Sent to patient_4: unavailable(doc_a_1,t2)
+[16:45:25] [clinic_a_mgr] Sent to patient_7: unavailable(doc_a_1,t2)
+[16:45:25] [clinic_a_mgr] Sent to logger: log_event(group_update,clinic_a_mgr,[unavailable,doc_a_1,t2])
+[16:45:25] [logger] Received from patient_6: log_event(decision,patient_6,[allow,doc_c_1,t1])
+[16:45:25] [logger] TRACE [decision] patient_6: [allow,doc_c_1,t1] @1778856325.513783
+[16:45:25] [logger] Belief added: logged(decision,patient_6,[allow,doc_c_1,t1],1778856325.513783)
+[16:45:25] [logger] Received from patient_3: log_event(decision,patient_3,[allow,doc_c_1,t1])
+[16:45:25] [logger] TRACE [decision] patient_3: [allow,doc_c_1,t1] @1778856325.520430
+[16:45:25] [logger] Belief added: logged(decision,patient_3,[allow,doc_c_1,t1],1778856325.52043)
+[16:45:25] [logger] Received from doc_a_1: log_event(unavailability,doc_a_1,[t2])
+[16:45:25] [logger] TRACE [unavailability] doc_a_1: [t2] @1778856325.526502
+[16:45:25] [logger] Belief added: logged(unavailability,doc_a_1,[t2],1778856325.526502)
+[16:45:25] [logger] Received from clinic_a_mgr: log_event(group_update,clinic_a_mgr,[unavailable,doc_a_1,t2])
+[16:45:25] [logger] TRACE [group_update] clinic_a_mgr: [unavailable,doc_a_1,t2] @1778856325.530866
+[16:45:25] [logger] Belief added: logged(group_update,clinic_a_mgr,[unavailable,doc_a_1,t2],1778856325.530866)
+[16:45:25] [patient_1] Received from clinic_a_mgr: unavailable(doc_a_1,t2)
+[16:45:25] [patient_1] patient_1: DISRUPTION — doc_a_1 unavailable at t2
+[16:45:25] [patient_1] Belief added: unavailable(doc_a_1,t2)
+[16:45:25] [patient_1] Belief removed: assigned_doctor(doc_a_1)
+[16:45:25] [patient_1] Sent to logger: log_event(disruption,patient_1,[unavailable,doc_a_1,t2])
+[16:45:25] [patient_1] Sent to clinic_a_mgr: repair_request(patient_1,consultation,t2)
+[16:45:26] [patient_4] Received from clinic_a_mgr: unavailable(doc_a_1,t2)
+[16:45:26] [patient_4] patient_4: DISRUPTION — doc_a_1 unavailable at t2
+[16:45:26] [patient_4] Belief added: unavailable(doc_a_1,t2)
+[16:45:26] [patient_4] Belief removed: assigned_doctor(doc_a_1)
+[16:45:26] [patient_4] Sent to logger: log_event(disruption,patient_4,[unavailable,doc_a_1,t2])
+[16:45:26] [patient_4] Sent to clinic_a_mgr: repair_request(patient_4,consultation,t2)
+[16:45:26] [clinic_a_mgr] Received from patient_1: repair_request(patient_1,consultation,t2)
+[16:45:26] [clinic_a_mgr] Sent to patient_1: local_repair(doc_a_3,t2,very_high,5)
+[16:45:26] [clinic_a_mgr] Received from patient_4: repair_request(patient_4,consultation,t2)
+[16:45:26] [clinic_a_mgr] Sent to patient_4: local_repair(doc_a_3,t2,very_high,5)
+[16:45:26] [logger] Received from patient_1: log_event(disruption,patient_1,[unavailable,doc_a_1,t2])
+[16:45:26] [logger] TRACE [disruption] patient_1: [unavailable,doc_a_1,t2] @1778856326.548058
+[16:45:26] [logger] Belief added: logged(disruption,patient_1,[unavailable,doc_a_1,t2],1778856326.548058)
+[16:45:26] [logger] Received from patient_4: log_event(disruption,patient_4,[unavailable,doc_a_1,t2])
+[16:45:26] [logger] TRACE [disruption] patient_4: [unavailable,doc_a_1,t2] @1778856326.553845
+[16:45:26] [logger] Belief added: logged(disruption,patient_4,[unavailable,doc_a_1,t2],1778856326.553845)
+[16:45:26] [patient_7] Received from clinic_a_mgr: unavailable(doc_a_1,t2)
+[16:45:26] [patient_7] patient_7: DISRUPTION — doc_a_1 unavailable at t2
+[16:45:26] [patient_7] Belief added: unavailable(doc_a_1,t2)
+[16:45:26] [patient_7] Belief removed: assigned_doctor(doc_a_1)
+[16:45:26] [patient_7] Sent to logger: log_event(disruption,patient_7,[unavailable,doc_a_1,t2])
+[16:45:26] [patient_7] Sent to clinic_a_mgr: repair_request(patient_7,consultation,t2)
+[16:45:27] [doc_b_1] Message sent from web UI: become_unavailable(t3)
+[16:45:27] [clinic_a_mgr] Received from patient_7: repair_request(patient_7,consultation,t2)
+[16:45:27] [clinic_a_mgr] Sent to patient_7: local_repair(doc_a_3,t2,very_high,5)
+[16:45:27] [logger] Received from patient_7: log_event(disruption,patient_7,[unavailable,doc_a_1,t2])
+[16:45:27] [doc_b_1] Received from user: become_unavailable(t3)
+[16:45:27] [logger] TRACE [disruption] patient_7: [unavailable,doc_a_1,t2] @1778856327.679967
+[16:45:27] [logger] Belief added: logged(disruption,patient_7,[unavailable,doc_a_1,t2],1778856327.679967)
+[16:45:27] [doc_b_1] doc_b_1: Becoming unavailable at t3
+[16:45:27] [doc_b_1] Belief removed: can_do(consultation,t3)
+[16:45:27] [doc_b_1] Belief removed: available(t3)
+[16:45:27] [doc_b_1] Belief added: unavailable(t3)
+[16:45:27] [doc_b_1] Sent to clinic_b_mgr: doctor_unavailable(doc_b_1,t3)
+[16:45:27] [doc_b_1] Sent to logger: log_event(unavailability,doc_b_1,[t3])
+[16:45:27] [patient_1] Received from clinic_a_mgr: local_repair(doc_a_3,t2,very_high,5)
+[16:45:27] [patient_1] patient_1: Local repair offered — doc_a_3 (trust=very_high, pref=5)
+[16:45:27] [patient_1] Belief added: assigned_doctor(doc_a_3)
+[16:45:27] [patient_1] Belief removed: intend(consultation(t2))
+[16:45:27] [patient_1] Belief added: intend(consultation_with(doc_a_3,t2))
+[16:45:28] [clinic_b_mgr] Received from doc_b_1: doctor_unavailable(doc_b_1,t3)
+[16:45:28] [patient_1] Sent to logger: log_event(decision,patient_1,[allow,doc_a_3,t2])
+[16:45:28] [clinic_b_mgr] clinic_b_mgr: doc_b_1 unavailable at t3
+[16:45:28] [clinic_b_mgr] Belief removed: doctor_available(doc_b_1)
+[16:45:28] [clinic_b_mgr] Belief added: doctor_unavailable_at(doc_b_1,t3)
+[16:45:28] [patient_4] Received from clinic_a_mgr: local_repair(doc_a_3,t2,very_high,5)
+[16:45:28] [clinic_b_mgr] Sent to patient_2: unavailable(doc_b_1,t3)
+[16:45:28] [patient_4] patient_4: Local repair offered — doc_a_3 (trust=very_high, pref=5)
+[16:45:28] [clinic_b_mgr] Sent to patient_5: unavailable(doc_b_1,t3)
+[16:45:28] [patient_4] Belief added: assigned_doctor(doc_a_3)
+[16:45:28] [patient_4] Belief removed: intend(consultation(t2))
+[16:45:28] [clinic_b_mgr] Sent to patient_8: unavailable(doc_b_1,t3)
+[16:45:28] [patient_4] Belief added: intend(consultation_with(doc_a_3,t2))
+[16:45:28] [clinic_b_mgr] Sent to logger: log_event(group_update,clinic_b_mgr,[unavailable,doc_b_1,t3])
+[16:45:28] [patient_4] Sent to logger: log_event(decision,patient_4,[allow,doc_a_3,t2])
+[16:45:28] [logger] Received from doc_b_1: log_event(unavailability,doc_b_1,[t3])
+[16:45:28] [logger] TRACE [unavailability] doc_b_1: [t3] @1778856328.875443
+[16:45:28] [patient_7] Received from clinic_a_mgr: local_repair(doc_a_3,t2,very_high,5)
+[16:45:28] [logger] Belief added: logged(unavailability,doc_b_1,[t3],1778856328.875443)
+[16:45:29] [patient_7] patient_7: Local repair offered — doc_a_3 (trust=very_high, pref=5)
+[16:45:29] [logger] Received from patient_1: log_event(decision,patient_1,[allow,doc_a_3,t2])
+[16:45:29] [logger] TRACE [decision] patient_1: [allow,doc_a_3,t2] @1778856329.105725
+[16:45:29] [patient_7] Belief added: assigned_doctor(doc_a_3)
+[16:45:29] [patient_7] Belief removed: intend(consultation(t2))
+[16:45:29] [logger] Belief added: logged(decision,patient_1,[allow,doc_a_3,t2],1778856329.105725)
+[16:45:29] [logger] Received from patient_4: log_event(decision,patient_4,[allow,doc_a_3,t2])
+[16:45:29] [patient_7] Belief added: intend(consultation_with(doc_a_3,t2))
+[16:45:29] [logger] TRACE [decision] patient_4: [allow,doc_a_3,t2] @1778856329.195592
+[16:45:29] [logger] Belief added: logged(decision,patient_4,[allow,doc_a_3,t2],1778856329.195592)
+[16:45:29] [patient_7] Sent to logger: log_event(decision,patient_7,[allow,doc_a_3,t2])
+[16:45:29] [logger] Received from clinic_b_mgr: log_event(group_update,clinic_b_mgr,[unavailable,doc_b_1,t3])
+[16:45:29] [logger] TRACE [group_update] clinic_b_mgr: [unavailable,doc_b_1,t3] @1778856329.241420
+[16:45:29] [logger] Belief added: logged(group_update,clinic_b_mgr,[unavailable,doc_b_1,t3],1778856329.24142)
+[16:45:29] [patient_5] Received from clinic_b_mgr: unavailable(doc_b_1,t3)
+[16:45:29] [patient_5] patient_5: DISRUPTION — doc_b_1 unavailable at t3
+[16:45:29] [patient_5] Belief added: unavailable(doc_b_1,t3)
+[16:45:29] [patient_5] Belief removed: assigned_doctor(doc_b_1)
+[16:45:29] [patient_5] Sent to logger: log_event(disruption,patient_5,[unavailable,doc_b_1,t3])
+[16:45:29] [patient_2] Received from clinic_b_mgr: unavailable(doc_b_1,t3)
+[16:45:29] [patient_5] Sent to clinic_b_mgr: repair_request(patient_5,consultation,t3)
+[16:45:29] [patient_2] patient_2: DISRUPTION — doc_b_1 unavailable at t3
+[16:45:29] [patient_2] Belief added: unavailable(doc_b_1,t3)
+[16:45:29] [patient_2] Belief removed: assigned_doctor(doc_b_1)
+[16:45:29] [patient_2] Sent to logger: log_event(disruption,patient_2,[unavailable,doc_b_1,t3])
+[16:45:29] [patient_2] Sent to clinic_b_mgr: repair_request(patient_2,consultation,t3)
+[16:45:30] [logger] Received from patient_7: log_event(decision,patient_7,[allow,doc_a_3,t2])
+[16:45:30] [logger] TRACE [decision] patient_7: [allow,doc_a_3,t2] @1778856330.253188
+[16:45:30] [logger] Belief added: logged(decision,patient_7,[allow,doc_a_3,t2],1778856330.253188)
+[16:45:30] [logger] Received from patient_5: log_event(disruption,patient_5,[unavailable,doc_b_1,t3])
+[16:45:30] [logger] TRACE [disruption] patient_5: [unavailable,doc_b_1,t3] @1778856330.258633
+[16:45:30] [logger] Belief added: logged(disruption,patient_5,[unavailable,doc_b_1,t3],1778856330.258633)
+[16:45:30] [logger] Received from patient_2: log_event(disruption,patient_2,[unavailable,doc_b_1,t3])
+[16:45:30] [logger] TRACE [disruption] patient_2: [unavailable,doc_b_1,t3] @1778856330.261840
+[16:45:30] [logger] Belief added: logged(disruption,patient_2,[unavailable,doc_b_1,t3],1778856330.26184)
+[16:45:30] [patient_8] Received from clinic_b_mgr: unavailable(doc_b_1,t3)
+[16:45:30] [patient_8] patient_8: DISRUPTION — doc_b_1 unavailable at t3
+[16:45:30] [patient_8] Belief added: unavailable(doc_b_1,t3)
+[16:45:30] [patient_8] Belief removed: assigned_doctor(doc_b_1)
+[16:45:30] [patient_8] Sent to logger: log_event(disruption,patient_8,[unavailable,doc_b_1,t3])
+[16:45:30] [patient_8] Sent to clinic_b_mgr: repair_request(patient_8,consultation,t3)
+[16:45:30] [clinic_b_mgr] Received from patient_5: repair_request(patient_5,consultation,t3)
+[16:45:30] [clinic_b_mgr] Sent to patient_5: local_repair(doc_b_3,t3,medium,10)
+[16:45:30] [clinic_b_mgr] Received from patient_2: repair_request(patient_2,consultation,t3)
+[16:45:30] [clinic_b_mgr] Sent to patient_2: local_repair(doc_b_3,t3,medium,10)
+[16:45:30] [clinic_b_mgr] Received from patient_8: repair_request(patient_8,consultation,t3)
+[16:45:30] [clinic_b_mgr] Sent to patient_8: local_repair(doc_b_3,t3,medium,10)
+[16:45:31] [logger] Received from patient_8: log_event(disruption,patient_8,[unavailable,doc_b_1,t3])
+[16:45:31] [logger] TRACE [disruption] patient_8: [unavailable,doc_b_1,t3] @1778856331.321818
+[16:45:31] [doc_b_2] Message sent from web UI: become_unavailable(t4)
+[16:45:31] [logger] Belief added: logged(disruption,patient_8,[unavailable,doc_b_1,t3],1778856331.321818)
+[16:45:31] [doc_b_2] Received from user: become_unavailable(t4)
+[16:45:31] [doc_b_2] doc_b_2: Becoming unavailable at t4
+[16:45:31] [doc_b_2] Belief removed: can_do(consultation,t4)
+[16:45:31] [doc_b_2] Belief removed: available(t4)
+[16:45:31] [doc_b_2] Belief added: unavailable(t4)
+[16:45:31] [doc_b_2] Sent to clinic_b_mgr: doctor_unavailable(doc_b_2,t4)
+[16:45:31] [doc_b_2] Sent to logger: log_event(unavailability,doc_b_2,[t4])
+[16:45:31] [clinic_b_mgr] Received from doc_b_2: doctor_unavailable(doc_b_2,t4)
+[16:45:31] [patient_5] Received from clinic_b_mgr: local_repair(doc_b_3,t3,medium,10)
+[16:45:31] [clinic_b_mgr] clinic_b_mgr: doc_b_2 unavailable at t4
+[16:45:31] [patient_5] patient_5: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:31] [clinic_b_mgr] Belief removed: doctor_available(doc_b_2)
+[16:45:31] [clinic_b_mgr] Belief added: doctor_unavailable_at(doc_b_2,t4)
+[16:45:31] [patient_5] Sent to logger: log_event(decision,patient_5,[delegate,doc_b_3,t3])
+[16:45:31] [patient_5] Sent to mediator: lending_request(patient_5,clinic_b,consultation,t3)
+[16:45:31] [clinic_b_mgr] Sent to patient_2: unavailable(doc_b_2,t4)
+[16:45:31] [patient_2] Received from clinic_b_mgr: local_repair(doc_b_3,t3,medium,10)
+[16:45:31] [clinic_b_mgr] Sent to patient_5: unavailable(doc_b_2,t4)
+[16:45:31] [patient_2] patient_2: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:31] [clinic_b_mgr] Sent to patient_8: unavailable(doc_b_2,t4)
+[16:45:31] [patient_2] Sent to logger: log_event(decision,patient_2,[delegate,doc_b_3,t3])
+[16:45:31] [clinic_b_mgr] Sent to logger: log_event(group_update,clinic_b_mgr,[unavailable,doc_b_2,t4])
+[16:45:31] [patient_2] Sent to mediator: lending_request(patient_2,clinic_b,consultation,t3)
+[16:45:31] [patient_2] Received from clinic_b_mgr: unavailable(doc_b_2,t4)
+[16:45:31] [patient_2] patient_2: DISRUPTION — doc_b_2 unavailable at t4
+[16:45:31] [patient_2] Belief added: unavailable(doc_b_2,t4)
+[16:45:31] [patient_2] Belief removed: assigned_doctor(doc_b_2)
+[16:45:31] [patient_2] Sent to logger: log_event(disruption,patient_2,[unavailable,doc_b_2,t4])
+[16:45:31] [patient_2] Sent to clinic_b_mgr: repair_request(patient_2,consultation,t4)
+[16:45:32] [logger] Received from doc_b_2: log_event(unavailability,doc_b_2,[t4])
+[16:45:32] [logger] TRACE [unavailability] doc_b_2: [t4] @1778856332.378335
+[16:45:32] [logger] Belief added: logged(unavailability,doc_b_2,[t4],1778856332.378335)
+[16:45:32] [logger] Received from patient_5: log_event(decision,patient_5,[delegate,doc_b_3,t3])
+[16:45:32] [logger] TRACE [decision] patient_5: [delegate,doc_b_3,t3] @1778856332.386790
+[16:45:32] [logger] Belief added: logged(decision,patient_5,[delegate,doc_b_3,t3],1778856332.38679)
+[16:45:32] [logger] Received from patient_2: log_event(decision,patient_2,[delegate,doc_b_3,t3])
+[16:45:32] [logger] TRACE [decision] patient_2: [delegate,doc_b_3,t3] @1778856332.391205
+[16:45:32] [logger] Belief added: logged(decision,patient_2,[delegate,doc_b_3,t3],1778856332.391205)
+[16:45:32] [logger] Received from clinic_b_mgr: log_event(group_update,clinic_b_mgr,[unavailable,doc_b_2,t4])
+[16:45:32] [logger] TRACE [group_update] clinic_b_mgr: [unavailable,doc_b_2,t4] @1778856332.394418
+[16:45:32] [logger] Belief added: logged(group_update,clinic_b_mgr,[unavailable,doc_b_2,t4],1778856332.394418)
+[16:45:32] [logger] Received from patient_2: log_event(disruption,patient_2,[unavailable,doc_b_2,t4])
+[16:45:32] [logger] TRACE [disruption] patient_2: [unavailable,doc_b_2,t4] @1778856332.397994
+[16:45:32] [logger] Belief added: logged(disruption,patient_2,[unavailable,doc_b_2,t4],1778856332.397994)
+[16:45:32] [patient_8] Received from clinic_b_mgr: local_repair(doc_b_3,t3,medium,10)
+[16:45:32] [patient_8] patient_8: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:32] [patient_8] Sent to logger: log_event(decision,patient_8,[delegate,doc_b_3,t3])
+[16:45:32] [patient_8] Sent to mediator: lending_request(patient_8,clinic_b,consultation,t3)
+[16:45:32] [patient_8] Received from clinic_b_mgr: unavailable(doc_b_2,t4)
+[16:45:32] [patient_8] patient_8: DISRUPTION — doc_b_2 unavailable at t4
+[16:45:32] [patient_8] Belief added: unavailable(doc_b_2,t4)
+[16:45:32] [patient_8] Belief removed: assigned_doctor(doc_b_2)
+[16:45:32] [patient_8] Sent to logger: log_event(disruption,patient_8,[unavailable,doc_b_2,t4])
+[16:45:32] [patient_8] Sent to clinic_b_mgr: repair_request(patient_8,consultation,t4)
+[16:45:32] [mediator] Received from patient_5: lending_request(patient_5,clinic_b,consultation,t3)
+[16:45:32] [mediator] Belief added: pending_lending(patient_5,clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_5,clinic_b,consultation,t3])
+[16:45:32] [mediator] Received from patient_2: lending_request(patient_2,clinic_b,consultation,t3)
+[16:45:32] [mediator] Belief added: pending_lending(patient_2,clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_2,clinic_b,consultation,t3])
+[16:45:32] [mediator] Received from patient_8: lending_request(patient_8,clinic_b,consultation,t3)
+[16:45:32] [mediator] Belief added: pending_lending(patient_8,clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_8,clinic_b,consultation,t3])
+[16:45:32] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:32] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:32] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:32] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:32] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:32] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t3)
+[16:45:32] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:32] [clinic_b_mgr] Received from patient_2: repair_request(patient_2,consultation,t4)
+[16:45:32] [clinic_b_mgr] Sent to patient_2: local_repair(doc_b_3,t4,medium,10)
+[16:45:32] [clinic_b_mgr] Received from patient_8: repair_request(patient_8,consultation,t4)
+[16:45:32] [clinic_b_mgr] Sent to patient_8: local_repair(doc_b_3,t4,medium,10)
+[16:45:33] [logger] Received from patient_8: log_event(decision,patient_8,[delegate,doc_b_3,t3])
+[16:45:33] [logger] TRACE [decision] patient_8: [delegate,doc_b_3,t3] @1778856333.488746
+[16:45:33] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:33] [logger] Belief added: logged(decision,patient_8,[delegate,doc_b_3,t3],1778856333.488746)
+[16:45:33] [mediator] Sent to patient_5: fallback_asp(t3)
+[16:45:33] [logger] Received from patient_8: log_event(disruption,patient_8,[unavailable,doc_b_2,t4])
+[16:45:33] [logger] TRACE [disruption] patient_8: [unavailable,doc_b_2,t4] @1778856333.726309
+[16:45:33] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:33] [logger] Belief added: logged(disruption,patient_8,[unavailable,doc_b_2,t4],1778856333.726309)
+[16:45:33] [logger] Received from mediator: log_event(lending_request,mediator,[patient_5,clinic_b,consultation,t3])
+[16:45:33] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:33] [logger] TRACE [lending_request] mediator: [patient_5,clinic_b,consultation,t3] @1778856333.780140
+[16:45:33] [patient_5] Received from clinic_b_mgr: unavailable(doc_b_2,t4)
+[16:45:33] [patient_2] Received from clinic_b_mgr: local_repair(doc_b_3,t4,medium,10)
+[16:45:33] [logger] Belief added: logged(lending_request,mediator,[patient_5,clinic_b,consultation,t3],1778856333.78014)
+[16:45:33] [mediator] Sent to patient_5: fallback_asp(t3)
+[16:45:33] [logger] Received from mediator: log_event(lending_request,mediator,[patient_2,clinic_b,consultation,t3])
+[16:45:33] [patient_5] patient_5: DISRUPTION — doc_b_2 unavailable at t4
+[16:45:33] [patient_2] patient_2: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:34] [patient_5] Belief added: unavailable(doc_b_2,t4)
+[16:45:34] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:34] [logger] TRACE [lending_request] mediator: [patient_2,clinic_b,consultation,t3] @1778856334.071792
+[16:45:34] [patient_2] Sent to logger: log_event(decision,patient_2,[delegate,doc_b_3,t4])
+[16:45:34] [patient_5] Belief removed: assigned_doctor(doc_b_2)
+[16:45:34] [logger] Belief added: logged(lending_request,mediator,[patient_2,clinic_b,consultation,t3],1778856334.071792)
+[16:45:34] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t3)
+[16:45:34] [logger] Received from mediator: log_event(lending_request,mediator,[patient_8,clinic_b,consultation,t3])
+[16:45:34] [mediator] Sent to patient_5: fallback_asp(t3)
+[16:45:34] [patient_5] Sent to logger: log_event(disruption,patient_5,[unavailable,doc_b_2,t4])
+[16:45:34] [logger] TRACE [lending_request] mediator: [patient_8,clinic_b,consultation,t3] @1778856334.311554
+[16:45:34] [patient_2] Sent to mediator: lending_request(patient_2,clinic_b,consultation,t4)
+[16:45:34] [logger] Belief added: logged(lending_request,mediator,[patient_8,clinic_b,consultation,t3],1778856334.311554)
+[16:45:34] [patient_5] Sent to clinic_b_mgr: repair_request(patient_5,consultation,t4)
+[16:45:34] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:34] [patient_8] Received from clinic_b_mgr: local_repair(doc_b_3,t4,medium,10)
+[16:45:34] [patient_5] Received from mediator: fallback_asp(t3)
+[16:45:34] [patient_8] patient_8: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:34] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:34] [mediator] Belief removed: pending_lending(patient_5,clinic_b,consultation,t3)
+[16:45:34] [patient_8] Sent to logger: log_event(decision,patient_8,[delegate,doc_b_3,t4])
+[16:45:34] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_5,t3)
+[16:45:34] [patient_5] Sent to logger: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:34] [patient_8] Sent to mediator: lending_request(patient_8,clinic_b,consultation,t4)
+[16:45:34] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t3)
+[16:45:34] [clinic_b_mgr] Received from patient_5: repair_request(patient_5,consultation,t4)
+[16:45:35] [clinic_b_mgr] Sent to patient_5: local_repair(doc_b_3,t4,medium,10)
+[16:45:35] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:35] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:35] [mediator] Belief removed: pending_lending(patient_2,clinic_b,consultation,t3)
+[16:45:35] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_2,t3)
+[16:45:35] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t3)
+[16:45:35] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:35] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t3)
+[16:45:35] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:35] [mediator] Belief removed: pending_lending(patient_8,clinic_b,consultation,t3)
+[16:45:35] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856335.495874
+[16:45:35] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_8,t3)
+[16:45:35] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856335.495874)
+[16:45:35] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t3)
+[16:45:35] [doc_c_2] Message sent from web UI: become_unavailable(t5)
+[16:45:35] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t3)
+[16:45:35] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:36] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856336.111657
+[16:45:36] [doc_c_1] Belief added: temporarily_in(clinic_b)
+[16:45:36] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:36] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856336.111657)
+[16:45:36] [doc_c_1] Belief removed: available(t3)
+[16:45:36] [logger] Received from patient_2: log_event(decision,patient_2,[delegate,doc_b_3,t4])
+[16:45:36] [logger] TRACE [decision] patient_2: [delegate,doc_b_3,t4] @1778856336.439420
+[16:45:36] [doc_c_2] Received from user: become_unavailable(t5)
+[16:45:36] [doc_c_1] Sent to mediator: lending_accepted(doc_c_1,clinic_b,consultation,t3)
+[16:45:36] [logger] Belief added: logged(decision,patient_2,[delegate,doc_b_3,t4],1778856336.43942)
+[16:45:36] [logger] Received from patient_5: log_event(disruption,patient_5,[unavailable,doc_b_2,t4])
+[16:45:36] [doc_c_2] doc_c_2: Becoming unavailable at t5
+[16:45:36] [doc_c_1] Sent to logger: log_event(lending_accepted,doc_c_1,[clinic_b,consultation,t3])
+[16:45:36] [logger] TRACE [disruption] patient_5: [unavailable,doc_b_2,t4] @1778856336.698187
+[16:45:36] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t3)
+[16:45:36] [logger] Belief added: logged(disruption,patient_5,[unavailable,doc_b_2,t4],1778856336.698187)
+[16:45:36] [doc_c_2] Belief removed: can_do(consultation,t5)
+[16:45:36] [patient_5] Received from mediator: fallback_asp(t3)
+[16:45:36] [doc_c_2] Belief removed: available(t5)
+[16:45:36] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:36] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856336.926211
+[16:45:36] [doc_c_2] Belief added: unavailable(t5)
+[16:45:36] [patient_5] Sent to logger: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:36] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856336.926211)
+[16:45:37] [doc_c_2] Sent to clinic_c_mgr: doctor_unavailable(doc_c_2,t5)
+[16:45:37] [patient_5] Received from mediator: fallback_asp(t3)
+[16:45:37] [logger] Received from patient_8: log_event(decision,patient_8,[delegate,doc_b_3,t4])
+[16:45:37] [clinic_c_mgr] Received from doc_c_2: doctor_unavailable(doc_c_2,t5)
+[16:45:37] [logger] TRACE [decision] patient_8: [delegate,doc_b_3,t4] @1778856337.114498
+[16:45:37] [clinic_c_mgr] clinic_c_mgr: doc_c_2 unavailable at t5
+[16:45:37] [doc_c_2] Sent to logger: log_event(unavailability,doc_c_2,[t5])
+[16:45:37] [logger] Belief added: logged(decision,patient_8,[delegate,doc_b_3,t4],1778856337.114498)
+[16:45:37] [patient_5] Sent to logger: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:37] [patient_5] Received from clinic_b_mgr: local_repair(doc_b_3,t4,medium,10)
+[16:45:37] [clinic_c_mgr] Belief removed: doctor_available(doc_c_2)
+[16:45:37] [logger] Received from patient_5: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:37] [clinic_c_mgr] Belief added: doctor_unavailable_at(doc_c_2,t5)
+[16:45:37] [mediator] Received from patient_2: lending_request(patient_2,clinic_b,consultation,t4)
+[16:45:37] [patient_5] patient_5: Local repair offered — doc_b_3 (trust=medium, pref=10)
+[16:45:37] [logger] TRACE [fallback] patient_5: [asp_reoptimization,t3] @1778856337.317269
+[16:45:37] [logger] Belief added: logged(fallback,patient_5,[asp_reoptimization,t3],1778856337.317269)
+[16:45:37] [mediator] Belief added: pending_lending(patient_2,clinic_b,consultation,t4)
+[16:45:37] [clinic_c_mgr] Sent to patient_3: unavailable(doc_c_2,t5)
+[16:45:37] [patient_5] Sent to logger: log_event(decision,patient_5,[delegate,doc_b_3,t4])
+[16:45:37] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:37] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t3] @1778856337.558288
+[16:45:37] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:37] [patient_5] Sent to mediator: lending_request(patient_5,clinic_b,consultation,t4)
+[16:45:37] [clinic_c_mgr] Sent to patient_6: unavailable(doc_c_2,t5)
+[16:45:37] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3],1778856337.558288)
+[16:45:37] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:37] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:37] [clinic_c_mgr] Sent to logger: log_event(group_update,clinic_c_mgr,[unavailable,doc_c_2,t5])
+[16:45:37] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t3] @1778856337.886634
+[16:45:37] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:37] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_2,clinic_b,consultation,t4])
+[16:45:37] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3],1778856337.886634)
+[16:45:38] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:38] [mediator] Received from patient_8: lending_request(patient_8,clinic_b,consultation,t4)
+[16:45:38] [mediator] Belief added: pending_lending(patient_8,clinic_b,consultation,t4)
+[16:45:38] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:38] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:38] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_8,clinic_b,consultation,t4])
+[16:45:38] [mediator] Received from doc_c_1: lending_accepted(doc_c_1,clinic_b,consultation,t3)
+[16:45:38] [mediator] Sent to patient_5: delegation_complete(doc_c_1,t3)
+[16:45:38] [mediator] Sent to doc_c_1: perform_consultation(patient_5,t3)
+[16:45:38] [mediator] Sent to logger: log_event(lending_executed,mediator,[doc_c_1,clinic_b,t3])
+[16:45:38] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t3)
+[16:45:38] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:39] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:39] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:39] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3])
+[16:45:39] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:39] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t3] @1778856339.171297
+[16:45:39] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:39] [patient_6] Received from clinic_c_mgr: unavailable(doc_c_2,t5)
+[16:45:39] [patient_3] Received from clinic_c_mgr: unavailable(doc_c_2,t5)
+[16:45:39] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t3],1778856339.171297)
+[16:45:39] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:39] [patient_3] patient_3: DISRUPTION — doc_c_2 unavailable at t5
+[16:45:39] [logger] Received from doc_c_1: log_event(lending_accepted,doc_c_1,[clinic_b,consultation,t3])
+[16:45:39] [patient_6] patient_6: DISRUPTION — doc_c_2 unavailable at t5
+[16:45:39] [patient_6] Belief added: unavailable(doc_c_2,t5)
+[16:45:39] [patient_3] Belief added: unavailable(doc_c_2,t5)
+[16:45:39] [logger] TRACE [lending_accepted] doc_c_1: [clinic_b,consultation,t3] @1778856339.548162
+[16:45:39] [logger] Belief added: logged(lending_accepted,doc_c_1,[clinic_b,consultation,t3],1778856339.548162)
+[16:45:39] [patient_3] Belief removed: assigned_doctor(doc_c_2)
+[16:45:39] [patient_6] Belief removed: assigned_doctor(doc_c_2)
+[16:45:39] [logger] Received from patient_5: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:39] [patient_3] Sent to logger: log_event(disruption,patient_3,[unavailable,doc_c_2,t5])
+[16:45:39] [logger] TRACE [fallback] patient_5: [asp_reoptimization,t3] @1778856339.612456
+[16:45:39] [patient_6] Sent to logger: log_event(disruption,patient_6,[unavailable,doc_c_2,t5])
+[16:45:39] [logger] Belief added: logged(fallback,patient_5,[asp_reoptimization,t3],1778856339.612456)
+[16:45:39] [patient_3] Sent to clinic_c_mgr: repair_request(patient_3,consultation,t5)
+[16:45:39] [patient_6] Sent to clinic_c_mgr: repair_request(patient_6,consultation,t5)
+[16:45:39] [logger] Received from doc_c_2: log_event(unavailability,doc_c_2,[t5])
+[16:45:39] [logger] TRACE [unavailability] doc_c_2: [t5] @1778856339.667100
+[16:45:39] [patient_5] Received from mediator: delegation_complete(doc_c_1,t3)
+[16:45:39] [logger] Belief added: logged(unavailability,doc_c_2,[t5],1778856339.6671)
+[16:45:39] [patient_5] Belief added: assigned_doctor(doc_c_1)
+[16:45:39] [mediator] Received from patient_5: lending_request(patient_5,clinic_b,consultation,t4)
+[16:45:39] [logger] Received from patient_5: log_event(fallback,patient_5,[asp_reoptimization,t3])
+[16:45:39] [patient_5] Belief removed: intend(consultation(t3))
+[16:45:40] [mediator] Belief added: pending_lending(patient_5,clinic_b,consultation,t4)
+[16:45:40] [patient_5] Belief added: intend(consultation_with(doc_c_1,t3))
+[16:45:40] [logger] TRACE [fallback] patient_5: [asp_reoptimization,t3] @1778856340.088407
+[16:45:40] [logger] Belief added: logged(fallback,patient_5,[asp_reoptimization,t3],1778856340.088407)
+[16:45:40] [logger] Received from patient_5: log_event(decision,patient_5,[delegate,doc_b_3,t4])
+[16:45:40] [mediator] Sent to clinic_a_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:40] [patient_5] Sent to logger: log_event(delegation_complete,patient_5,[doc_c_1,t3])
+[16:45:40] [clinic_c_mgr] Received from patient_3: repair_request(patient_3,consultation,t5)
+[16:45:40] [logger] TRACE [decision] patient_5: [delegate,doc_b_3,t4] @1778856340.393095
+[16:45:40] [clinic_a_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:40] [logger] Belief added: logged(decision,patient_5,[delegate,doc_b_3,t4],1778856340.393095)
+[16:45:40] [mediator] Sent to clinic_c_mgr: lending_inquiry(clinic_b,consultation,t4)
+[16:45:40] [logger] Received from clinic_c_mgr: log_event(group_update,clinic_c_mgr,[unavailable,doc_c_2,t5])
+[16:45:40] [clinic_c_mgr] Sent to patient_3: local_repair(doc_c_1,t5,very_high,7)
+[16:45:40] [clinic_a_mgr] Sent to mediator: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:40] [mediator] Sent to logger: log_event(lending_request,mediator,[patient_5,clinic_b,consultation,t4])
+[16:45:40] [logger] TRACE [group_update] clinic_c_mgr: [unavailable,doc_c_2,t5] @1778856340.546597
+[16:45:40] [clinic_c_mgr] Received from patient_6: repair_request(patient_6,consultation,t5)
+[16:45:40] [logger] Belief added: logged(group_update,clinic_c_mgr,[unavailable,doc_c_2,t5],1778856340.546597)
+[16:45:40] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:40] [logger] Received from mediator: log_event(lending_request,mediator,[patient_2,clinic_b,consultation,t4])
+[16:45:40] [mediator] Sent to patient_2: fallback_asp(t4)
+[16:45:40] [logger] TRACE [lending_request] mediator: [patient_2,clinic_b,consultation,t4] @1778856340.577717
+[16:45:40] [clinic_c_mgr] Sent to patient_6: local_repair(doc_c_1,t5,very_high,7)
+[16:45:40] [logger] Belief added: logged(lending_request,mediator,[patient_2,clinic_b,consultation,t4],1778856340.577717)
+[16:45:40] [logger] Received from mediator: log_event(lending_request,mediator,[patient_8,clinic_b,consultation,t4])
+[16:45:40] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:40] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:40] [logger] TRACE [lending_request] mediator: [patient_8,clinic_b,consultation,t4] @1778856340.600118
+[16:45:40] [logger] Belief added: logged(lending_request,mediator,[patient_8,clinic_b,consultation,t4],1778856340.600118)
+[16:45:40] [mediator] Belief removed: pending_lending(patient_2,clinic_b,consultation,t4)
+[16:45:40] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_2,t4)
+[16:45:40] [logger] Received from mediator: log_event(lending_executed,mediator,[doc_c_1,clinic_b,t3])
+[16:45:40] [logger] TRACE [lending_executed] mediator: [doc_c_1,clinic_b,t3] @1778856340.622863
+[16:45:40] [logger] Belief added: logged(lending_executed,mediator,[doc_c_1,clinic_b,t3],1778856340.622863)
+[16:45:40] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t4)
+[16:45:40] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:40] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:40] [mediator] Belief removed: pending_lending(patient_8,clinic_b,consultation,t4)
+[16:45:40] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_8,t4)
+[16:45:40] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t4)
+[16:45:40] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:40] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:40] [mediator] Sent to patient_5: fallback_asp(t4)
+[16:45:40] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:40] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t4)
+[16:45:41] [doc_c_1] Belief added: temporarily_in(clinic_b)
+[16:45:41] [doc_c_1] Belief removed: available(t4)
+[16:45:41] [doc_c_1] Sent to mediator: lending_accepted(doc_c_1,clinic_b,consultation,t4)
+[16:45:41] [doc_c_1] Sent to logger: log_event(lending_accepted,doc_c_1,[clinic_b,consultation,t4])
+[16:45:41] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t4)
+[16:45:41] [clinic_c_mgr] Received from mediator: lending_inquiry(clinic_b,consultation,t4)
+[16:45:41] [clinic_c_mgr] Sent to mediator: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:41] [patient_3] Received from clinic_c_mgr: local_repair(doc_c_1,t5,very_high,7)
+[16:45:41] [patient_6] Received from clinic_c_mgr: local_repair(doc_c_1,t5,very_high,7)
+[16:45:41] [patient_3] patient_3: Local repair offered — doc_c_1 (trust=very_high, pref=7)
+[16:45:41] [patient_6] patient_6: Local repair offered — doc_c_1 (trust=very_high, pref=7)
+[16:45:41] [patient_6] Belief added: assigned_doctor(doc_c_1)
+[16:45:41] [patient_3] Belief added: assigned_doctor(doc_c_1)
+[16:45:41] [patient_6] Belief removed: intend(consultation(t5))
+[16:45:41] [patient_3] Belief removed: intend(consultation(t5))
+[16:45:41] [patient_6] Belief added: intend(consultation_with(doc_c_1,t5))
+[16:45:41] [patient_3] Belief added: intend(consultation_with(doc_c_1,t5))
+[16:45:41] [patient_6] Sent to logger: log_event(decision,patient_6,[allow,doc_c_1,t5])
+[16:45:41] [patient_3] Sent to logger: log_event(decision,patient_3,[allow,doc_c_1,t5])
+[16:45:41] [logger] Received from patient_3: log_event(disruption,patient_3,[unavailable,doc_c_2,t5])
+[16:45:41] [logger] TRACE [disruption] patient_3: [unavailable,doc_c_2,t5] @1778856341.762456
+[16:45:41] [logger] Belief added: logged(disruption,patient_3,[unavailable,doc_c_2,t5],1778856341.762456)
+[16:45:41] [logger] Received from patient_6: log_event(disruption,patient_6,[unavailable,doc_c_2,t5])
+[16:45:41] [logger] TRACE [disruption] patient_6: [unavailable,doc_c_2,t5] @1778856341.769503
+[16:45:41] [logger] Belief added: logged(disruption,patient_6,[unavailable,doc_c_2,t5],1778856341.769503)
+[16:45:41] [logger] Received from patient_5: log_event(delegation_complete,patient_5,[doc_c_1,t3])
+[16:45:41] [logger] TRACE [delegation_complete] patient_5: [doc_c_1,t3] @1778856341.777385
+[16:45:41] [logger] Belief added: logged(delegation_complete,patient_5,[doc_c_1,t3],1778856341.777385)
+[16:45:41] [logger] Received from mediator: log_event(lending_request,mediator,[patient_5,clinic_b,consultation,t4])
+[16:45:41] [logger] TRACE [lending_request] mediator: [patient_5,clinic_b,consultation,t4] @1778856341.781289
+[16:45:41] [logger] Belief added: logged(lending_request,mediator,[patient_5,clinic_b,consultation,t4],1778856341.781289)
+[16:45:41] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:41] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856341.786531
+[16:45:41] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856341.786531)
+[16:45:41] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:41] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t4] @1778856341.792840
+[16:45:41] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4],1778856341.79284)
+[16:45:41] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:41] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t4] @1778856341.805918
+[16:45:41] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4],1778856341.805918)
+[16:45:41] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:41] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856341.822774
+[16:45:41] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856341.822774)
+[16:45:41] [logger] Received from doc_c_1: log_event(lending_accepted,doc_c_1,[clinic_b,consultation,t4])
+[16:45:41] [logger] TRACE [lending_accepted] doc_c_1: [clinic_b,consultation,t4] @1778856341.848095
+[16:45:41] [logger] Belief added: logged(lending_accepted,doc_c_1,[clinic_b,consultation,t4],1778856341.848095)
+[16:45:41] [logger] Received from patient_3: log_event(decision,patient_3,[allow,doc_c_1,t5])
+[16:45:41] [logger] TRACE [decision] patient_3: [allow,doc_c_1,t5] @1778856341.877432
+[16:45:41] [logger] Belief added: logged(decision,patient_3,[allow,doc_c_1,t5],1778856341.877432)
+[16:45:41] [logger] Received from patient_6: log_event(decision,patient_6,[allow,doc_c_1,t5])
+[16:45:41] [logger] TRACE [decision] patient_6: [allow,doc_c_1,t5] @1778856341.889243
+[16:45:41] [logger] Belief added: logged(decision,patient_6,[allow,doc_c_1,t5],1778856341.889243)
+[16:45:41] [mediator] Received from clinic_a_mgr: lending_offer(doc_a_2,clinic_a,low,consultation,t4)
+[16:45:41] [mediator] Sent to patient_5: fallback_asp(t4)
+[16:45:41] [mediator] Sent to logger: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:41] [mediator] Received from doc_c_1: lending_accepted(doc_c_1,clinic_b,consultation,t4)
+[16:45:41] [mediator] Sent to patient_2: delegation_complete(doc_c_1,t4)
+[16:45:41] [mediator] Sent to doc_c_1: perform_consultation(patient_2,t4)
+[16:45:41] [mediator] Sent to logger: log_event(lending_executed,mediator,[doc_c_1,clinic_b,t4])
+[16:45:41] [mediator] Received from clinic_c_mgr: lending_offer(doc_c_1,clinic_c,very_high,consultation,t4)
+[16:45:41] [mediator] Belief removed: pending_lending(patient_5,clinic_b,consultation,t4)
+[16:45:41] [mediator] Belief added: active_lending(doc_c_1,clinic_c,clinic_b,patient_5,t4)
+[16:45:42] [mediator] Sent to doc_c_1: lend_to(clinic_b,consultation,t4)
+[16:45:42] [mediator] Sent to logger: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:42] [patient_5] Received from mediator: fallback_asp(t4)
+[16:45:42] [patient_5] Sent to logger: log_event(fallback,patient_5,[asp_reoptimization,t4])
+[16:45:42] [patient_2] Received from mediator: fallback_asp(t4)
+[16:45:42] [patient_5] Received from mediator: fallback_asp(t4)
+[16:45:42] [patient_5] Sent to logger: log_event(fallback,patient_5,[asp_reoptimization,t4])
+[16:45:42] [patient_2] Sent to logger: log_event(fallback,patient_2,[asp_reoptimization,t4])
+[16:45:42] [patient_2] Received from mediator: delegation_complete(doc_c_1,t4)
+[16:45:42] [patient_2] Belief added: assigned_doctor(doc_c_1)
+[16:45:42] [patient_2] Belief removed: intend(consultation(t4))
+[16:45:42] [patient_2] Belief added: intend(consultation_with(doc_c_1,t4))
+[16:45:42] [patient_2] Sent to logger: log_event(delegation_complete,patient_2,[doc_c_1,t4])
+[16:45:42] [logger] Received from mediator: log_event(lending_denied,mediator,[doc_a_2,low,4])
+[16:45:42] [logger] TRACE [lending_denied] mediator: [doc_a_2,low,4] @1778856342.928387
+[16:45:42] [logger] Belief added: logged(lending_denied,mediator,[doc_a_2,low,4],1778856342.928387)
+[16:45:42] [logger] Received from mediator: log_event(lending_executed,mediator,[doc_c_1,clinic_b,t4])
+[16:45:42] [logger] TRACE [lending_executed] mediator: [doc_c_1,clinic_b,t4] @1778856342.969803
+[16:45:42] [logger] Belief added: logged(lending_executed,mediator,[doc_c_1,clinic_b,t4],1778856342.969803)
+[16:45:42] [logger] Received from mediator: log_event(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4])
+[16:45:42] [logger] TRACE [lending_approved] mediator: [doc_c_1,clinic_c,clinic_b,t4] @1778856342.978995
+[16:45:42] [logger] Belief added: logged(lending_approved,mediator,[doc_c_1,clinic_c,clinic_b,t4],1778856342.978995)
+[16:45:42] [logger] Received from patient_5: log_event(fallback,patient_5,[asp_reoptimization,t4])
+[16:45:42] [logger] TRACE [fallback] patient_5: [asp_reoptimization,t4] @1778856342.995287
+[16:45:42] [logger] Belief added: logged(fallback,patient_5,[asp_reoptimization,t4],1778856342.995287)
+[16:45:43] [logger] Received from patient_2: log_event(fallback,patient_2,[asp_reoptimization,t4])
+[16:45:43] [logger] TRACE [fallback] patient_2: [asp_reoptimization,t4] @1778856343.005347
+[16:45:43] [logger] Belief added: logged(fallback,patient_2,[asp_reoptimization,t4],1778856343.005347)
+[16:45:43] [logger] Received from patient_5: log_event(fallback,patient_5,[asp_reoptimization,t4])
+[16:45:43] [logger] TRACE [fallback] patient_5: [asp_reoptimization,t4] @1778856343.022216
+[16:45:43] [logger] Belief added: logged(fallback,patient_5,[asp_reoptimization,t4],1778856343.022216)
+[16:45:43] [logger] Received from patient_2: log_event(delegation_complete,patient_2,[doc_c_1,t4])
+[16:45:43] [logger] TRACE [delegation_complete] patient_2: [doc_c_1,t4] @1778856343.029956
+[16:45:43] [logger] Belief added: logged(delegation_complete,patient_2,[doc_c_1,t4],1778856343.029956)
+[16:45:43] [doc_c_1] Received from mediator: perform_consultation(patient_2,t4)
+[16:45:43] [doc_c_1] doc_c_1: Performing consultation for patient_2 at t4
+[16:45:43] [doc_c_1] Belief removed: can_do(consultation,t4)
+[16:45:43] [doc_c_1] Belief added: done(consultation,patient_2,t4)
+[16:45:43] [doc_c_1] Sent to patient_2: consultation_done(doc_c_1,t4)
+[16:45:43] [doc_c_1] Sent to logger: log_event(consultation,doc_c_1,[patient_2,t4])
+[16:45:43] [doc_c_1] Sent to mediator: lending_task_done(doc_c_1,clinic_b,t4)
+[16:45:43] [doc_c_1] Received from mediator: lend_to(clinic_b,consultation,t4)
+[16:45:44] [mediator] Received from doc_c_1: lending_task_done(doc_c_1,clinic_b,t4)
+[16:45:44] [mediator] Belief removed: active_lending(doc_c_1,clinic_c,clinic_b,patient_2,t4)
+[16:45:44] [mediator] Sent to doc_c_1: return_to_group
+[16:45:44] [logger] Received from doc_c_1: log_event(consultation,doc_c_1,[patient_2,t4])
+[16:45:44] [logger] TRACE [consultation] doc_c_1: [patient_2,t4] @1778856344.046561
+[16:45:44] [logger] Belief added: logged(consultation,doc_c_1,[patient_2,t4],1778856344.046561)
+[16:45:44] [patient_2] Received from doc_c_1: consultation_done(doc_c_1,t4)
+[16:45:44] [patient_2] Belief added: done(consultation_with(doc_c_1,t4))
+[16:45:44] [patient_2] Belief removed: intend(consultation_with(doc_c_1,t4))
+[16:45:44] [patient_2] Belief removed: needs_consultation(t4)
+[16:45:44] [patient_2] Sent to logger: log_event(consultation_done,patient_2,[doc_c_1,t4])
+[16:45:45] [logger] Received from patient_2: log_event(consultation_done,patient_2,[doc_c_1,t4])
+[16:45:45] [logger] TRACE [consultation_done] patient_2: [doc_c_1,t4] @1778856345.170410
+[16:45:45] [logger] Belief added: logged(consultation_done,patient_2,[doc_c_1,t4],1778856345.17041)
+[16:45:45] [doc_c_1] Received from mediator: return_to_group
+[16:45:45] [doc_c_1] Belief removed: temporarily_in(clinic_b)
+[16:45:45] [doc_c_1] Sent to logger: log_event(return_group,doc_c_1,[clinic_c])
+[16:45:46] [logger] Received from doc_c_1: log_event(return_group,doc_c_1,[clinic_c])
+[16:45:46] [logger] TRACE [return_group] doc_c_1: [clinic_c] @1778856346.188376
+[16:45:46] [logger] Belief added: logged(return_group,doc_c_1,[clinic_c],1778856346.188376)
+[16:46:00] [patient_1] Message sent from web UI: select_action(t1)
+[16:46:00] [patient_1] Received from user: select_action(t1)
+[16:46:00] [patient_1] patient_1: Probabilistic action selection
+[16:46:00] [patient_1] Sent to logger: log_event(selector_start,patient_1,[consultation,t1])
+[16:46:00] [patient_1] Belief added: selected_action(visit_type_2,t1)
+[16:46:00] [patient_1] Sent to logger: log_event(prob_selection,patient_1,[visit_type_2,87.6923076923077,t1])
+[16:46:01] [logger] Received from patient_1: log_event(selector_start,patient_1,[consultation,t1])
+[16:46:01] [logger] TRACE [selector_start] patient_1: [consultation,t1] @1778856361.572915
+[16:46:01] [logger] Belief added: logged(selector_start,patient_1,[consultation,t1],1778856361.572915)
+[16:46:01] [logger] Received from patient_1: log_event(prob_selection,patient_1,[visit_type_2,87.6923076923077,t1])
+[16:46:01] [logger] TRACE [prob_selection] patient_1: [visit_type_2,87.6923076923077,t1] @1778856361.582983
+[16:46:01] [logger] Belief added: logged(prob_selection,patient_1,[visit_type_2,87.6923076923077,t1],1778856361.582983)
+[16:46:03] [patient_2] Message sent from web UI: select_action(t2)
+[16:46:04] [patient_2] Received from user: select_action(t2)
+[16:46:04] [patient_2] patient_2: Probabilistic action selection
+[16:46:04] [patient_2] Sent to logger: log_event(selector_start,patient_2,[consultation,t2])
+[16:46:04] [patient_2] Belief added: selected_action(visit_type_2,t2)
+[16:46:04] [patient_2] Sent to logger: log_event(prob_selection,patient_2,[visit_type_2,95.88888888888889,t2])
+[16:46:05] [logger] Received from patient_2: log_event(selector_start,patient_2,[consultation,t2])
+[16:46:05] [logger] TRACE [selector_start] patient_2: [consultation,t2] @1778856365.691247
+[16:46:05] [logger] Belief added: logged(selector_start,patient_2,[consultation,t2],1778856365.691247)
+[16:46:05] [logger] Received from patient_2: log_event(prob_selection,patient_2,[visit_type_2,95.88888888888889,t2])
+[16:46:05] [logger] TRACE [prob_selection] patient_2: [visit_type_2,95.88888888888889,t2] @1778856365.698210
+[16:46:05] [logger] Belief added: logged(prob_selection,patient_2,[visit_type_2,95.88888888888889,t2],1778856365.69821)
+[16:46:06] [patient_3] Message sent from web UI: select_action(t3)
+[16:46:07] [patient_3] Received from user: select_action(t3)
+[16:46:07] [patient_3] patient_3: Probabilistic action selection
+[16:46:07] [patient_3] Sent to logger: log_event(selector_start,patient_3,[consultation,t3])
+[16:46:08] [patient_3] Belief added: selected_action(visit_type_4,t3)
+[16:46:08] [patient_3] Sent to logger: log_event(prob_selection,patient_3,[visit_type_4,90.88888888888889,t3])
+[16:46:08] [logger] Received from patient_3: log_event(selector_start,patient_3,[consultation,t3])
+[16:46:08] [logger] TRACE [selector_start] patient_3: [consultation,t3] @1778856368.739534
+[16:46:08] [logger] Belief added: logged(selector_start,patient_3,[consultation,t3],1778856368.739534)
+[16:46:08] [logger] Received from patient_3: log_event(prob_selection,patient_3,[visit_type_4,90.88888888888889,t3])
+[16:46:08] [logger] TRACE [prob_selection] patient_3: [visit_type_4,90.88888888888889,t3] @1778856368.745442
+[16:46:08] [logger] Belief added: logged(prob_selection,patient_3,[visit_type_4,90.88888888888889,t3],1778856368.745442)
+[16:46:09] [patient_4] Message sent from web UI: select_action(t4)
+[16:46:11] [patient_4] Received from user: select_action(t4)
+[16:46:11] [patient_4] patient_4: Probabilistic action selection
+[16:46:11] [patient_4] Sent to logger: log_event(selector_start,patient_4,[consultation,t4])
+[16:46:11] [patient_4] Belief added: selected_action(visit_type_5,t4)
+[16:46:11] [patient_4] Sent to logger: log_event(prob_selection,patient_4,[visit_type_5,92.33333333333333,t4])
+[16:46:11] [logger] Received from patient_4: log_event(selector_start,patient_4,[consultation,t4])
+[16:46:11] [logger] TRACE [selector_start] patient_4: [consultation,t4] @1778856371.772969
+[16:46:11] [logger] Belief added: logged(selector_start,patient_4,[consultation,t4],1778856371.772969)
+[16:46:11] [logger] Received from patient_4: log_event(prob_selection,patient_4,[visit_type_5,92.33333333333333,t4])
+[16:46:11] [logger] TRACE [prob_selection] patient_4: [visit_type_5,92.33333333333333,t4] @1778856371.780214
+[16:46:11] [logger] Belief added: logged(prob_selection,patient_4,[visit_type_5,92.33333333333333,t4],1778856371.780214)
+[16:46:12] [patient_5] Message sent from web UI: select_action(t5)
+[16:46:12] [patient_5] Received from user: select_action(t5)
+[16:46:13] [patient_5] patient_5: Probabilistic action selection
+[16:46:13] [patient_5] Sent to logger: log_event(selector_start,patient_5,[consultation,t5])
+[16:46:13] [patient_5] Belief added: selected_action(visit_type_1,t5)
+[16:46:13] [patient_5] Sent to logger: log_event(prob_selection,patient_5,[visit_type_1,78.11111111111111,t5])
+[16:46:13] [logger] Received from patient_5: log_event(selector_start,patient_5,[consultation,t5])
+[16:46:13] [logger] TRACE [selector_start] patient_5: [consultation,t5] @1778856373.813227
+[16:46:13] [logger] Belief added: logged(selector_start,patient_5,[consultation,t5],1778856373.813227)
+[16:46:13] [logger] Received from patient_5: log_event(prob_selection,patient_5,[visit_type_1,78.11111111111111,t5])
+[16:46:13] [logger] TRACE [prob_selection] patient_5: [visit_type_1,78.11111111111111,t5] @1778856373.819556
+[16:46:13] [logger] Belief added: logged(prob_selection,patient_5,[visit_type_1,78.11111111111111,t5],1778856373.819556)
+[16:46:15] [patient_6] Message sent from web UI: select_action(t6)
+[16:46:16] [patient_6] Received from user: select_action(t6)
+[16:46:16] [patient_6] patient_6: Probabilistic action selection
+[16:46:16] [patient_6] Sent to logger: log_event(selector_start,patient_6,[consultation,t6])
+[16:46:16] [patient_6] Belief added: selected_action(visit_type_4,t6)
+[16:46:16] [patient_6] Sent to logger: log_event(prob_selection,patient_6,[visit_type_4,76.72727272727272,t6])
+[16:46:16] [logger] Received from patient_6: log_event(selector_start,patient_6,[consultation,t6])
+[16:46:17] [logger] TRACE [selector_start] patient_6: [consultation,t6] @1778856377.017157
+[16:46:17] [logger] Belief added: logged(selector_start,patient_6,[consultation,t6],1778856377.017157)
+[16:46:17] [logger] Received from patient_6: log_event(prob_selection,patient_6,[visit_type_4,76.72727272727272,t6])
+[16:46:17] [logger] TRACE [prob_selection] patient_6: [visit_type_4,76.72727272727272,t6] @1778856377.189459
+[16:46:17] [logger] Belief added: logged(prob_selection,patient_6,[visit_type_4,76.72727272727272,t6],1778856377.189459)
+[16:46:19] [patient_7] Message sent from web UI: select_action(t7)
+[16:46:19] [patient_7] Received from user: select_action(t7)
+[16:46:19] [patient_7] patient_7: Probabilistic action selection
+[16:46:19] [patient_7] Sent to logger: log_event(selector_start,patient_7,[consultation,t7])
+[16:46:19] [patient_7] Belief added: selected_action(visit_type_2,t7)
+[16:46:19] [patient_7] Sent to logger: log_event(prob_selection,patient_7,[visit_type_2,99.5,t7])
+[16:46:20] [logger] Received from patient_7: log_event(selector_start,patient_7,[consultation,t7])
+[16:46:20] [logger] TRACE [selector_start] patient_7: [consultation,t7] @1778856380.424478
+[16:46:20] [logger] Belief added: logged(selector_start,patient_7,[consultation,t7],1778856380.424478)
+[16:46:20] [logger] Received from patient_7: log_event(prob_selection,patient_7,[visit_type_2,99.5,t7])
+[16:46:20] [logger] TRACE [prob_selection] patient_7: [visit_type_2,99.5,t7] @1778856380.429093
+[16:46:20] [logger] Belief added: logged(prob_selection,patient_7,[visit_type_2,99.5,t7],1778856380.429093)
+[16:46:22] [patient_8] Message sent from web UI: select_action(t8)
+[16:46:23] [patient_8] Received from user: select_action(t8)
+[16:46:23] [patient_8] patient_8: Probabilistic action selection
+[16:46:23] [patient_8] Sent to logger: log_event(selector_start,patient_8,[consultation,t8])
+[16:46:23] [patient_8] Belief added: selected_action(visit_type_5,t8)
+[16:46:23] [patient_8] Sent to logger: log_event(prob_selection,patient_8,[visit_type_5,74.94736842105263,t8])
+[16:46:24] [logger] Received from patient_8: log_event(selector_start,patient_8,[consultation,t8])
+[16:46:24] [logger] TRACE [selector_start] patient_8: [consultation,t8] @1778856384.473164
+[16:46:24] [logger] Belief added: logged(selector_start,patient_8,[consultation,t8],1778856384.473164)
+[16:46:24] [logger] Received from patient_8: log_event(prob_selection,patient_8,[visit_type_5,74.94736842105263,t8])
+[16:46:24] [logger] TRACE [prob_selection] patient_8: [visit_type_5,74.94736842105263,t8] @1778856384.481095
+[16:46:24] [logger] Belief added: logged(prob_selection,patient_8,[visit_type_5,74.94736842105263,t8],1778856384.481095)
+[16:46:28] [logger] Message sent from web UI: compute_metrics
+[16:46:29] [logger] Received from user: compute_metrics
+[16:46:29] [logger] Belief added: metrics_summary(186,26,2,12,16,21835.788011550903,46.15384615384615,10.067939758300781)
+[16:46:29] [logger] METRICS: events=186 disruptions=26 repairs=2 lendings=12 selections=16
+[16:46:29] [logger] METRICS: repair_ms=21835.79 lending_pct=46.2 selector_ms=10.068

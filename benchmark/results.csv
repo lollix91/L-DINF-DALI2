@@ -1,5 +1,5 @@
 scenario,agents,clinics,docs_per_clinic,patients,disruptions_cfg,equiv_actions,runs,avg_disruptions,avg_repairs,avg_lendings,avg_selections,avg_repair_ms,avg_lending_pct,avg_selector_ms,avg_total_events,avg_wall_clock_ms
-S1_small,10,2,2,2,1,3,1,0,0,0,0,0,0,0,0,15652.72
-S2_medium,20,3,3,6,3,4,1,0,0,0,0,0,0,0,0,28820.85
-S3_large,34,4,4,12,5,5,1,0,0,0,0,0,0,0,0,201635.1
-S4_xlarge,52,5,5,20,10,6,1,0,0,0,0,0,0,0,0,183631.79
+S1_small,10,2,2,2,1,3,3,2.0,0.0,0.0,4.0,0.0,0.0,4.69,0,20454.62
+S2_medium,20,3,3,6,3,4,3,12.0,3.33,4.0,12.0,7564.25,33.3,4.12,0,38378.42
+S3_large,25,3,4,8,5,5,3,26.0,3.33,12.0,16.0,19010.23,46.2,6.39,0,66230.3
+S4_xlarge,28,4,3,10,8,6,3,38.0,8.67,33.33,20.0,19201.16,88.03,39.32,0,92636.83
